@@ -14,7 +14,7 @@ Enabling this mod will change most Serpulo blocks. Schematics may malfunction, a
   '''
 subtitle: "I smell a snooper!"
 version: 0.8-dev
-minGameVersion: 160
+minGameVersion: 9999999999
 contentOrder: [
   air-factory
   ground-factory
