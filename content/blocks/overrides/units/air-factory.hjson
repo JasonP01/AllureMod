@@ -1,0 +1,37 @@
+plans: [
+  {
+    unit: flare
+    time: 600
+    requirements: [
+      copper/20
+      graphite/10
+    ]
+  }
+  {
+    unit: mono
+    time: 900
+    requirements: [
+      copper/60
+      lead/15
+      silicon/15
+    ]
+  }
+]
+requirements: [
+  copper/150
+  graphite/50
+]
+research: {
+  parent: ground-factory
+  objectives: [
+    {
+      type: SectorComplete
+      preset: fungalPass
+    }
+  ]
+  requirements: [
+    copper/1000
+    lead/500
+    graphite/500
+  ]
+}

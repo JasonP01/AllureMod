@@ -1,0 +1,10 @@
+type: ItemTurret
+size: 4
+ammoTypes: {
+  copper: {
+    spawnUnit: allure-luminance-missile
+  }
+  lead: {
+    spawnUnit: allure-luminance-lightning
+  }
+}

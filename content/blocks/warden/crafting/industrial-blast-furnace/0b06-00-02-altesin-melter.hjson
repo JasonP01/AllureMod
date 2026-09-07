@@ -1,0 +1,207 @@
+type: GenericCrafter
+squareSprite: false
+size: 7
+conductivePower: true
+rotate: false
+hasLiquids: true
+liquidCapacity: 600
+liquidOutputDirections: [1]
+consumes: {
+  power: 1
+  liquid: {
+    liquid: crystal-plasma
+    amount: 0.5
+  }
+  items: [
+    altesin/2
+  ]
+}
+craftTime: 60
+outputLiquid: 0b19-00-melted-altesin/2
+category: crafting
+research: {
+  parent: industrial-blast-furnace
+  requirements: []
+}
+requirements: [
+  metaglass/300
+  dantrales/500
+  territe-alloy/1200
+  scilaxa/150
+]
+drawer: {
+  type: DrawMulti
+  iconOverride: [
+    -icon
+  ]
+  drawers: [
+    {
+    }
+    {
+      type: DrawRegion
+      suffix: -icon
+      layer: 29.5
+    }
+    {
+      type: DrawLiquidTile
+      drawLiquid: 0b19-00-melted-altesin
+      padding: 3
+    }
+    {
+      type: DrawRegion
+      suffix: -top
+    }
+    {
+      type: DrawGlowRegion
+      color: ffb380
+      layer: 30
+      alpha: 0.5
+    }
+  ]
+}
+breakEffect: [
+  {
+    type: WaveEffect
+    rotation: 38
+    lifetime: 20
+    sides: 4
+    sizeFrom: 28
+    sizeTo: 56
+    strokeFrom: 21
+    strokeTo: 0
+    colorFrom: 7382f0
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    length: 0
+    lifetime: 11
+    useRotation: false
+    region: allure-warden-icon
+    sizeFrom: 8
+    sizeTo: 8
+    colorFrom: 7382f000
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    length: 0
+    lifetime: 30
+    startDelay: 10
+    useRotation: false
+    region: allure-warden-icon
+    sizeFrom: 8
+    sizeTo: 8
+    colorFrom: 7382f0
+    colorTo: 7382f000
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    cone: 0
+    randLength: false
+    baseLength: 6
+    length: 21
+    lifetime: 35
+    useRotation: false
+    region: allure-energy-arrow
+    interp: pow3Out
+    sizeInterp: pow2In
+    sizeFrom: 8
+    sizeTo: 0
+    colorFrom: 7382f0
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    cone: 0
+    baseRotation: 180
+    randLength: false
+    baseLength: 6
+    length: 21
+    lifetime: 35
+    useRotation: false
+    region: allure-energy-arrow
+    interp: pow3Out
+    sizeInterp: pow2In
+    sizeFrom: 8
+    sizeTo: 0
+    colorFrom: 7382f0
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    cone: 0
+    baseRotation: 45
+    randLength: false
+    baseLength: 6
+    length: 24
+    lifetime: 35
+    useRotation: false
+    region: allure-energy-arrow
+    interp: pow3Out
+    sizeInterp: pow2In
+    sizeFrom: 4
+    sizeTo: 0
+    colorFrom: 7382f0
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    cone: 0
+    baseRotation: -45
+    randLength: false
+    baseLength: 6
+    length: 24
+    lifetime: 35
+    useRotation: false
+    region: allure-energy-arrow
+    interp: pow3Out
+    sizeInterp: pow2In
+    sizeFrom: 4
+    sizeTo: 0
+    colorFrom: 7382f0
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    cone: 0
+    baseRotation: 135
+    randLength: false
+    baseLength: 6
+    length: 24
+    lifetime: 35
+    useRotation: false
+    region: allure-energy-arrow
+    interp: pow3Out
+    sizeInterp: pow2In
+    sizeFrom: 4
+    sizeTo: 0
+    colorFrom: 7382f0
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    cone: 0
+    baseRotation: -135
+    randLength: false
+    baseLength: 6
+    length: 24
+    lifetime: 35
+    useRotation: false
+    region: allure-energy-arrow
+    interp: pow3Out
+    sizeInterp: pow2In
+    sizeFrom: 4
+    sizeTo: 0
+    colorFrom: 7382f0
+    colorTo: 7382f0
+  }
+]

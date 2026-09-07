@@ -1,0 +1,8 @@
+research: {
+  parent: 0b-begin
+  requirements: [
+    dantrales/200
+    territe-alloy/2000
+  ]
+}
+show: false

@@ -1,0 +1,68 @@
+type: AttributeCrafter
+size: 12
+craftTime: 5
+floating: true
+itemCapacity: 96
+liquidCapacity: 1296
+liquidPressure: 2.1
+maxBoost: 1
+baseEfficiency: 0
+minEfficiency: 1
+boostScale: 0.02
+drawer: [
+  {
+  }
+  {
+    type: DrawLiquidTile
+    drawLiquid: slag
+    padding: 6
+  }
+  {
+    type: DrawRegion
+    suffix: -mid
+  }
+  {
+    type: DrawLiquidTile
+    drawLiquid: crystal-plasma
+    padding: 30
+  }
+  {
+    type: DrawRegion
+    suffix: -mid3
+  }
+  {
+    type: DrawGlowRegion
+    blending: normal
+    color: ffffff
+    alpha: 1
+    suffix: -top
+  }
+  {
+    type: DrawRegion
+    suffix: -mid-shadow
+    layer: 30.9
+    x: -6
+    y: -6
+  }
+  {
+    type: DrawRegion
+    suffix: -mid2
+    layer: 31.1
+  }
+]
+consumes: {
+  liquids: [
+    arreacta/0.1
+  ]
+  items: [
+    contained-slag/4
+  ]
+}
+outputLiquid: crystal-plasma/0.8
+category: crafting
+requirements: [
+  anden/1200
+  ladera/300
+  renfrien/600
+  baenite/300
+]

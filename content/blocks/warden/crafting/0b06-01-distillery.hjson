@@ -1,0 +1,235 @@
+type: GenericCrafter
+squareSprite: false
+size: 6
+craftTime: 60
+hasLiquids: true
+conductivePower: true
+liquidCapacity: 1200
+itemCapacity: 32
+ignoreLiquidFullness: true
+drawer: {
+  type: DrawMulti
+  iconOverride: [
+    -icon
+  ]
+  drawers: [
+    {
+    }
+    {
+      type: DrawLiquidTile
+      drawLiquid: liquid-baenara
+      padLeft: 18
+      padRight: 3.5
+      padTop: 22
+      padBottom: 6
+    }
+    {
+      type: DrawRegion
+      suffix: -reservior
+      x: -8
+      y: 8
+    }
+    {
+      type: DrawLiquidTile
+      drawLiquid: steam
+      padLeft: 1.5
+      padRight: 16
+      padTop: 5
+      padBottom: 21
+    }
+    {
+      type: DrawGlowRegion
+      color: feb380
+      layer: 30
+    }
+    {
+      type: DrawGlowRegion
+      suffix: -flare
+      alpha: 0.9
+      glowIntensity: 0.1
+      color: ffffff
+    }
+    {
+      type: DrawRegion
+      suffix: -top
+      layer: 32
+    }
+  ]
+}
+consumes: {
+  power: 12
+  liquids: [
+    liquid-baenara/10
+    plasma/1
+  ]
+  liquid: {
+    liquid: steam
+    amount: 0
+    optional: true
+  }
+}
+outputLiquids: [
+  steam/5
+  liquid-baenara/0
+  plasma/0
+]
+outputItem: baenite/8
+category: crafting
+research: {
+  parent: 0b-begin
+  objectives: [
+    0b-basic-infrastructure
+  ]
+}
+requirements: [
+  silicon/200
+  metaglass/100
+  dantrales/300
+  territe-alloy/900
+]
+breakEffect: [
+  {
+    type: WaveEffect
+    rotation: 39
+    lifetime: 20
+    sides: 4
+    sizeFrom: 24
+    sizeTo: 48
+    strokeFrom: 18
+    strokeTo: 0
+    colorFrom: 7382f0
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    length: 0
+    lifetime: 11
+    useRotation: false
+    region: allure-warden-icon
+    sizeFrom: 8
+    sizeTo: 8
+    colorFrom: 7382f000
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    length: 0
+    lifetime: 30
+    startDelay: 10
+    useRotation: false
+    region: allure-warden-icon
+    sizeFrom: 8
+    sizeTo: 8
+    colorFrom: 7382f0
+    colorTo: 7382f000
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    cone: 0
+    randLength: false
+    baseLength: 6
+    length: 18
+    lifetime: 35
+    useRotation: false
+    region: allure-energy-arrow
+    interp: pow3Out
+    sizeInterp: pow2In
+    sizeFrom: 8
+    sizeTo: 0
+    colorFrom: 7382f0
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    cone: 0
+    baseRotation: 180
+    randLength: false
+    baseLength: 6
+    length: 18
+    lifetime: 35
+    useRotation: false
+    region: allure-energy-arrow
+    interp: pow3Out
+    sizeInterp: pow2In
+    sizeFrom: 8
+    sizeTo: 0
+    colorFrom: 7382f0
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    cone: 0
+    baseRotation: 45
+    randLength: false
+    baseLength: 6
+    length: 9
+    lifetime: 35
+    useRotation: false
+    region: allure-energy-arrow
+    interp: pow3Out
+    sizeInterp: pow2In
+    sizeFrom: 4
+    sizeTo: 0
+    colorFrom: 7382f0
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    cone: 0
+    baseRotation: -45
+    randLength: false
+    baseLength: 6
+    length: 9
+    lifetime: 35
+    useRotation: false
+    region: allure-energy-arrow
+    interp: pow3Out
+    sizeInterp: pow2In
+    sizeFrom: 4
+    sizeTo: 0
+    colorFrom: 7382f0
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    cone: 0
+    baseRotation: 135
+    randLength: false
+    baseLength: 6
+    length: 9
+    lifetime: 35
+    useRotation: false
+    region: allure-energy-arrow
+    interp: pow3Out
+    sizeInterp: pow2In
+    sizeFrom: 4
+    sizeTo: 0
+    colorFrom: 7382f0
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    cone: 0
+    baseRotation: -135
+    randLength: false
+    baseLength: 6
+    length: 9
+    lifetime: 35
+    useRotation: false
+    region: allure-energy-arrow
+    interp: pow3Out
+    sizeInterp: pow2In
+    sizeFrom: 4
+    sizeTo: 0
+    colorFrom: 7382f0
+    colorTo: 7382f0
+  }
+]

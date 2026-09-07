@@ -1,0 +1,30 @@
+type: ConsumeGenerator
+size: 4
+hasPower: true
+hasItems: true
+powerProduction: 10.5
+itemDuration: 20
+drawer: {
+  type: DrawMulti
+  drawers: [
+    {
+      type: DrawDefault
+    }
+    {
+      type: DrawWarmupRegion
+    }
+  ]
+}
+consumes: {
+  itemFlammable: {}
+//  itemExplode: {}
+}
+category: power
+research: combustion-generator
+requirements: [
+  copper/250
+  lead/200
+  territe-alloy/200
+  thorium/150
+  amethyst/50
+]

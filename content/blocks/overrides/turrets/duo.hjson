@@ -1,0 +1,27 @@
+targetInterval: 5, newTargetInterval: 30
+ammoTypes: {
+  copper: {
+    speed: 3, damage: 10, lifetime: 53
+    width: 7, height: 9
+    ammoMultiplier: 4
+    frontColor: 'eac1a8', backColor: 'd39169', hitColor: 'd39169'
+    hitEffect: 'hitBulletColor', despawnEffect: 'hitBulletColor'
+  }
+  graphite: {
+    speed: 3, damage: 12, lifetime: 60
+    width: 7, height: 9
+    ammoMultiplier: 8, reloadMultiplier: 1.5
+    rangeChange: 16
+    frontColor: 'dae1ee', backColor: '7d89d8', hitColor: '7d89d8'
+    hitEffect: 'hitBulletColor', despawnEffect: 'hitBulletColor'
+  }
+  silicon: {
+    speed: 3, damage: 20, lifetime: 60
+    width: 9, height: 12
+    reloadMultiplier: 0.75
+    homingPower: 0.2
+    trailLength: 15, trailWidth: 1.75
+    frontColor: '999ba0', backColor: '707594', trailColor: '707594', hitColor: '707594'
+    hitEffect: 'hitBulletColor', despawnEffect: 'hitBulletColor'
+  }
+}

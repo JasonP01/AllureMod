@@ -1,0 +1,9 @@
+accessible: false
+localizedName: "Verden-Calsiope"
+camRadius: 25
+minZoom: 0.02
+mesh: {
+  type: HexSkyMesh
+  color: 000000
+  thresh: 0.01
+}

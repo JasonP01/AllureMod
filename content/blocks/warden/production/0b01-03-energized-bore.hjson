@@ -1,0 +1,75 @@
+type: BeamDrill
+size: 3
+range: 2
+drillTime: 240
+tier: 9
+sparks: 24
+sparkRecurrence: 8
+sparkLife: 25
+sparkSpread: 25
+sparkRange: -18
+liquidCapacity: 30
+consumes: {
+  power: 12
+  liquids: [
+    {
+      liquid: fluid-energy
+      amount: 0.25
+      optional: true
+      booster: true
+    }
+  ]
+}
+optionalBoostIntensity: 1.8
+category: production
+research: {
+  parent: 0b01-02-temporal-blaster
+  objectives: [
+    0b-advanced-production
+  ]
+}
+requirements: [
+  territe-alloy/350
+  dantrales/400
+  scilaxa/50
+  draconium/120
+]
+breakEffect: [
+  {
+    type: WaveEffect
+    rotation: 41
+    lifetime: 20
+    sides: 4
+    sizeFrom: 12
+    sizeTo: 24
+    strokeFrom: 9
+    strokeTo: 0
+    colorFrom: 7382f0
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    length: 0
+    lifetime: 11
+    useRotation: false
+    region: allure-warden-icon
+    sizeFrom: 8
+    sizeTo: 8
+    colorFrom: 7382f000
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    length: 0
+    lifetime: 30
+    startDelay: 10
+    useRotation: false
+    region: allure-warden-icon
+    sizeFrom: 8
+    sizeTo: 8
+    colorFrom: 7382f0
+    colorTo: 7382f000
+  }
+]

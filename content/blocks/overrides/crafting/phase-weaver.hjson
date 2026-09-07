@@ -1,0 +1,10 @@
+craftTime: 300
+consumes: {
+  remove: [
+    items
+  ]
+  items: [
+    thorium/2
+    metaglass/5
+  ]
+}

@@ -1,0 +1,15 @@
+type: WobbleProp
+variants: 3
+update: false
+solid: false
+breakable: true
+destructible: false
+drawTeamOverlay: false
+health: 200
+customShadow: true
+targetable: false
+underBullets: true
+buildVisibility: editorOnly
+instantDeconstruct: true
+breakSound: plantBreak
+breakEffect: breakProp

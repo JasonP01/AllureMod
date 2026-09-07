@@ -1,0 +1,34 @@
+plans: [
+  {
+    unit: risso
+    time: 1200
+    requirements: [
+      copper/40
+      pyratite/15
+      metaglass/10
+    ]
+  }
+  {
+    unit: retusa
+    time: 1800
+    requirements: [
+      lead/30
+      silicon/30
+      metaglass/30
+    ]
+  }
+]
+requirements: [
+  copper/250
+  graphite/100
+  metaglass/50
+]
+research: {
+  parent: ground-factory
+  objectives: [
+    {
+      type: onSector
+      preset: ruinousShores
+    }
+  ]
+}

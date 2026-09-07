@@ -1,0 +1,21 @@
+type: HeatProducer
+placeablePlayer: false
+heatOutput: 6
+conductivePower: true
+drawer: [
+  {
+  }
+  {
+    type: DrawHeatOutput
+    drawGlow: false
+  }
+]
+consumes: {
+  power: 3
+  liquids: [
+    kerosene/0.075
+  ]
+}
+buildTime: 151200
+category: crafting
+buildVisibility: sandboxOnly

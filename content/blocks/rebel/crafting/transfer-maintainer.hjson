@@ -1,0 +1,74 @@
+type: GenericCrafter
+size: 10
+rotate: true
+quickRotate: true
+liquidOutputDirections: [0]
+enableDrawStatus: false
+craftTime: 700
+floating: true
+itemCapacity: 200
+liquidCapacity: 2200
+liquidPressure: 2.1
+drawer: [
+  {
+    type: DrawRegion
+    layer: 29.5
+  }
+  {
+    type: DrawLiquidTile
+    padding: 24
+    drawLiquid: arreacta
+  }
+  {
+    type: DrawRegion
+    suffix: -transfer-shadow
+    layer: 29.7
+    x: -6
+    y: -6
+    buildingRotate: true
+  }
+  {
+    type: DrawGlowRegion
+    layer: 29.8
+  }
+  {
+    type: DrawPistons
+    sides: 1
+    sinMag: 32
+    sinScl: 120
+    lenOffset: -16
+  }
+  {
+    type: DrawPistons
+    suffix: -piston-0
+    angleOffset: 90
+    sides: 2
+    sinMag: 32
+    sinScl: 45
+    lenOffset: -16
+  }
+  {
+    type: DrawRegion
+    suffix: -transfer
+    layer: 50
+    buildingRotate: true
+  }
+  {
+    type: DrawRegion
+    suffix: -top
+    layer: 55
+  }
+]
+consumes: {
+  liquids: [
+    arreacta/0.7
+  ]
+}
+outputLiquid: arreacta/0.1
+outputItem: scilaxa/50
+category: crafting
+requirements: [
+  anden/300
+  ladera/150
+  baenite/150
+]

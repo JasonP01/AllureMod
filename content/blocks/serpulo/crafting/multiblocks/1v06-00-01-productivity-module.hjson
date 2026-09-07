@@ -1,0 +1,26 @@
+type: GenericCrafter
+placeablePlayer: false
+liquidCapacity: 20
+rotateDraw: false
+rotate: true
+liquidOutputDirections: [0]
+conductivePower: true
+canOverdrive: false
+drawer: [
+  {
+  }
+  {
+    type: DrawLiquidOutputs
+  }
+]
+consumes: {
+  power: 8
+  liquids: [
+    thermal-gas/0.5
+    cryofluid/0.1
+  ]
+}
+buildTime: 302400
+outputLiquid: thermal-fluid/0.5
+category: crafting
+buildVisibility: sandboxOnly

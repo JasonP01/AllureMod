@@ -1,0 +1,8 @@
+research: {
+  parent: 0b-basic-infrastructure
+  requirements: [
+    dantrales/1200
+    territe-alloy/3500
+  ]
+}
+show: false

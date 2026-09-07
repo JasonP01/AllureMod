@@ -1,0 +1,11 @@
+type: Floor
+cacheLayer: cryofluid
+attributes: {
+  heat: 0.175
+  water: -0.55
+}
+liquidDrop: fluid-energy
+liquidMultiplier: 0.5
+emitLight: true
+lightRadius: 36
+lightColor: 3bbeff44

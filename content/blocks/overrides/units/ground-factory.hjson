@@ -1,0 +1,46 @@
+plans: [
+  {
+    unit: dagger
+    time: 1200
+    requirements: [
+      lead/40
+      graphite/15
+    ]
+  }
+  {
+    unit: crawler
+    time: 600
+    requirements: [
+      coal/10
+      graphite/5
+    ]
+  }
+  {
+    unit: nova
+    time: 1800
+    requirements: [
+      copper/15
+      lead/60
+      silicon/15
+    ]
+  }
+]
+research: {
+  parent: core-shard
+  objectives: [
+    {
+      type: SectorComplete
+      preset: frozenForest
+    }
+  ]
+  requirements: [
+    copper/200
+    lead/1000
+    graphite/500
+  ]
+}
+requirements: [
+  copper/50
+  lead/100
+  graphite/50
+]

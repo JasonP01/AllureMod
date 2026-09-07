@@ -1,0 +1,2401 @@
+type: 'flying'
+flying: true, lowAltitude: true, wobble: false
+health: 1000000, armor: 1500, hitSize: 360
+speed: 2, rotateSpeed: 0.4, drag: 0.02, accel: 0.03, strafePenalty: 0.1
+range: 1200, maxRange: 1600
+buildSpeed: 10, buildRange: 640, rotateToBuilding: false
+healColor: '7382f044', shieldColor: '7382f011'
+loopSoundVolume: 1, loopSound: 'arc', moveSound: 'beamLustre'
+fogRadius: 120, lightRadius: 480, lightColor: '7382f044'
+drawBody: false, drawSoftShadow: false, outlines: false
+engineSize: 0, shadowElevationScl: 9
+deathShake: 64, createWreck: false, createScorch: false, deathSound: 'acceleratorLaunch', deathExplosionEffect: 'none'
+envEnabled: -1, envDisabled: 0
+immunities: [
+  wet, shocked, blasted, tarred, burning, melting, electrified, freezing, unmoving,
+  allure-0b-energy0, allure-0b-energy1, allure-0b-energy2, allure-0b-energy3, allure-0b-energy4, allure-emp
+]
+targetFlags: [
+  turret
+]
+abilities: [
+  {
+    type: 'RegenAbility', percentAmount: 0.01388888888 
+  }
+  //segmented shield layer
+  {
+    type: 'ShieldArcAbility'
+    regen: 100, max: 500000, cooldown: 180
+    radius: 150, width: 150, angle: 45, angleOffset: 0
+    whenShooting: false
+  }
+  {
+    type: 'ShieldArcAbility'
+    regen: 100, max: 500000, cooldown: 180
+    radius: 150, width: 150, angle: 45, angleOffset: 180
+    whenShooting: false, display: false
+  }
+  {
+    type: 'ShieldArcAbility'
+    regen: 100, max: 500000, cooldown: 180
+    radius: 130, width: 130, angle: 60, angleOffset: 90
+    whenShooting: false, display: false
+  }
+  {
+    type: 'ShieldArcAbility'
+    regen: 100, max: 500000, cooldown: 180
+    radius: 130, width: 130, angle: 60, angleOffset: -90
+    whenShooting: false, display: false
+  }
+  {
+    type: 'ShieldArcAbility', x: 92, y: -23
+    regen: 100, max: 500000, cooldown: 180
+    radius: 220, width: 140, angle: 30, angleOffset: 52
+    whenShooting: false, display: false
+  }
+  {
+    type: 'ShieldArcAbility', x: -92, y: -23
+    regen: 100, max: 500000, cooldown: 180
+    radius: 220, width: 140, angle: 30, angleOffset: -52
+    whenShooting: false, display: false
+  }
+  {
+    type: 'ShieldArcAbility', x: 92, y: 23
+    regen: 100, max: 500000, cooldown: 180
+    radius: 220, width: 140, angle: 30, angleOffset: 128
+    whenShooting: false, display: false
+  }
+  {
+    type: 'ShieldArcAbility', x: -92, y: 23
+    regen: 100, max: 500000, cooldown: 180
+    radius: 220, width: 140, angle: 30, angleOffset: -128
+    whenShooting: false, display: false
+  }
+
+]
+parts: [
+  {
+    type: 'RegionPart', layer: 91, outline: false
+  }
+  { 
+    type: 'RegionPart', suffix: '-flare'
+    outline: false, blending: 'additive'
+    layer: 92, weaponIndex: 1
+    color: '7382f0', colorTo: 'ffffff'
+  }
+  { 
+    type: 'RegionPart', suffix: '-flare'
+    outline: false, blending: 'additive'
+    layer: 140
+    color: '7382f025'
+  }
+  {
+    type: 'RegionPart', name: 'allure-shield'
+    outline: false, blending: 'additive'
+    color: '7382f088'
+    layer: 93
+    xScl: 5, yScl: 6
+  }
+  //engines
+  //1
+  {
+    name: 'allure-shootspike', outline: false, blending: 'additive'
+    y: -180, rotation: -90, xScl: 1, yScl: 7, growX: 6, growY: -3.5
+    color: '7382f0'
+    weaponIndex: 0, clampProgress: false
+    growProgress: {
+      type: 'heat', op: 'sin', scl: 2, mag: 0.01
+    }
+  }
+  {
+    name: 'allure-shootspike', outline: false, blending: 'additive'
+    y: -180, rotation: -90, xScl: 1, yScl: 7, growX: 2
+    color: '7382f000', colorTo: 'ffffffbb'
+    weaponIndex: 0, clampProgress: false
+    growProgress: {
+      type: 'heat', op: 'sin', scl: 2, mag: 0.01
+    }
+  }
+  {
+    name: 'allure-thruster-flare', outline: false, blending: 'additive', progress: 'heat'
+    y: -230, rotation: 180, xScl: 3, yScl: 3
+    color: '7382f088', colorTo: '7382f0'
+  }
+  {
+    name: 'circle-shadow', outline: false, blending: 'additive', progress: 'heat'
+    y: -230, xScl: 3, yScl: 3, layer: 140
+    color: '7382f000', colorTo: '90a2fc66'
+  }
+  {
+    type: 'FlarePart', y: -230, followRotation: false
+    sides: 2, layer: 88, stroke: 16, radius: 0, radiusTo: 480
+    color1: '7382f088', color2: '90a2fc44'
+    progress: 'heat'
+  }
+  {
+    type: 'FlarePart', y: -230, followRotation: false
+    sides: 2, layer: 100, stroke: 8, radius: 0, radiusTo: 480
+    innerScl: 0.75, innerRadScl: 0.9
+    color1: '00000000', color2: 'ffffffbb'
+    progress: 'heat'
+  }
+  //2
+  {
+    name: 'allure-shootspike', outline: false, mirror: true, blending: 'additive'
+    x: 85, y: -180, rotation: -90, xScl: 0.5, yScl: 3, growX: 4, growY: -1.5
+    color: '7382f0'
+    weaponIndex: 0, clampProgress: false
+    growProgress: {
+      type: 'heat', op: 'sin', scl: 2, mag: 0.01
+    }
+  }
+  {
+    name: 'allure-shootspike', outline: false, mirror: true, blending: 'additive'
+    x: 85, y: -180, rotation: -90, xScl: 0.5, yScl: 3, growX: 1
+    color: '7382f000', colorTo: 'ffffffbb'
+    weaponIndex: 0, clampProgress: false
+    growProgress: {
+      type: 'heat', op: 'sin', scl: 2, mag: 0.01
+    }
+  }
+  {
+    name: 'allure-thruster-flare', outline: false, mirror: true, blending: 'additive', progress: 'heat'
+    x: 85, y: -195, rotation: 180, xScl: 1.5, yScl: 1.5
+    color: '7382f088', colorTo: '7382f0'
+  }
+  {
+    name: 'circle-shadow', outline: false, mirror: true, blending: 'additive', progress: 'heat'
+    x: 85, y: -195, xScl: 1.5, yScl: 1.5, layer: 140
+    color: '7382f000', colorTo: '90a2fc66'
+  }
+  {
+    type: 'FlarePart', x: 85, y: -200, followRotation: false
+    sides: 2, layer: 88, stroke: 8, radius: 0, radiusTo: 240
+    innerScl: 0.75, innerRadScl: 0.9
+    color1: '7382f088', color2: '90a2fc44'
+    progress: 'heat'
+  }
+  {
+    type: 'FlarePart', x: 85, y: -200, followRotation: false
+    sides: 2, layer: 100, stroke: 4, radius: 0, radiusTo: 240
+    innerScl: 0.75, innerRadScl: 0.9
+    color1: '00000000', color2: 'ffffffbb'
+    progress: 'heat'
+  }
+  {
+    type: 'FlarePart', x: -85, y: -200, followRotation: false
+    sides: 2, layer: 88, stroke: 8, radius: 0, radiusTo: 240
+    innerScl: 0.75, innerRadScl: 0.9
+    color1: '7382f088', color2: '90a2fc44'
+    progress: 'heat'
+  }
+  {
+    type: 'FlarePart', x: -85, y: -200, followRotation: false
+    sides: 2, layer: 100, stroke: 4, radius: 0, radiusTo: 240
+    innerScl: 0.75, innerRadScl: 0.9
+    color1: '00000000', color2: 'ffffffbb'
+    progress: 'heat'
+  }
+  //reverse thrust
+  {
+    name: 'allure-shootspike', outline: false, mirror: true, blending: 'additive'
+    x: 160, y: -134, rotation: 90, xScl: 0.5, yScl: 1.5, growX: 0.25, growY: -1
+    color: '7382f0'
+    weaponIndex: 0, clampProgress: false
+    growProgress: {
+      type: 'recoil', ops: [
+        {op: 'slope'}
+        {op: 'curve', interp: 'pow3'}
+        {op: 'sin', scl: 2, mag: 0.1}
+      ]
+    }
+  }
+  {
+    name: 'allure-shootspike', outline: false, mirror: true, blending: 'additive'
+    x: 150, y: -111, rotation: 90, xScl: 0.05, yScl: 0.25, growX: 0.25, layer: 91.6
+    color: '7382f0'
+    weaponIndex: 0, clampProgress: false
+    growProgress: {
+      type: 'recoil', ops: [
+        {op: 'slope'}
+        {op: 'curve', interp: 'pow3'}
+        {op: 'sin', scl: 2, mag: 0.1}
+      ]
+    }
+  }
+  {
+    name: 'allure-shootspike', outline: false, mirror: true, blending: 'additive'
+    x: 140, y: -101, rotation: 90, xScl: 0.05, yScl: 0.25, growX: 0.25, layer: 91.6
+    color: '7382f0'
+    weaponIndex: 0, clampProgress: false
+    growProgress: {
+      type: 'recoil', ops: [
+        {op: 'slope'}
+        {op: 'curve', interp: 'pow3'}
+        {op: 'sin', scl: 2, mag: 0.1}
+      ]
+    }
+  }
+  {
+    name: 'allure-shootspike', outline: false, mirror: true, blending: 'additive'
+    x: 145, y: -60, rotation: 90, xScl: 0.05, yScl: 0.25, growX: 0.25, layer: 91.6
+    color: '7382f0'
+    weaponIndex: 0, clampProgress: false
+    growProgress: {
+      type: 'recoil', ops: [
+        {op: 'slope'}
+        {op: 'curve', interp: 'pow3'}
+        {op: 'sin', scl: 2, mag: 0.1}
+      ]
+    }
+  }
+  {
+    name: 'allure-shootspike', outline: false, mirror: true, blending: 'additive'
+    x: 140, y: -55, rotation: 90, xScl: 0.05, yScl: 0.25, growX: 0.25, layer: 91.6
+    color: '7382f0'
+    weaponIndex: 0, clampProgress: false
+    growProgress: {
+      type: 'recoil', ops: [
+        {op: 'slope'}
+        {op: 'curve', interp: 'pow3'}
+        {op: 'sin', scl: 2, mag: 0.1}
+      ]
+    }
+  }
+  {
+    name: 'allure-shootspike', outline: false, mirror: true, blending: 'additive'
+    x: 135, y: -50, rotation: 90, xScl: 0.05, yScl: 0.25, growX: 0.25, layer: 91.6
+    color: '7382f0'
+    weaponIndex: 0, clampProgress: false
+    growProgress: {
+      type: 'recoil', ops: [
+        {op: 'slope'}
+        {op: 'curve', interp: 'pow3'}
+        {op: 'sin', scl: 2, mag: 0.1}
+      ]
+    }
+  }
+  {
+    name: 'allure-shootspike', outline: false, mirror: true, blending: 'additive'
+    x: 130, y: -45, rotation: 90, xScl: 0.05, yScl: 0.25, growX: 0.25, layer: 91.6
+    color: '7382f0'
+    weaponIndex: 0, clampProgress: false
+    growProgress: {
+      type: 'recoil', ops: [
+        {op: 'slope'}
+        {op: 'curve', interp: 'pow3'}
+        {op: 'sin', scl: 2, mag: 0.1}
+      ]
+    }
+  }
+  //top thrusters
+  {
+    name: 'allure-unusually-organized-rectangle', outline: false, mirror: true, blending: 'additive'
+    x: 107, y: -106.5, rotation: 45, xScl: 0.3, yScl: 0.3, growX: 0.02, growY: 0.02, layer: 91.6
+    color: '7382f0'
+    weaponIndex: 0, clampProgress: false
+    growProgress: {
+      type: 'time',  ops: [
+        {op: 'loop', time: 60}
+        {op: 'slope'}
+        {op: 'sin', scl: 2, mag: 0.5}
+      ]
+    }
+  }
+  {
+    name: 'allure-unusually-organized-rectangle', outline: false, mirror: true, blending: 'additive'
+    x: 100.5, y: -52, rotation: 45, xScl: 0.3, yScl: 0.3, growX: 0.02, growY: 0.02, layer: 91.6
+    color: '7382f0'
+    weaponIndex: 0, clampProgress: false
+    growProgress: {
+      type: 'time',  ops: [
+        {op: 'loop', time: 60}
+        {op: 'slope'}
+        {op: 'sin', scl: 2, mag: 0.5}
+      ]
+    }
+  }
+  {
+    name: 'allure-unusually-organized-rectangle', outline: false, mirror: true, blending: 'additive'
+    x: 100.5, y: -37, rotation: 45, xScl: 0.3, yScl: 0.3, growX: 0.02, growY: 0.02, layer: 91.6
+    color: '7382f0'
+    weaponIndex: 0, clampProgress: false
+    growProgress: {
+      type: 'time',  ops: [
+        {op: 'loop', time: 60}
+        {op: 'slope'}
+        {op: 'sin', scl: 2, mag: 0.5}
+      ]
+    }
+  }
+  {
+    name: 'allure-unusually-organized-rectangle', outline: false, mirror: true, blending: 'additive'
+    x: 61, y: 78.25, rotation: 45, xScl: 0.3, yScl: 0.3, growX: 0.02, growY: 0.02, layer: 91.6
+    color: '7382f0'
+    weaponIndex: 0, clampProgress: false
+    growProgress: {
+      type: 'time',  ops: [
+        {op: 'loop', time: 60}
+        {op: 'slope'}
+        {op: 'sin', scl: 2, mag: 0.5}
+      ]
+    }
+  }
+  {
+    name: 'allure-unusually-organized-rectangle', outline: false, mirror: true, blending: 'additive'
+    x: 61, y: 92.25, rotation: 45, xScl: 0.3, yScl: 0.3, growX: 0.02, growY: 0.02, layer: 91.6
+    color: '7382f0'
+    weaponIndex: 0, clampProgress: false
+    growProgress: {
+      type: 'time',  ops: [
+        {op: 'loop', time: 60}
+        {op: 'slope'}
+        {op: 'sin', scl: 2, mag: 0.5}
+      ]
+    }
+  }
+  {
+    name: 'allure-unusually-organized-rectangle', outline: false, mirror: true, blending: 'additive'
+    x: 61, y: 106.25, rotation: 45, xScl: 0.3, yScl: 0.3, growX: 0.02, growY: 0.02, layer: 91.6
+    color: '7382f0'
+    weaponIndex: 0, clampProgress: false
+    growProgress: {
+      type: 'time',  ops: [
+        {op: 'loop', time: 60}
+        {op: 'slope'}
+        {op: 'sin', scl: 2, mag: 0.5}
+      ]
+    }
+  }
+  //top side thrusters
+  {
+    name: 'allure-shootspike', outline: false, mirror: true, blending: 'additive'
+    x: 82, y: 91, rotation: 0, xScl: 0.1, yScl: 1.25, growX: 0.02
+    color: '7382f0'
+    weaponIndex: 0, clampProgress: false
+    growProgress: {
+      type: 'time',  ops: [
+        {op: 'loop', time: 60}
+        {op: 'slope'}
+        {op: 'sin', scl: 2, mag: 0.5}
+      ]
+    }
+  }
+  {
+    name: 'allure-shootspike', outline: false, mirror: true, blending: 'additive'
+    x: 82, y: 60.25, rotation: 0, xScl: 0.1, yScl: 1.25, growX: 0.02
+    color: '7382f0'
+    weaponIndex: 0, clampProgress: false
+    growProgress: {
+      type: 'time',  ops: [
+        {op: 'loop', time: 60}
+        {op: 'slope'}
+        {op: 'sin', scl: 2, mag: 0.5}
+      ]
+    }
+  }
+  {
+    name: 'allure-shootspike', outline: false, mirror: true, blending: 'additive'
+    x: 90, y: -71, rotation: 0, xScl: 0.15, yScl: 0.75, growX: 0.02, layer: 91.6
+    color: '7382f0'
+    weaponIndex: 0, clampProgress: false
+    growProgress: {
+      type: 'time',  ops: [
+        {op: 'loop', time: 60}
+        {op: 'slope'}
+        {op: 'sin', scl: 2, mag: 0.5}
+      ]
+    }
+  }
+  {
+    name: 'allure-shootspike', outline: false, mirror: true, blending: 'additive'
+    x: 104.75, y: -131.5, rotation: 0, xScl: 0.15, yScl: 0.75, growX: 0.02, layer: 91.6
+    color: '7382f0'
+    weaponIndex: 0, clampProgress: false
+    growProgress: {
+      type: 'time',  ops: [
+        {op: 'loop', time: 60}
+        {op: 'slope'}
+        {op: 'sin', scl: 2, mag: 0.5}
+      ]
+    }
+  }
+  {
+    name: 'allure-shootspike', outline: false, mirror: true, blending: 'additive'
+    x: 104.75, y: -148.5, rotation: 0, xScl: 0.15, yScl: 0.75, growX: 0.02, layer: 91.6
+    color: '7382f0'
+    weaponIndex: 0, clampProgress: false
+    growProgress: {
+      type: 'time',  ops: [
+        {op: 'loop', time: 60}
+        {op: 'slope'}
+        {op: 'sin', scl: 2, mag: 0.5}
+      ]
+    }
+  }
+  //airbrakes (I am sorry)
+  {
+    name: 'clear-effect', outline: false
+    children: [
+      //starboard
+      {
+        name: 'allure-hellfire-airbrake-0'
+        outline: false, layer: 91.5, x: 57.5, y: 196
+        moveY: 9, growY: -0.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        growProgress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        children: [
+          {
+            name: 'allure-unusually-organized-rectangle'
+            outline: false, layer: 91.4, moveY: -9
+            xScl: 0.15, yScl: 0.4, growY: 0.4, color: '131316', colorTo: '4a4b53'
+            progress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+            growProgress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+          }
+        ]
+      }
+      {
+        name: 'allure-hellfire-airbrake-1'
+        outline: false, layer: 91.5, x: 55.5, y: 178.25
+        moveY: 6, growY: -0.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        growProgress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        children: [
+          {
+            name: 'allure-unusually-organized-rectangle'
+            outline: false, layer: 91.4, moveY: -6
+            xScl: 0.25, yScl: 0.2, growY: 0.2, color: '131316', colorTo: '4a4b53'
+            progress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+            growProgress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+          }
+        ]
+      }
+      {
+        name: 'allure-hellfire-airbrake-2'
+        outline: false, layer: 91.5, x: 57.5, y: 158
+        moveY: 9, growY: -0.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        growProgress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        children: [
+          {
+            name: 'allure-unusually-organized-rectangle'
+            outline: false, layer: 91.4, moveY: -9
+            xScl: 0.15, yScl: 0.5, growY: 0.4, color: '131316', colorTo: '4a4b53'
+            progress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+            growProgress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+          }
+        ]
+      }
+      {
+        name: 'allure-hellfire-airbrake-3'
+        outline: false, layer: 91.5, x: 58.5, y: 130.75
+        moveY: 8, growY: -0.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        growProgress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        children: [
+          {
+            name: 'allure-unusually-organized-rectangle'
+            outline: false, layer: 91.4, moveY: -8
+            xScl: 0.15, yScl: 0.5, growY: 0.4, color: '131316', colorTo: '4a4b53'
+            progress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+            growProgress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+          }
+        ]
+      }
+      {
+        name: 'allure-hellfire-airbrake-4'
+        outline: false, layer: 91.5, x: 79.5, y: 70.5
+        moveY: 4, growY: -0.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        growProgress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        children: [
+          {
+            name: 'allure-unusually-organized-rectangle'
+            outline: false, layer: 91.4, moveY: -4
+            xScl: 0.15, yScl: 0.2, growY: 0.2, color: '131316', colorTo: '32333d'
+            progress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+            growProgress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+          }
+        ]
+      }
+      {
+        name: 'allure-hellfire-airbrake-4'
+        outline: false, layer: 91.5, x: 79.5, y: 58.75
+        moveY: 4, growY: -0.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        growProgress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        children: [
+          {
+            name: 'allure-unusually-organized-rectangle'
+            outline: false, layer: 91.4, moveY: -4
+            xScl: 0.15, yScl: 0.2, growY: 0.2, color: '131316', colorTo: '32333d'
+            progress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+            growProgress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+          }
+        ]
+      }
+      {
+        name: 'allure-hellfire-airbrake-4'
+        outline: false, layer: 91.5, x: 79.5, y: 47
+        moveY: 4, growY: -0.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        growProgress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        children: [
+          {
+            name: 'allure-unusually-organized-rectangle'
+            outline: false, layer: 91.4, moveY: -4
+            xScl: 0.15, yScl: 0.2, growY: 0.2, color: '131316', colorTo: '32333d'
+            progress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+            growProgress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+          }
+        ]
+      }
+      {
+        name: 'allure-hellfire-airbrake-4'
+        outline: false, layer: 91.5, x: 79.5, y: 35.25
+        moveY: 4, growY: -0.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        growProgress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        children: [
+          {
+            name: 'allure-unusually-organized-rectangle'
+            outline: false, layer: 91.4, moveY: -4
+            xScl: 0.15, yScl: 0.2, growY: 0.2, color: '131316', colorTo: '32333d'
+            progress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+            growProgress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+          }
+        ]
+      }
+      {
+        name: 'allure-hellfire-airbrake-5'
+        outline: false, layer: 91.5, x: 83.75, y: 9.75
+        moveY: 4, growY: -0.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        growProgress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        children: [
+          {
+            name: 'allure-unusually-organized-rectangle'
+            outline: false, layer: 91.4, moveY: -4, x: 3
+            xScl: 0.1, yScl: 0.5, growY: 0.5, color: '131316', colorTo: '32333d'
+            progress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+            growProgress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+          }
+          {
+            name: 'allure-unusually-organized-rectangle'
+            outline: false, layer: 91.4, moveY: -4, x: -3
+            xScl: 0.1, yScl: 0.5, growY: 0.5, color: '131316', colorTo: '32333d'
+            progress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+            growProgress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+          }
+        ]
+      }
+      {
+        name: 'allure-hellfire-airbrake-6'
+        outline: false, layer: 91.5, x: 83.75, y: -10.75
+        moveY: 4, growY: -0.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        growProgress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        children: [
+          {
+            name: 'allure-unusually-organized-rectangle'
+            outline: false, layer: 91.4, moveY: -4, x: 3
+            xScl: 0.1, yScl: 0.5, growY: 0.5, color: '131316', colorTo: '32333d'
+            progress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+            growProgress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+          }
+          {
+            name: 'allure-unusually-organized-rectangle'
+            outline: false, layer: 91.4, moveY: -4, x: -3
+            xScl: 0.1, yScl: 0.5, growY: 0.5, color: '131316', colorTo: '32333d'
+            progress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+            growProgress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+          }
+        ]
+      }
+      {
+        name: 'allure-hellfire-airbrake-7'
+        outline: false, layer: 91.5, x: 85.75, y: -36.75
+        moveY: 6, growY: -0.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        growProgress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        children: [
+          {
+            name: 'allure-unusually-organized-rectangle'
+            outline: false, layer: 91.4, moveY: -6
+            xScl: 0.15, yScl: 0.3, growY: 0.3, color: '131316', colorTo: '32333d'
+            progress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+            growProgress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+          }
+        ]
+      }
+      {
+        name: 'allure-hellfire-airbrake-8'
+        outline: false, layer: 91.5, x: 87.75, y: -55
+        moveY: 4, growY: -0.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        growProgress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        children: [
+          {
+            name: 'allure-unusually-organized-rectangle'
+            outline: false, layer: 91.4, moveY: -4
+            xScl: 0.15, yScl: 0.2, growY: 0.2, color: '131316', colorTo: '32333d'
+            progress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+            growProgress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+          }
+        ]
+      }
+      {
+        name: 'allure-hellfire-airbrake-10'
+        outline: false, layer: 91.5, x: 120, y: -101.75
+        moveY: 3, growY: -0.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        growProgress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        children: [
+          {
+            name: 'allure-unusually-organized-rectangle'
+            outline: false, layer: 91.4, moveY: -3
+            xScl: 0.1, yScl: 0.15, growY: 0.15, color: '131316', colorTo: '32333d'
+            progress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+            growProgress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+          }
+        ]
+      }
+      {
+        name: 'allure-hellfire-airbrake-11'
+        outline: false, layer: 91.5, x: 118.75, y: -118
+        moveY: 8, growY: -0.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        growProgress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        children: [
+          {
+            name: 'allure-unusually-organized-rectangle'
+            outline: false, layer: 91.4, moveY: -8
+            xScl: 0.25, yScl: 0.4, growY: 0.4, color: '131316', colorTo: '32333d'
+            progress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+            growProgress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+          }
+        ]
+      }
+      {
+        name: 'allure-hellfire-airbrake-12'
+        outline: false, layer: 91.5, x: 106.25, y: -118.5
+        moveY: 3, growY: -0.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        growProgress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        children: [
+          {
+            name: 'allure-unusually-organized-rectangle'
+            outline: false, layer: 91.4, moveY: -3
+            xScl: 0.15, yScl: 0.15, growY: 0.15, color: '131316', colorTo: '32333d'
+            progress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+            growProgress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+          }
+        ]
+      }
+      {
+        name: 'allure-hellfire-airbrake-13'
+        outline: false, layer: 91.5, x: 101.75, y: 24.25
+        moveX: -2, moveY: 3
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+      }
+      {
+        name: 'allure-hellfire-airbrake-14'
+        outline: false, layer: 91.5, x: 102, y: -11.5
+        moveX: 4, moveY: 2
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+      }
+      {
+        name: 'allure-hellfire-airbrake-15'
+        outline: false, layer: 91.5, x: 123.25, y: -21.75
+        moveX: 2, moveY: 1
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+      }
+      {
+        name: 'allure-hellfire-airbrake-16'
+        outline: false, layer: 91.5, x: 142.75, y: -72.5
+        moveX: 2, moveY: 1
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+      }
+      {
+        name: 'allure-hellfire-airbrake-17'
+        outline: false, layer: 91.5, x: 138.75, y: -87.5
+        moveX: 5, moveY: 2.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+      }
+      {
+        name: 'allure-hellfire-airbrake-18'
+        outline: false, layer: 91.4, x: 149, y: -91
+        moveX: 3, moveY: 1.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+      }
+      {
+        name: 'allure-hellfire-airbrake-19'
+        outline: false, layer: 91.4, x: 157.5, y: -132.25
+        moveX: 1, moveY: 0.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+      }
+      {
+        name: 'allure-hellfire-airbrake-20'
+        outline: false, layer: 91.4, x: 148, y: -149.5
+        moveX: 1, moveY: 2
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+      }
+      //port
+      {
+        name: 'allure-hellfire-airbrake-0'
+        outline: false, layer: 91.5, x: -57.5, y: 196
+        moveY: 9, growY: -0.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        growProgress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        children: [
+          {
+            name: 'allure-unusually-organized-rectangle'
+            outline: false, layer: 91.4, moveY: -9
+            xScl: 0.15, yScl: 0.4, growY: 0.4, color: '131316', colorTo: '4a4b53'
+            progress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+            growProgress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+          }
+        ]
+      }
+      {
+        name: 'allure-hellfire-airbrake-1'
+        outline: false, layer: 91.5, x: -55.5, y: 178.25
+        moveY: 6, growY: -0.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        growProgress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        children: [
+          {
+            name: 'allure-unusually-organized-rectangle'
+            outline: false, layer: 91.4, moveY: -6
+            xScl: 0.25, yScl: 0.2, growY: 0.2, color: '131316', colorTo: '4a4b53'
+            progress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+            growProgress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+          }
+        ]
+      }
+      {
+        name: 'allure-hellfire-airbrake-2'
+        outline: false, layer: 91.5, x: -57.5, y: 158
+        moveY: 9, growY: -0.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        growProgress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        children: [
+          {
+            name: 'allure-unusually-organized-rectangle'
+            outline: false, layer: 91.4, moveY: -9
+            xScl: 0.15, yScl: 0.5, growY: 0.4, color: '131316', colorTo: '4a4b53'
+            progress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+            growProgress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+          }
+        ]
+      }
+      {
+        name: 'allure-hellfire-airbrake-3'
+        outline: false, layer: 91.5, x: -58.5, y: 130.75
+        moveY: 8, growY: -0.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        growProgress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        children: [
+          {
+            name: 'allure-unusually-organized-rectangle'
+            outline: false, layer: 91.4, moveY: -8
+            xScl: 0.15, yScl: 0.5, growY: 0.4, color: '131316', colorTo: '4a4b53'
+            progress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+            growProgress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+          }
+        ]
+      }
+      {
+        name: 'allure-hellfire-airbrake-4'
+        outline: false, layer: 91.5, x: -79.5, y: 70.5
+        moveY: 4, growY: -0.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        growProgress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        children: [
+          {
+            name: 'allure-unusually-organized-rectangle'
+            outline: false, layer: 91.4, moveY: -4
+            xScl: 0.15, yScl: 0.2, growY: 0.2, color: '131316', colorTo: '32333d'
+            progress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+            growProgress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+          }
+        ]
+      }
+      {
+        name: 'allure-hellfire-airbrake-4'
+        outline: false, layer: 91.5, x: -79.5, y: 58.75
+        moveY: 4, growY: -0.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        growProgress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        children: [
+          {
+            name: 'allure-unusually-organized-rectangle'
+            outline: false, layer: 91.4, moveY: -4
+            xScl: 0.15, yScl: 0.2, growY: 0.2, color: '131316', colorTo: '32333d'
+            progress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+            growProgress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+          }
+        ]
+      }
+      {
+        name: 'allure-hellfire-airbrake-4'
+        outline: false, layer: 91.5, x: -79.5, y: 47
+        moveY: 4, growY: -0.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        growProgress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        children: [
+          {
+            name: 'allure-unusually-organized-rectangle'
+            outline: false, layer: 91.4, moveY: -4
+            xScl: 0.15, yScl: 0.2, growY: 0.2, color: '131316', colorTo: '32333d'
+            progress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+            growProgress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+          }
+        ]
+      }
+      {
+        name: 'allure-hellfire-airbrake-4'
+        outline: false, layer: 91.5, x: -79.5, y: 35.25
+        moveY: 4, growY: -0.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        growProgress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        children: [
+          {
+            name: 'allure-unusually-organized-rectangle'
+            outline: false, layer: 91.4, moveY: -4
+            xScl: 0.15, yScl: 0.2, growY: 0.2, color: '131316', colorTo: '32333d'
+            progress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+            growProgress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+          }
+        ]
+      }
+      {
+        name: 'allure-hellfire-airbrake-5'
+        outline: false, layer: 91.5, x: -83.75, y: 9.75
+        moveY: 4, growY: -0.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        growProgress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        children: [
+          {
+            name: 'allure-unusually-organized-rectangle'
+            outline: false, layer: 91.4, moveY: -4, x: 3
+            xScl: 0.1, yScl: 0.5, growY: 0.5, color: '131316', colorTo: '32333d'
+            progress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+            growProgress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+          }
+          {
+            name: 'allure-unusually-organized-rectangle'
+            outline: false, layer: 91.4, moveY: -4, x: -3
+            xScl: 0.1, yScl: 0.5, growY: 0.5, color: '131316', colorTo: '32333d'
+            progress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+            growProgress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+          }
+        ]
+      }
+      {
+        name: 'allure-hellfire-airbrake-6'
+        outline: false, layer: 91.5, x: -83.75, y: -10.75
+        moveY: 4, growY: -0.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        growProgress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        children: [
+          {
+            name: 'allure-unusually-organized-rectangle'
+            outline: false, layer: 91.4, moveY: -4, x: 3
+            xScl: 0.1, yScl: 0.5, growY: 0.5, color: '131316', colorTo: '32333d'
+            progress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+            growProgress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+          }
+          {
+            name: 'allure-unusually-organized-rectangle'
+            outline: false, layer: 91.4, moveY: -4, x: -3
+            xScl: 0.1, yScl: 0.5, growY: 0.5, color: '131316', colorTo: '32333d'
+            progress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+            growProgress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+          }
+        ]
+      }
+      {
+        name: 'allure-hellfire-airbrake-7'
+        outline: false, layer: 91.5, x: -85.75, y: -36.75
+        moveY: 6, growY: -0.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        growProgress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        children: [
+          {
+            name: 'allure-unusually-organized-rectangle'
+            outline: false, layer: 91.4, moveY: -6
+            xScl: 0.15, yScl: 0.3, growY: 0.3, color: '131316', colorTo: '32333d'
+            progress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+            growProgress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+          }
+        ]
+      }
+      {
+        name: 'allure-hellfire-airbrake-24'
+        outline: false, layer: 91.5, x: -87.75, y: -55
+        moveY: 4, growY: -0.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        growProgress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        children: [
+          {
+            name: 'allure-unusually-organized-rectangle'
+            outline: false, layer: 91.4, moveY: -4
+            xScl: 0.15, yScl: 0.2, growY: 0.2, color: '131316', colorTo: '32333d'
+            progress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+            growProgress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+          }
+        ]
+      }
+      {
+        name: 'allure-hellfire-airbrake-28'
+        outline: false, layer: 91.5, x: -120, y: -101.75
+        moveY: 3, growY: -0.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        growProgress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        children: [
+          {
+            name: 'allure-unusually-organized-rectangle'
+            outline: false, layer: 91.4, moveY: -3
+            xScl: 0.1, yScl: 0.15, growY: 0.15, color: '131316', colorTo: '32333d'
+            progress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+            growProgress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+          }
+        ]
+      }
+      {
+        name: 'allure-hellfire-airbrake-29'
+        outline: false, layer: 91.5, x: -118.75, y: -118
+        moveY: 8, growY: -0.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        growProgress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        children: [
+          {
+            name: 'allure-unusually-organized-rectangle'
+            outline: false, layer: 91.4, moveY: -8
+            xScl: 0.25, yScl: 0.4, growY: 0.4, color: '131316', colorTo: '32333d'
+            progress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+            growProgress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+          }
+        ]
+      }
+      {
+        name: 'allure-hellfire-airbrake-12'
+        outline: false, layer: 91.5, x: -106.25, y: -118.5
+        moveY: 3, growY: -0.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        growProgress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+        children: [
+          {
+            name: 'allure-unusually-organized-rectangle'
+            outline: false, layer: 91.4, moveY: -3
+            xScl: 0.15, yScl: 0.15, growY: 0.15, color: '131316', colorTo: '32333d'
+            progress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+            growProgress: {
+              type: 'recoil', ops: [
+                {op: 'slope'}
+                {op: 'curve', interp: 'pow3'}
+              ]
+            }
+          }
+        ]
+      }
+      {
+        name: 'allure-hellfire-airbrake-21'
+        outline: false, layer: 91.5, x: -101.75, y: 24.25
+        moveX: 2, moveY: 3
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+      }
+      {
+        name: 'allure-hellfire-airbrake-23'
+        outline: false, layer: 91.5, x: -102, y: -11.5
+        moveX: -4, moveY: 2
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+      }
+      {
+        name: 'allure-hellfire-airbrake-22'
+        outline: false, layer: 91.5, x: -123.25, y: -21.75
+        moveX: -2, moveY: 1
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+      }
+      {
+        name: 'allure-hellfire-airbrake-25'
+        outline: false, layer: 91.5, x: -142.75, y: -72.5
+        moveX: -2, moveY: 1
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+      }
+      {
+        name: 'allure-hellfire-airbrake-27'
+        outline: false, layer: 91.5, x: -138.75, y: -87.5
+        moveX: -5, moveY: 2.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+      }
+      {
+        name: 'allure-hellfire-airbrake-26'
+        outline: false, layer: 91.4, x: -149, y: -91
+        moveX: -3, moveY: 1.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+      }
+      {
+        name: 'allure-hellfire-airbrake-30'
+        outline: false, layer: 91.4, x: -157.5, y: -132.25
+        moveX: -1, moveY: 0.5
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+      }
+      {
+        name: 'allure-hellfire-airbrake-31'
+        outline: false, layer: 91.4, x: -148, y: -149.5
+        moveX: -1, moveY: 2
+        progress: {
+          type: 'recoil', ops: [
+            {op: 'slope'}
+            {op: 'curve', interp: 'pow3'}
+          ]
+        }
+      }
+    ]
+  }
+]
+weapons: [
+  //flight controller
+  {
+    x: 0
+    mirror: false, alwaysShooting: true, controllable: false, minShootVelocity: 2.05
+    cooldownTime: 30, recoilTime: 200
+    useAttackRange: false
+    shootSound: 'none', shake: 2
+    activeSound: 'loopSmelter', activeSoundVolume: 0.75
+    reload: 3, recoil: 0, bullet: {
+      type: 'EmptyBulletType', shootEffect: 'none', smokeEffect: 'none', despawnEffect: 'none'
+    }
+  }
+  //beam
+  {
+    x: 0, mirror: false, rotate: true, rotateSpeed: 0
+    reload: 240, continuous: true
+    shootSound: 'loopThoriumReactor', shoot: {
+      firstShotDelay: 180
+    }
+    shootStatus: 'slow', shootStatusDuration: 420
+    shake: 40
+    bullet: {
+      type: 'ContinuousLaserBulletType'
+      damage: 240, lifetime: 240, range: 1200, maxRange: 1300
+      length: 640, width: 32, frontLength: 320
+      status: 'allure-0b-energy4', statusDuration: 10
+      incendChance: 0
+      shake: 6
+      colors: [
+        '7382f044', '7382f0', 'ffffff'
+      ]
+      bulletInterval: 3, intervalBullets: 3, intervalRandomSpread: 3, intervalBullet: {
+        type: 'EmptyBulletType', lifetime: 0, despawnEffect: {
+          type: 'SoundEffect', sound: 'blockExplode3'
+          minVolume: 0.5, maxVolume: 0.5, minPitch: 0.28, maxPitch: 0.28
+          effect: 'none'
+        }
+        spawnBullets: [
+          {
+            speed: 12, drag: 0.002, lifetime: 160, damage: 100
+            status: 'allure-emp', statusDuration: 30
+            pierce: true, pierceBuilding: true, pierceDamageFactor: 0.01
+            homingPower: 0.03, homingRange: 40
+            weaveScale: 10, weaveMag: 2.5
+            velocityScaleRandMin: 0.5, createChance: 0.5
+            sprite: 'circle-bullet', width: 4, height: 36, shrinkX: 0.5, shrinkY: 1
+            trailLength: 15, trailWidth: 1
+            frontColor: 'ffffff', backColor: '7382f0', trailColor: '7382f0', hitColor: '7382f0'
+            shootEffect: 'none', smokeEffect: 'none', hitEffect: 'hitBulletColor', despawnEffect: 'hitBulletColor'
+            reflectable: false, hittable: false, hitUnder: true
+          }
+        ]
+        fragBullets: 1, fragRandomSpread: 0, fragOffsetMin: 160, fragOffsetMax: 480, fragBullet: {
+          speed: 16, drag: 0.003, lifetime: 120, damage: 100
+          status: 'allure-0b-energy3', statusDuration: 10
+          pierce: true, pierceBuilding: true, pierceDamageFactor: 0.001
+          homingPower: 0.06, homingRange: 80
+          weaveScale: 12, weaveMag: 1
+          velocityScaleRandMax: 1.2
+          sprite: 'circle-bullet', width: 16, height: 148, hitSize: 24, shrinkX: 0.5, shrinkY: 1
+          trailLength: 15, trailWidth: 4
+          frontColor: 'ffffff', backColor: '90a2fc', trailColor: '90a2fc', hitColor: '90a2fc'
+          shootEffect: 'none', smokeEffect: 'none', hitEffect: 'hitBulletColor', despawnEffect: 'hitBulletColor'
+          reflectable: false, hittable: false, hitUnder: true
+          bulletInterval: 19, intervalBullets: 1, intervalRandomSpread: 45, intervalBullet: {
+            speed: 8, drag: 0.001, lifetime: 120, damage: 100
+            status: 'allure-emp', statusDuration: 15
+            pierce: true, pierceBuilding: true, pierceDamageFactor: 0.01
+            homingPower: 0.06, homingRange: 40
+            weaveScale: 10, weaveMag: 2.5
+            velocityScaleRandMin: 0.5, createChance: 0.5
+            sprite: 'circle-bullet', width: 4, height: 36, shrinkX: 0.5, shrinkY: 1
+            trailLength: 15, trailWidth: 1
+            frontColor: 'ffffff', backColor: '7382f0', trailColor: '7382f0', hitColor: '7382f0'
+            shootEffect: 'none', smokeEffect: 'none', hitEffect: 'hitBulletColor', despawnEffect: 'hitBulletColor'
+            reflectable: false, hittable: false, hitUnder: true
+          }
+        }
+      }
+      shootEffect: {
+        type: 'SoundEffect', sound: 'shootNavanax'
+        minVolume: 3, maxVolume: 3, minPitch: 0.8, maxPitch: 1
+        effect: {
+          type: 'SoundEffect', sound: 'explosionReactorNeoplasm'
+          minVolume: 4, maxVolume: 4, minPitch: 3, maxPitch: 3
+          effect: 'none'
+        }
+      }
+      chargeEffect: [
+        {
+          type: 'SoundEffect', sound: 'chargeCorvus', startDelay: 110
+          minVolume: 0.8, maxVolume: 0.8, minPitch: 1, maxPitch: 1
+          effect: 'none'
+        }
+        {
+          type: 'SoundEffect', sound: 'chargeVela'
+          minVolume: 1.2, maxVolume: 1.2, minPitch: 0.25, maxPitch: 0.25
+          effect: {
+            type: 'SoundEffect', sound: 'chargeVela', startDelay: 80
+            minVolume: 1, maxVolume: 1, minPitch: 0.5, maxPitch: 0.5
+            effect: {
+              type: 'SoundEffect', sound: 'chargeVela', startDelay: 140
+              minVolume: 1, maxVolume: 1, minPitch: 1, maxPitch: 1
+              effect: 'none'
+            }
+          }
+        }
+      ]
+    }
+  }
+  //railguns (ignore the top three weapons)
+  {
+    x: 0, mirror: false, reload: 60, shootSound: 'none', otherSide: 3, flipSprite: true, alwaysShooting: true
+    bullet: {
+      type: 'EmptyBulletType', lifetime: 0, shootEffect: 'none', smokeEffect: 'none', despawnEffect: 'none'
+    }
+  }
+  {
+    x: 0, mirror: false, reload: 60, shootSound: 'none', otherSide: 4, flipSprite: true, alwaysShooting: true
+    bullet: {
+      type: 'EmptyBulletType', lifetime: 0, shootEffect: 'none', smokeEffect: 'none', despawnEffect: 'none'
+    }
+  }
+  {
+    x: 0, mirror: false, reload: 60, shootSound: 'none', otherSide: 5, flipSprite: true, alwaysShooting: true
+    bullet: {
+      type: 'EmptyBulletType', lifetime: 0, shootEffect: 'none', smokeEffect: 'none', despawnEffect: 'none'
+    }
+  }
+  {
+    name: 'clear-effect', x: 0, y: -60, mirror: false
+    rotate: true, rotateSpeed: 0.45
+    recoil: 0, recoilTime: 90
+    reload: 60, shootSound: 'none', shootY: 60, shake: 30
+    shootWarmupSpeed: 0.02
+    otherSide: 6
+    parts: [
+      {
+        name: 'allure-hellfire-railgun-upper', outline: false, layer: 95
+        y: 60, moveY: -20
+        progress: 'recoil'
+        children: [
+          { 
+            type: 'RegionPart', name: 'allure-hellfire-railgun-flare'
+            outline: false, blending: 'additive'
+            layer: 96, y: -46
+            color: '7382f0', colorTo: 'ffffff'
+          }
+          { 
+            type: 'RegionPart', name: 'allure-hellfire-railgun-rails', outline: false
+            layer: 97, x: 27, y: 25, moveY: -75
+            progress: 'smoothReload'
+          }
+          { 
+            type: 'RegionPart', name: 'allure-hellfire-railgun-rails', outline: false
+            layer: 97, x: -27, y: 25, moveY: -75
+            progress: 'smoothReload'
+          }
+          {
+            type: 'FlarePart', y: 30, followRotation: false
+            sides: 2, layer: 100, stroke: 16, radius: 0, radiusTo: 25
+            color1: '90a2fc44', color2: 'ffffff'
+            progress: {
+              type: 'recoil', op: 'compress', start: 0.5, end: 1
+            }
+          }
+          {
+            type: 'FlarePart', y: 30, followRotation: false
+            sides: 2, layer: 100, stroke: 4, radius: 0, radiusTo: 240
+            innerScl: 0.75, innerRadScl: 0.9
+            color1: '90a2fc88', color2: 'ffffffbb'
+            progress: {
+              type: 'recoil', op: 'compress', start: 0.5, end: 1
+            }
+          }
+          {
+            type: 'FlarePart', y: 30, followRotation: false
+            sides: 2, layer: 100, stroke: 60, radius: 0, radiusTo: 4
+            innerScl: 0.75, innerRadScl: 0.9
+            color1: '90a2fc88', color2: 'ffffffbb'
+            progress: {
+              type: 'recoil', op: 'compress', start: 0.5, end: 1
+            }
+          }
+        ]
+      }
+      {
+        name: 'circle-shadow', outline: false, layer: 91.1
+        color: '000000bb', xScl: 5, yScl: 5
+      }
+    ]
+    bullet: {
+      lifetime: 120, speed: 40, drag: 0.008
+      damage: 40000, status: 'allure-0b-energy2', statusDuration: 60
+      pierce: true, pierceBuilding: true, pierceDamageFactor: 0.75
+      sprite: 'allure-bolt', width: 80, height: 128, shrinkY: 0.2
+      frontColor: 'ffffff', backColor: '90a2fc', trailColor: '7382f0bb'
+      recoil: 0.1, hitSize: 18, hitSound: 'shootScepter'
+      trailLength: 24, trailWidth: 12, trailInterval: 1, trailRotation: true, trailEffect: [
+        {
+          type: 'RadialEffect', amount: 2, rotationOffset: 135, lengthOffset: 24, effect: {
+            line: true, particles: 1, lifetime: 30
+            length: 48, randLength: false, cone: 0
+            lenFrom: 0, lenTo: 48, strokeFrom: 2, strokeTo: 2
+            colorTo: '7382f0', sizeInterp: 'slope'
+          }
+        }
+        {
+          particles: 4, lifetime: 45, layer: 88
+          length: -80, cone: 35
+          sizeFrom: 32, sizeTo: 0
+          colorFrom: 'ffffff11', colorTo: '7382f044'
+          interp: 'pow3Out', sizeInterp: 'linear'
+        }
+        {
+          particles: 1, lifetime: 30, length: 0, offset: 90
+          region: 'allure-squishwave', sizeFrom: 40, sizeTo: 0
+          colorFrom: '90a2fc00', colorTo: '7382f088'
+        }
+      ]
+      smokeEffect: {
+        type: 'SoundEffect', sound: 'explosionArtilleryShockBig'
+        minVolume: 0.7, maxVolume: 0.7, minPitch: 0.5, maxPitch: 0.6
+        effect: {
+          type: 'SoundEffect', sound: 'shootConquer'
+          minVolume: 1.5, maxVolume: 1.5, minPitch: 1.3, maxPitch: 1.5
+          effect: {
+            type: 'SoundEffect', sound: 'shootReign'
+            minVolume: 6, maxVolume: 6, minPitch: 0.4, maxPitch: 0.5
+            effect: {
+              type: 'SoundEffect', sound: 'whoosh'
+              minVolume: 2, maxVolume: 2, minPitch: 0.2, maxPitch: 0.25
+              startDelay: 0, effect: 'none'
+            }
+          }
+        }
+      }
+      hitEffect: [
+        {
+          particles: 12, lifetime: 90, layer: 88
+          length: 160, cone: 35
+          sizeFrom: 16, sizeTo: 0
+          colorFrom: 'ffffff11', colorTo: '7382f044'
+          interp: 'pow5Out', sizeInterp: 'linear'
+        }
+        {
+          particles: 6, lifetime: 360, layer: 88
+          length: 24
+          sizeFrom: 16, sizeTo: 0
+          colorFrom: 'ffffff00', colorTo: '7382f044'
+          interp: 'pow5Out', sizeInterp: 'linear'
+        }
+        {
+          line: true, particles: 5, lifetime: 60
+          length: 120, cone: 25
+          lenFrom: 0, lenTo: 24, strokeFrom: 3, strokeTo: 3
+          colorTo: '7382f0', interp: 'pow2Out', sizeInterp: 'slope'
+        }
+      ]
+      shootEffect: [
+        {
+          particles: 1, length: 0, lifetime: 45, layer: 105
+          region: 'allure-shootspike', sizeFrom: 240, sizeTo: 0
+          colorFrom: '90a2fc88', colorTo: '7382f088'
+        }
+        {
+          particles: 1, length: 0, lifetime: 45
+          region: 'allure-shootspike', sizeFrom: 160, sizeTo: 0
+          colorFrom: 'ffffffbb', colorTo: '90a2fcbb'
+        }
+        {
+          particles: 1, length: 0, lifetime: 45, layer: 140
+          region: 'circle-shadow', sizeFrom: 300, sizeTo: 0
+          colorFrom: 'ffffff44', colorTo: '90a2fc44'
+        }
+        {
+          particles: 1, lifetime: 70, offset: 90
+          length: 20, baseLength: 150, cone: 0, randLength: false
+          region: 'allure-squishwave', sizeFrom: 120, sizeTo: 180
+          colorFrom: '90a2fc88', colorTo: '7382f000'
+        }
+        {
+          particles: 1, lifetime: 45, offset: 90
+          length: 20, baseLength: 240, cone: 0, randLength: false
+          region: 'allure-squishwave', sizeFrom: 120, sizeTo: 0
+          colorFrom: '90a2fc00', colorTo: '7382f0'
+        }
+        {
+          particles: 1, lifetime: 30, offset: 90
+          length: 20, baseLength: 280, cone: 0, randLength: false
+          region: 'allure-squishwave', sizeFrom: 80, sizeTo: 0
+          colorFrom: '90a2fc00', colorTo: '7382f0'
+        }
+        {
+          line: true, particles: 8, lifetime: 45
+          length: 160, baseLength: 40, cone: 10, baseRotation: 5, offsetY: -20
+          lenFrom: 0, lenTo: 24, strokeFrom: 3, strokeTo: 3
+          colorFrom: '90a2fc', colorTo: 'feb380', interp: 'pow2Out', sizeInterp: 'slope'
+        }
+        {
+          line: true, particles: 8, lifetime: 45
+          length: 160, baseLength: 40, cone: 10, baseRotation: -5, offsetY: 20
+          lenFrom: 0, lenTo: 24, strokeFrom: 3, strokeTo: 3
+          colorFrom: '90a2fc', colorTo: 'feb380', interp: 'pow2Out', sizeInterp: 'slope'
+        }
+      ]
+    }
+  }
+  {
+    name: 'clear-effect', x: 0, y: -70, mirror: false
+    rotate: true, rotateSpeed: 0.45
+    recoil: 0, recoilTime: 90
+    reload: 60, shootSound: 'none', shootY: 50, shake: 30
+    shootWarmupSpeed: 0.02
+    otherSide: 2, flipSprite: true
+    parts: [
+      {
+        name: 'allure-hellfire-railgun-upper', outline: false, layer: 88
+        y: 60, moveY: -20, xScl: 0.95, yScl: 0.95
+        color: '787878'
+        progress: 'recoil'
+      }
+    ]
+    bullet: {
+      lifetime: 120, speed: 40, drag: 0.008
+      damage: 40000, status: 'allure-0b-energy2', statusDuration: 60
+      pierce: true, pierceBuilding: true, pierceDamageFactor: 0.75
+      sprite: 'allure-bolt', width: 80, height: 128, shrinkY: 0.2
+      frontColor: 'ffffff', backColor: '90a2fc', trailColor: '7382f0bb'
+      recoil: 0.1, hitSize: 18, hitSound: 'shootScepter'
+      trailLength: 24, trailWidth: 12, trailInterval: 1, trailRotation: true, trailEffect: [
+        {
+          type: 'RadialEffect', amount: 2, rotationOffset: 135, lengthOffset: 24, effect: {
+            line: true, particles: 1, lifetime: 30, layer: 88
+            length: 48, randLength: false, cone: 0
+            lenFrom: 0, lenTo: 48, strokeFrom: 2, strokeTo: 2
+            colorTo: '7382f0', sizeInterp: 'slope'
+          }
+        }
+        {
+          particles: 4, lifetime: 45, layer: 88
+          length: -80, cone: 35
+          sizeFrom: 32, sizeTo: 0
+          colorFrom: 'ffffff11', colorTo: '7382f044'
+          interp: 'pow3Out', sizeInterp: 'linear'
+        }
+        {
+          particles: 1, lifetime: 30, length: 0, offset: 90, layer: 88
+          region: 'allure-squishwave', sizeFrom: 40, sizeTo: 0
+          colorFrom: '90a2fc00', colorTo: '7382f088'
+        }
+      ]
+      smokeEffect: {
+        type: 'SoundEffect', sound: 'explosionArtilleryShockBig'
+        minVolume: 0.7, maxVolume: 0.7, minPitch: 0.5, maxPitch: 0.6
+        effect: {
+          type: 'SoundEffect', sound: 'shootConquer'
+          minVolume: 1.5, maxVolume: 1.5, minPitch: 1.3, maxPitch: 1.5
+          effect: {
+            type: 'SoundEffect', sound: 'shootReign'
+            minVolume: 6, maxVolume: 6, minPitch: 0.4, maxPitch: 0.5
+            effect: {
+              type: 'SoundEffect', sound: 'whoosh'
+              minVolume: 2, maxVolume: 2, minPitch: 0.2, maxPitch: 0.25
+              startDelay: 0, effect: 'none'
+            }
+          }
+        }
+      }
+      hitEffect: [
+        {
+          particles: 12, lifetime: 90, layer: 88
+          length: 160, cone: 35
+          sizeFrom: 16, sizeTo: 0
+          colorFrom: 'ffffff11', colorTo: '7382f044'
+          interp: 'pow5Out', sizeInterp: 'linear'
+        }
+        {
+          particles: 6, lifetime: 360, layer: 88
+          length: 24
+          sizeFrom: 16, sizeTo: 0
+          colorFrom: 'ffffff00', colorTo: '7382f044'
+          interp: 'pow5Out', sizeInterp: 'linear'
+        }
+        {
+          line: true, particles: 5, lifetime: 60
+          length: 120, cone: 25
+          lenFrom: 0, lenTo: 24, strokeFrom: 3, strokeTo: 3
+          colorTo: '7382f0', interp: 'pow2Out', sizeInterp: 'slope'
+        }
+      ]
+      shootEffect: [
+        {
+          particles: 1, length: 0, lifetime: 45, layer: 88
+          region: 'allure-shootspike', sizeFrom: 240, sizeTo: 0
+          colorFrom: '90a2fc88', colorTo: '7382f088'
+        }
+        {
+          particles: 1, length: 0, lifetime: 45, layer: 89
+          region: 'allure-shootspike', sizeFrom: 160, sizeTo: 0
+          colorFrom: 'ffffffbb', colorTo: '90a2fcbb'
+        }
+        {
+          particles: 1, length: 0, lifetime: 45, layer: 88
+          region: 'circle-shadow', sizeFrom: 300, sizeTo: 0
+          colorFrom: 'ffffff44', colorTo: '90a2fc44'
+        }
+        {
+          particles: 1, lifetime: 70, offset: 90, layer: 88
+          length: 20, baseLength: 140, cone: 0, randLength: false
+          region: 'allure-squishwave', sizeFrom: 100, sizeTo: 160
+          colorFrom: '90a2fc88', colorTo: '7382f000'
+        }
+        {
+          particles: 1, lifetime: 45, offset: 90, layer: 88
+          length: 20, baseLength: 200, cone: 0, randLength: false
+          region: 'allure-squishwave', sizeFrom: 100, sizeTo: 0
+          colorFrom: '90a2fc00', colorTo: '7382f0'
+        }
+        {
+          particles: 1, lifetime: 30, offset: 90, layer: 88
+          length: 20, baseLength: 240, cone: 0, randLength: false
+          region: 'allure-squishwave', sizeFrom: 70, sizeTo: 0
+          colorFrom: '90a2fc00', colorTo: '7382f0'
+        }
+        {
+          line: true, particles: 8, lifetime: 45, layer: 89
+          length: 140, baseLength: 40, cone: 10, baseRotation: 5, offsetY: -20
+          lenFrom: 0, lenTo: 18, strokeFrom: 2, strokeTo: 2
+          colorFrom: '90a2fc', colorTo: 'feb380', interp: 'pow2Out', sizeInterp: 'slope'
+        }
+        {
+          line: true, particles: 8, lifetime: 45, layer: 89
+          length: 140, baseLength: 40, cone: 10, baseRotation: -5, offsetY: 20
+          lenFrom: 0, lenTo: 18, strokeFrom: 2, strokeTo: 2
+          colorFrom: '90a2fc', colorTo: 'feb380', interp: 'pow2Out', sizeInterp: 'slope'
+        }
+      ]
+    }
+  }
+  //pulse seekers
+  {
+    x: 72, y: 46.5, reload: 135, shootY: 0, shootCone: 100, shootSound: 'shootAvert', shoot: {
+      shots: 3, shotDelay: 20
+    }
+    rotate: true, rotateSpeed: 0, baseRotation: -90
+    alternate: false, controllable: false, autoTarget: true
+    bullet: {
+      speed: 4, lifetime: 160, damage: 100
+      status: 'allure-0b-energy1', statusDuration: 30
+      pierce: true, pierceBuilding: true, pierceDamageFactor: 0.01
+      homingPower: 0.03, homingRange: 40
+      weaveScale: 10, weaveMag: 2.5
+      sprite: 'circle-bullet', width: 4, height: 36
+      trailLength: 15, trailWidth: 1
+      frontColor: 'ffffff', backColor: '7382f0', trailColor: '7382f0'
+      shootEffect: 'none', smokeEffect: 'none', hitEffect: 'hitBulletColor', despawnEffect: 'hitBulletColor'
+      reflectable: false, hittable: false, hitUnder: true
+    }
+  }
+  {
+    x: 72, y: 37, reload: 135, shootY: 0, shootCone: 100, shootSound: 'shootAvert', shoot: {
+      shots: 3, shotDelay: 20
+    }
+    rotate: true, rotateSpeed: 0, baseRotation: -90
+    alternate: false, controllable: false, autoTarget: true
+    bullet: {
+      speed: 4, lifetime: 160, damage: 100
+      status: 'allure-0b-energy1', statusDuration: 30
+      pierce: true, pierceBuilding: true, pierceDamageFactor: 0.01
+      homingPower: 0.03, homingRange: 40
+      weaveScale: 10, weaveMag: 2.5
+      sprite: 'circle-bullet', width: 4, height: 36
+      trailLength: 15, trailWidth: 1
+      frontColor: 'ffffff', backColor: '7382f0', trailColor: '7382f0'
+      shootEffect: 'none', smokeEffect: 'none', hitEffect: 'hitBulletColor', despawnEffect: 'hitBulletColor'
+      reflectable: false, hittable: false, hitUnder: true
+    }
+  }
+  {
+    x: 72, y: 11.75, reload: 135, shootY: 0, shootCone: 100, shootSound: 'shootAvert', shoot: {
+      shots: 3, shotDelay: 20
+    }
+    rotate: true, rotateSpeed: 0, baseRotation: -90
+    alternate: false, controllable: false, autoTarget: true
+    bullet: {
+      speed: 4, lifetime: 160, damage: 100
+      status: 'allure-0b-energy1', statusDuration: 30
+      pierce: true, pierceBuilding: true, pierceDamageFactor: 0.01
+      homingPower: 0.03, homingRange: 40
+      weaveScale: 10, weaveMag: 2.5
+      sprite: 'circle-bullet', width: 4, height: 36
+      trailLength: 15, trailWidth: 1
+      frontColor: 'ffffff', backColor: '7382f0', trailColor: '7382f0'
+      shootEffect: 'none', smokeEffect: 'none', hitEffect: 'hitBulletColor', despawnEffect: 'hitBulletColor'
+      reflectable: false, hittable: false, hitUnder: true
+    }
+  }
+  {
+    x: 72, y: 2.25, reload: 135, shootY: 0, shootCone: 100, shootSound: 'shootAvert', shoot: {
+      shots: 3, shotDelay: 20
+    }
+    rotate: true, rotateSpeed: 0, baseRotation: -90
+    alternate: false, controllable: false, autoTarget: true
+    bullet: {
+      speed: 4, lifetime: 160, damage: 100
+      status: 'allure-0b-energy1', statusDuration: 30
+      pierce: true, pierceBuilding: true, pierceDamageFactor: 0.01
+      homingPower: 0.03, homingRange: 40
+      weaveScale: 10, weaveMag: 2.5
+      sprite: 'circle-bullet', width: 4, height: 36
+      trailLength: 15, trailWidth: 1
+      frontColor: 'ffffff', backColor: '7382f0', trailColor: '7382f0'
+      shootEffect: 'none', smokeEffect: 'none', hitEffect: 'hitBulletColor', despawnEffect: 'hitBulletColor'
+      reflectable: false, hittable: false, hitUnder: true
+    }
+  }
+  {
+    x: 72, y: -7.25, reload: 135, shootY: 0, shootCone: 100, shootSound: 'shootAvert', shoot: {
+      shots: 3, shotDelay: 20
+    }
+    rotate: true, rotateSpeed: 0, baseRotation: -90
+    alternate: false, controllable: false, autoTarget: true
+    bullet: {
+      speed: 4, lifetime: 160, damage: 100
+      status: 'allure-0b-energy1', statusDuration: 30
+      pierce: true, pierceBuilding: true, pierceDamageFactor: 0.01
+      homingPower: 0.03, homingRange: 40
+      weaveScale: 10, weaveMag: 2.5
+      sprite: 'circle-bullet', width: 4, height: 36
+      trailLength: 15, trailWidth: 1
+      frontColor: 'ffffff', backColor: '7382f0', trailColor: '7382f0'
+      shootEffect: 'none', smokeEffect: 'none', hitEffect: 'hitBulletColor', despawnEffect: 'hitBulletColor'
+      reflectable: false, hittable: false, hitUnder: true
+    }
+  }
+  {
+    x: 77, y: -41, reload: 135, shootY: 0, shootCone: 100, shootSound: 'shootAvert', shoot: {
+      shots: 3, shotDelay: 20
+    }
+    rotate: true, rotateSpeed: 0, baseRotation: -90
+    alternate: false, controllable: false, autoTarget: true
+    bullet: {
+      speed: 4, lifetime: 160, damage: 100
+      status: 'allure-0b-energy1', statusDuration: 30
+      pierce: true, pierceBuilding: true, pierceDamageFactor: 0.01
+      homingPower: 0.03, homingRange: 40
+      weaveScale: 10, weaveMag: 2.5
+      sprite: 'circle-bullet', width: 4, height: 36
+      trailLength: 15, trailWidth: 1
+      frontColor: 'ffffff', backColor: '7382f0', trailColor: '7382f0'
+      shootEffect: 'none', smokeEffect: 'none', hitEffect: 'hitBulletColor', despawnEffect: 'hitBulletColor'
+      reflectable: false, hittable: false, hitUnder: true
+    }
+  }
+  {
+    x: 77, y: -50.5, reload: 135, shootY: 0, shootCone: 100, shootSound: 'shootAvert', shoot: {
+      shots: 3, shotDelay: 20
+    }
+    rotate: true, rotateSpeed: 0, baseRotation: -90
+    alternate: false, controllable: false, autoTarget: true
+    bullet: {
+      speed: 4, lifetime: 160, damage: 100
+      status: 'allure-0b-energy1', statusDuration: 30
+      pierce: true, pierceBuilding: true, pierceDamageFactor: 0.01
+      homingPower: 0.03, homingRange: 40
+      weaveScale: 10, weaveMag: 2.5
+      sprite: 'circle-bullet', width: 4, height: 36
+      trailLength: 15, trailWidth: 1
+      frontColor: 'ffffff', backColor: '7382f0', trailColor: '7382f0'
+      shootEffect: 'none', smokeEffect: 'none', hitEffect: 'hitBulletColor', despawnEffect: 'hitBulletColor'
+      reflectable: false, hittable: false, hitUnder: true
+    }
+  }
+  {
+    x: 92, y: -111.5, reload: 135, shootY: 0, shootCone: 100, shootSound: 'shootAvert', shoot: {
+      shots: 3, shotDelay: 20
+    }
+    rotate: true, rotateSpeed: 0, baseRotation: -90
+    alternate: false, controllable: false, autoTarget: true
+    bullet: {
+      speed: 4, lifetime: 160, damage: 100
+      status: 'allure-0b-energy1', statusDuration: 30
+      pierce: true, pierceBuilding: true, pierceDamageFactor: 0.01
+      homingPower: 0.03, homingRange: 40
+      weaveScale: 10, weaveMag: 2.5
+      sprite: 'circle-bullet', width: 4, height: 36
+      trailLength: 15, trailWidth: 1
+      frontColor: 'ffffff', backColor: '7382f0', trailColor: '7382f0'
+      shootEffect: 'none', smokeEffect: 'none', hitEffect: 'hitBulletColor', despawnEffect: 'hitBulletColor'
+      reflectable: false, hittable: false, hitUnder: true
+    }
+  }
+  {
+    x: 92, y: -121, reload: 135, shootY: 0, shootCone: 100, shootSound: 'shootAvert', shoot: {
+      shots: 3, shotDelay: 20
+    }
+    rotate: true, rotateSpeed: 0, baseRotation: -90
+    alternate: false, controllable: false, autoTarget: true
+    bullet: {
+      speed: 4, lifetime: 160, damage: 100
+      status: 'allure-0b-energy1', statusDuration: 30
+      pierce: true, pierceBuilding: true, pierceDamageFactor: 0.01
+      homingPower: 0.03, homingRange: 40
+      weaveScale: 10, weaveMag: 2.5
+      sprite: 'circle-bullet', width: 4, height: 36
+      trailLength: 15, trailWidth: 1
+      frontColor: 'ffffff', backColor: '7382f0', trailColor: '7382f0'
+      shootEffect: 'none', smokeEffect: 'none', hitEffect: 'hitBulletColor', despawnEffect: 'hitBulletColor'
+      reflectable: false, hittable: false, hitUnder: true
+    }
+  }
+  {
+    x: 92, y: -140.5, reload: 135, shootY: 0, shootCone: 100, shootSound: 'shootAvert', shoot: {
+      shots: 3, shotDelay: 20
+    }
+    rotate: true, rotateSpeed: 0, baseRotation: -90
+    alternate: false, controllable: false, autoTarget: true
+    bullet: {
+      speed: 4, lifetime: 160, damage: 100
+      status: 'allure-0b-energy1', statusDuration: 30
+      pierce: true, pierceBuilding: true, pierceDamageFactor: 0.01
+      homingPower: 0.03, homingRange: 40
+      weaveScale: 10, weaveMag: 2.5
+      sprite: 'circle-bullet', width: 4, height: 36
+      trailLength: 15, trailWidth: 1
+      frontColor: 'ffffff', backColor: '7382f0', trailColor: '7382f0'
+      shootEffect: 'none', smokeEffect: 'none', hitEffect: 'hitBulletColor', despawnEffect: 'hitBulletColor'
+      reflectable: false, hittable: false, hitUnder: true
+    }
+  }
+]

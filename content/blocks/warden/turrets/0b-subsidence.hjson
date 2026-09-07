@@ -1,0 +1,719 @@
+type: PowerTurret
+size: 5
+range: 30
+rotateSpeed: 0
+recoil: 0
+alwaysShooting: true
+consumes: {
+  power: 4
+  liquids: [
+    fluid-energy/0.25
+  ]
+}
+shootY: 0
+reload: 5
+canOverdrive: false
+shootWarmupSpeed: 0.0035
+minWarmup: 0.999
+linearWarmup: true
+shootType: {
+  type: BulletType
+  damage: 1400
+  lifetime: 5
+  hitSize: 26
+  hittable: false
+  absorbable: false
+  speed: 0.001
+  homingPower: 360
+  homingRange: 180
+  status: {
+    name: SKJDFhksahdgkshdkjshgd
+    speedMultiplier: 0.01
+    dragMultiplier: 0.01
+  }
+  statusDuration: 30
+  knockback: 200
+}
+shootSound: none
+drawer: [
+  {
+    type: DrawTurret
+    //make sure the base doesnt exist
+    basePrefix: -sahjfhsjdfkjHGASJ
+    parts: [
+      {
+        type: RegionPart
+        xScl: 1
+        yScl: 1
+        layer: 55
+        name: clear-effect
+        moves: [
+          {
+            progress: {
+              type: warmup
+              ops: [
+                {
+                  op: compress
+                  start: 0.5
+                  end: 1
+                }
+                {
+                  op: curve
+                  interp: pow3In
+                }
+              ]
+            }
+            rot: -360
+          }
+          {
+            rot: 45
+            progress: reload
+          }
+        ]
+        children: [
+          {
+            type: RegionPart
+            suffix: -fins
+            outline: false
+            y: 33
+            layer: 60
+            color: 7382f0
+            colorTo: 5a58c4
+            moves: [
+              {
+                gy: -1
+                moveY: -11.5
+                progress: {
+                  type: warmup
+                  op: compress
+                  start: 0.5
+                  end: 1
+                }
+              }
+            ]
+          }
+          {
+            type: RegionPart
+            suffix: -fins0
+            outline: false
+            y: 44.5
+            yScl: 0
+            layer: 61
+            color: 7382f0
+            colorTo: 90a2fc
+            moves: [
+              {
+                y: -11.5
+                gy: 1
+                layer: 61
+                progress: {
+                  type: warmup
+                  op: compress
+                  start: 0.5
+                  end: 1
+                }
+              }
+            ]
+          }
+          {
+            type: RegionPart
+            suffix: -fins1
+            y: 36
+            yScl: 0
+            layer: 61
+            outline: false
+            color: 7382f0
+            moves: [
+              {
+                y: -3
+                gy: 1
+                layer: 61
+                progress: {
+                  type: warmup
+                  op: compress
+                  start: 0.5
+                  end: 1
+                }
+              }
+            ]
+          }
+          {
+            type: RegionPart
+            suffix: -fins
+            outline: false
+            y: -33
+            rotation: 180
+            layer: 60
+            color: 7382f0
+            colorTo: 5a58c4
+            moves: [
+              {
+                gy: -1
+                moveY: -11.5
+                progress: {
+                  type: warmup
+                  op: compress
+                  start: 0.5
+                  end: 1
+                }
+              }
+            ]
+          }
+          {
+            type: RegionPart
+            suffix: -fins0
+            outline: false
+            y: -44.5
+            rotation: 180
+            yScl: 0
+            layer: 61
+            color: 7382f0
+            colorTo: 90a2fc
+            moves: [
+              {
+                y: 11.5
+                gy: 1
+                layer: 61
+                progress: {
+                  type: warmup
+                  op: compress
+                  start: 0.5
+                  end: 1
+                }
+              }
+            ]
+          }
+          {
+            type: RegionPart
+            suffix: -fins1
+            outline: false
+            y: -36
+            rotation: 180
+            yScl: 0
+            layer: 61
+            color: 7382f0
+            moves: [
+              {
+                y: 3
+                gy: 1
+                layer: 61
+                progress: {
+                  type: warmup
+                  op: compress
+                  start: 0.5
+                  end: 1
+                }
+              }
+            ]
+          }
+          {
+            type: RegionPart
+            suffix: -fins
+            outline: false
+            x: -33
+            rotation: 90
+            layer: 60
+            color: 7382f0
+            colorTo: 5a58c4
+            moves: [
+              {
+                gy: -1
+                moveY: -11.5
+                progress: {
+                  type: warmup
+                  op: compress
+                  start: 0.5
+                  end: 1
+                }
+              }
+            ]
+          }
+          {
+            type: RegionPart
+            suffix: -fins0
+            outline: false
+            x: -44.5
+            rotation: 90
+            yScl: 0
+            layer: 61
+            color: 7382f0
+            colorTo: 90a2fc
+            moves: [
+              {
+                x: 11.5
+                gy: 1
+                layer: 61
+                progress: {
+                  type: warmup
+                  op: compress
+                  start: 0.5
+                  end: 1
+                }
+              }
+            ]
+          }
+          {
+            type: RegionPart
+            suffix: -fins1
+            outline: false
+            x: -36
+            rotation: 90
+            yScl: 0
+            layer: 61
+            color: 7382f0
+            moves: [
+              {
+                x: 3
+                gy: 1
+                layer: 61
+                progress: {
+                  type: warmup
+                  op: compress
+                  start: 0.5
+                  end: 1
+                }
+              }
+            ]
+          }
+          {
+            type: RegionPart
+            suffix: -fins
+            outline: false
+            x: 33
+            rotation: -90
+            layer: 60
+            color: 7382f0
+            colorTo: 5a58c4
+            moves: [
+              {
+                gy: -1
+                moveY: -11.5
+                progress: {
+                  type: warmup
+                  op: compress
+                  start: 0.5
+                  end: 1
+                }
+              }
+            ]
+          }
+          {
+            type: RegionPart
+            suffix: -fins0
+            outline: false
+            x: 44.5
+            rotation: -90
+            yScl: 0
+            layer: 61
+            color: 7382f0
+            colorTo: 90a2fc
+            moves: [
+              {
+                x: -11.5
+                gy: 1
+                layer: 61
+                progress: {
+                  type: warmup
+                  op: compress
+                  start: 0.5
+                  end: 1
+                }
+              }
+            ]
+          }
+          {
+            type: RegionPart
+            suffix: -fins1
+            outline: false
+            x: 36
+            rotation: -90
+            yScl: 0
+            layer: 61
+            color: 7382f0
+            moves: [
+              {
+                x: -3
+                gy: 1
+                layer: 61
+                progress: {
+                  type: warmup
+                  op: compress
+                  start: 0.5
+                  end: 1
+                }
+              }
+            ]
+          }
+        ]
+      }
+      {
+        type: RegionPart
+        rotation: 45
+        xScl: 1
+        yScl: 1
+        layer: 55
+        name: clear-effect
+        moves: [
+          {
+            progress: {
+              type: warmup
+              ops: [
+                {
+                  op: compress
+                  start: 0.5
+                  end: 1
+                }
+                {
+                  op: curve
+                  interp: pow3In
+                }
+              ]
+            }
+            rot: -360
+          }
+          {
+            rot: 45
+            progress: reload
+          }
+        ]
+        children: [
+          {
+            type: RegionPart
+            suffix: -fins
+            outline: false
+            y: 33
+            layer: 60
+            color: 7382f0
+            colorTo: 5a58c4
+            moves: [
+              {
+                gy: -1
+                moveY: -11.5
+                progress: {
+                  type: warmup
+                  op: compress
+                  start: 0.5
+                  end: 1
+                }
+              }
+            ]
+          }
+          {
+            type: RegionPart
+            suffix: -fins0
+            outline: false
+            y: 44.5
+            yScl: 0
+            layer: 61
+            color: 7382f0
+            colorTo: 90a2fc
+            moves: [
+              {
+                y: -11.5
+                gy: 1
+                layer: 61
+                progress: {
+                  type: warmup
+                  op: compress
+                  start: 0.5
+                  end: 1
+                }
+              }
+            ]
+          }
+          {
+            type: RegionPart
+            suffix: -fins1
+            y: 36
+            yScl: 0
+            layer: 61
+            outline: false
+            color: 7382f0
+            moves: [
+              {
+                y: -3
+                gy: 1
+                layer: 61
+                progress: {
+                  type: warmup
+                  op: compress
+                  start: 0.5
+                  end: 1
+                }
+              }
+            ]
+          }
+          {
+            type: RegionPart
+            suffix: -fins
+            outline: false
+            y: -33
+            rotation: 180
+            layer: 60
+            color: 7382f0
+            colorTo: 5a58c4
+            moves: [
+              {
+                gy: -1
+                moveY: -11.5
+                progress: {
+                  type: warmup
+                  op: compress
+                  start: 0.5
+                  end: 1
+                }
+              }
+            ]
+          }
+          {
+            type: RegionPart
+            suffix: -fins0
+            outline: false
+            y: -44.5
+            rotation: 180
+            yScl: 0
+            layer: 61
+            color: 7382f0
+            colorTo: 90a2fc
+            moves: [
+              {
+                y: 11.5
+                gy: 1
+                layer: 61
+                progress: {
+                  type: warmup
+                  op: compress
+                  start: 0.5
+                  end: 1
+                }
+              }
+            ]
+          }
+          {
+            type: RegionPart
+            suffix: -fins1
+            outline: false
+            y: -36
+            rotation: 180
+            yScl: 0
+            layer: 61
+            color: 7382f0
+            moves: [
+              {
+                y: 3
+                gy: 1
+                layer: 61
+                progress: {
+                  type: warmup
+                  op: compress
+                  start: 0.5
+                  end: 1
+                }
+              }
+            ]
+          }
+          {
+            type: RegionPart
+            suffix: -fins
+            outline: false
+            x: -33
+            rotation: 90
+            layer: 60
+            color: 7382f0
+            colorTo: 5a58c4
+            moves: [
+              {
+                gy: -1
+                moveY: -11.5
+                progress: {
+                  type: warmup
+                  op: compress
+                  start: 0.5
+                  end: 1
+                }
+              }
+            ]
+          }
+          {
+            type: RegionPart
+            suffix: -fins0
+            outline: false
+            x: -44.5
+            rotation: 90
+            yScl: 0
+            layer: 61
+            color: 7382f0
+            colorTo: 90a2fc
+            moves: [
+              {
+                x: 11.5
+                gy: 1
+                layer: 61
+                progress: {
+                  type: warmup
+                  op: compress
+                  start: 0.5
+                  end: 1
+                }
+              }
+            ]
+          }
+          {
+            type: RegionPart
+            suffix: -fins1
+            outline: false
+            x: -36
+            rotation: 90
+            yScl: 0
+            layer: 61
+            color: 7382f0
+            moves: [
+              {
+                x: 3
+                gy: 1
+                layer: 61
+                progress: {
+                  type: warmup
+                  op: compress
+                  start: 0.5
+                  end: 1
+                }
+              }
+            ]
+          }
+          {
+            type: RegionPart
+            suffix: -fins
+            outline: false
+            x: 33
+            rotation: -90
+            layer: 60
+            color: 7382f0
+            colorTo: 5a58c4
+            moves: [
+              {
+                gy: -1
+                moveY: -11.5
+                progress: {
+                  type: warmup
+                  op: compress
+                  start: 0.5
+                  end: 1
+                }
+              }
+            ]
+          }
+          {
+            type: RegionPart
+            suffix: -fins0
+            outline: false
+            x: 44.5
+            rotation: -90
+            yScl: 0
+            layer: 61
+            color: 7382f0
+            colorTo: 90a2fc
+            moves: [
+              {
+                x: -11.5
+                gy: 1
+                layer: 61
+                progress: {
+                  type: warmup
+                  op: compress
+                  start: 0.5
+                  end: 1
+                }
+              }
+            ]
+          }
+          {
+            type: RegionPart
+            suffix: -fins1
+            outline: false
+            x: 36
+            rotation: -90
+            yScl: 0
+            layer: 61
+            color: 7382f0
+            moves: [
+              {
+                x: -3
+                gy: 1
+                layer: 61
+                progress: {
+                  type: warmup
+                  op: compress
+                  start: 0.5
+                  end: 1
+                }
+              }
+            ]
+          }
+        ]
+      }
+      {
+        type: ShapePart
+        circle: true
+        hollow: true
+        radius: 0
+        radiusTo: 29
+        stroke: 2
+        color: 7382f0
+        progress: {
+          type: warmup
+          op: compress
+          start: 0.75
+          end: 1
+        }
+        layer: 109
+      }
+      {
+        type: ShapePart
+        circle: true
+        radius: 0
+        radiusTo: 30
+        color: 7382f088
+        progress: {
+          type: warmup
+          op: compress
+          start: 0.75
+          end: 1
+        }
+        layer: 108
+      }
+      {
+        type: ShapePart
+        circle: true
+        radius: 0
+        radiusTo: 22
+        color: 7382f0
+        progress: {
+          type: warmup
+          op: compress
+          start: 0.75
+          end: 1
+        }
+        layer: 109
+      }
+      {
+        type: ShapePart
+        circle: true
+        radius: 0
+        radiusTo: 18
+        progress: {
+          type: warmup
+          op: compress
+          start: 0.75
+          end: 1
+        }
+        layer: 110
+      }
+    ]
+  }
+  {
+    type: DrawRegion
+    suffix: -bees
+    layer: 51
+  }
+]

@@ -1,0 +1,16 @@
+floating: true
+craftTime: 120
+liquidCapacity: 48
+consumes: {
+  remove: [
+    liquid
+  ]
+  liquids: [
+    water/0.4
+  ]
+}
+requirements: [
+  copper/20
+  silicon/30
+  titanium/10
+]

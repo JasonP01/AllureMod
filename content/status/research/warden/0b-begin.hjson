@@ -1,0 +1,8 @@
+research: {
+  root: true
+  planet: wandura
+  name: Warden
+  requiresUnlock: true
+}
+alwaysUnlocked: true
+show: false

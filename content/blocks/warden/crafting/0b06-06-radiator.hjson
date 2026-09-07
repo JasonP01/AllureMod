@@ -1,0 +1,141 @@
+type: HeatProducer
+size: 5
+squareSprite: false
+customShadow: true
+heatOutput: 20
+warmupRate: 0.6
+liquidCapacity: 2400
+drawer:  [
+  {
+    type: DrawRegion
+    suffix: -bottom0
+  }
+  {
+    type: DrawRegion
+    suffix: -bottom1
+  }
+  {
+    type: DrawRegion
+    suffix: -transfer
+  }
+  {
+    type: DrawGlowRegion
+    suffix: -transfer-heat
+    layer: 30
+    color: ffb380bb
+  }
+  {
+    type: DrawLiquidTile
+    padding: 6
+    drawLiquid: steam
+  }
+  {
+    type: DrawRegion
+    suffix: -bottom2
+  }
+  {
+    type: DrawLiquidTile
+    padding: 13
+    drawLiquid: water
+  }
+  {
+    type: DrawRegion
+    suffix: -top
+  }
+  {
+    type: DrawHeatOutput
+    heatColor: 90a2fcbb
+  }
+]
+consumes: {
+  liquid: steam/10
+}
+outputLiquid: water/10
+ambientSoundVolume: 0
+category: crafting
+research: {
+  parent: 0b06-04-heat-engine
+  objectives: [
+    0b-steam-heating,
+    0b-advanced-production
+  ]
+}
+requirements: [
+  dantrales/400
+  territe-alloy/1200
+  scilaxa/100
+]
+breakEffect: [
+  {
+    type: WaveEffect
+    rotation: 40
+    lifetime: 20
+    sides: 4
+    sizeFrom: 20
+    sizeTo: 40
+    strokeFrom: 15
+    strokeTo: 0
+    colorFrom: 7382f0
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    length: 0
+    lifetime: 11
+    useRotation: false
+    region: allure-warden-icon
+    sizeFrom: 8
+    sizeTo: 8
+    colorFrom: 7382f000
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    length: 0
+    lifetime: 30
+    startDelay: 10
+    useRotation: false
+    region: allure-warden-icon
+    sizeFrom: 8
+    sizeTo: 8
+    colorFrom: 7382f0
+    colorTo: 7382f000
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    cone: 0
+    randLength: false
+    baseLength: 6
+    length: 12
+    lifetime: 35
+    useRotation: false
+    region: allure-energy-arrow
+    interp: pow3Out
+    sizeInterp: pow2In
+    sizeFrom: 6
+    sizeTo: 0
+    colorFrom: 7382f0
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    cone: 0
+    baseRotation: 180
+    randLength: false
+    baseLength: 6
+    length: 12
+    lifetime: 35
+    useRotation: false
+    region: allure-energy-arrow
+    interp: pow3Out
+    sizeInterp: pow2In
+    sizeFrom: 6
+    sizeTo: 0
+    colorFrom: 7382f0
+    colorTo: 7382f0
+  }
+]

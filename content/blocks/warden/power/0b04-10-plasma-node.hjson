@@ -1,0 +1,35 @@
+type: BeamNode
+range: 7
+consumesPower: true
+conductivePower: true
+laserWidth: 0.35
+pulseScl: 22
+pulseMag: 0.1
+consumes: {
+  power: 1.5
+}
+canOverdrive: false
+category: power
+research: {
+  parent: 0b-begin
+  objectives: [
+    0b-basic-infrastructure
+  ]
+}
+requirements: [
+  dantrales/20
+  territe-alloy/80
+  metaglass/10
+]
+breakEffect: {
+  type: WaveEffect
+  rotation: 44
+  lifetime: 20
+  sides: 4
+  sizeFrom: 4
+  sizeTo: 8
+  strokeFrom: 3
+  strokeTo: 0
+  colorFrom: 7382f0
+  colorTo: 7382f0
+}

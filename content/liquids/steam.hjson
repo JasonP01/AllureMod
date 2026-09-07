@@ -1,0 +1,17 @@
+gas: true
+temperature: 0.8
+color: c7cdd6
+research: {
+  parent: fluid-energy
+  objectives: [
+    {
+      type: Produce
+      content: allure-steam
+    }
+  ]
+}
+shownPlanets: [
+  allure-wandura,
+  allure-genaise,
+  allure-lus
+]

@@ -1,0 +1,12 @@
+craftTime: 160
+consumes: {
+  remove: [
+    items
+  ]
+  items: [
+    pyratite/2
+    graphite/1
+    sand/8
+  ]
+}
+outputItem: silicon/8

@@ -1,0 +1,11 @@
+research: {
+  parent: 0b-basic-infrastructure
+  requirements: [
+    territe-alloy/5000
+    dantrales/1500
+    baenite/3000
+    scilaxa/1200
+    crystal/12000
+  ]
+}
+show: false

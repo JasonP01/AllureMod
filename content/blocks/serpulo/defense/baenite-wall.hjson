@@ -1,0 +1,11 @@
+type: RegenProjector
+health: 640
+hasPower: false
+range: 1
+optionalMultiplier: 1
+baseColor: abffac
+category: defense
+research: surge-wall
+requirements: [
+  baenite/6
+]

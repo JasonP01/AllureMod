@@ -1,0 +1,19 @@
+type: BuildTurret
+outlineIcon: false
+size: 3
+rotateSpeed: 3
+buildTime: 300
+buildSpeed: 0.25
+buildBeamOffset: 12
+buildRange: 120
+category: effect
+consumes: {
+  liquids: [
+    fluid-energy/0.1
+  ]
+}
+requirements: [
+  anden/300
+  graphite/50
+  silicon/100
+]

@@ -1,0 +1,13 @@
+powerProduction: 0.5
+research: {
+  parent: steam-generator
+  objectives: [
+    {
+      type: onSector
+      preset: powerResearchOutpost
+    }
+  ]
+}
+requirements: [
+  copper/10, lead/30, graphite/30, silicon/20, metaglass/10
+]

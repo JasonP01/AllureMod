@@ -1,0 +1,136 @@
+type: ConsumeGenerator
+size: 2
+liquidCapacity: 300
+squareSprite: false 
+customShadow: true
+effectChance: 0.1
+warmupSpeed: 0.01
+generateEffectRange: 3
+generateEffect: {
+  particles: 1
+  length: 15
+  lifetime: 120
+  cone: 12
+  baseRotation: 32
+  sizeFrom: 0
+  sizeTo: 2
+  colorTo: ffffff00
+  sizeInterp: pow2Out
+  interp: pow2Out
+}
+drawer: {
+  type: DrawMulti
+  iconOverride: [
+    -icon
+  ]
+  drawers: [
+    {
+    }
+    {
+      type: DrawRegion
+      suffix: -fan
+      spinSprite: true
+      rotateSpeed: 12
+    }
+    {
+      type: DrawRegion
+      suffix: -fan
+      spinSprite: true
+      rotateSpeed: 12
+      rotation: 45
+    }
+    {
+      type: DrawLiquidTile
+      drawLiquid: steam
+      padLeft: 0.75
+      padRight: 12
+      padTop: 9
+      padBottom: 3.75
+    }
+    {
+      type: DrawLiquidTile
+      drawLiquid: steam
+      padLeft: 12
+      padRight: 0.75
+      padTop: 3.75
+      padBottom: 9
+    }
+    {
+      type: DrawLiquidTile
+      drawLiquid: water
+      padLeft: 0.75
+      padRight: 12
+      padTop: 3.75
+      padBottom: 9
+    }
+    {
+      type: DrawLiquidTile
+      drawLiquid: water
+      padLeft: 12
+      padRight: 0.75
+      padTop: 9
+      padBottom: 3.75
+    }
+    {
+      type: DrawRegion
+      suffix: -top
+    }
+    {
+      type: DrawGlowRegion
+      suffix: -flare
+      alpha: 0.9
+      glowIntensity: 0.1
+      color: ffffff
+    }
+  ]
+}
+consumes: {
+  liquids: [
+    steam/2.5
+  ]
+  liquid: {
+    liquid: water
+    amount: 0
+    optional: true
+  }
+}
+powerProduction: 2
+outputLiquid: water/2.083334
+category: power
+research: {
+  parent:  0b04-00-03-industrial-turbine
+  objectives: [
+    0b-condenser-turbines
+  ]
+}
+requirements: [
+  dantrales/60
+  territe-alloy/200
+  silicon/60
+]
+breakEffect: [
+  {
+    type: WaveEffect
+    rotation: 43
+    lifetime: 20
+    sides: 4
+    sizeFrom: 8
+    sizeTo: 16
+    strokeFrom: 6
+    strokeTo: 0
+    colorFrom: 7382f0
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    length: 0
+    lifetime: 30
+    useRotation: false
+    region: allure-warden-icon
+    sizeFrom: 8
+    sizeTo: 8
+    colorFrom: 7382f0
+    colorTo: 7382f000
+  }
+]

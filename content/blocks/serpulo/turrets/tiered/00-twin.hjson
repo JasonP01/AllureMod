@@ -1,0 +1,125 @@
+//TODO rename!
+type: ItemTurret
+liquidCapacity: 20
+size: 2
+health: 800
+range: 160
+targetGround: true
+targetAir: true
+reload: 30
+recoil: 2.5
+inaccuracy: 2
+cooldownTime: 35
+targetInterval: 5
+newTargetInterval: 60
+smokeEffect: shootSmallSmoke
+shootEffect: shootBig
+shootSound: shootScatter
+shoot: {
+  type: ShootAlternate
+  shots: 2
+  spread: 5.5
+}
+ammoPerShot: 2
+ammoTypes: {
+  lead: {
+    damage: 14
+    speed: 4
+    lifetime: 40
+    reloadMultiplier: 0.75
+    ammoMultiplier: 1
+    pierce: true
+    pierceBuilding: true
+    pierceCap: 2
+    pierceDamageFactor: 0.001
+    height: 15
+    width: 10
+    frontColor: b3b7cf
+    backColor: 8c7fa9
+    hitColor: 8c7fa9
+    hitEffect: hitBulletColor
+    despawnEffect: hitBulletColor
+  }
+  scrap: {
+    damage: 3
+    speed: 5
+    lifetime: 40
+    reloadMultiplier: 1.35
+    ammoMultiplier: 3
+    splashDamage: 29
+    splashDamageRadius: 15
+    inaccuracy: 18
+    rangeChange: 40
+    height: 12
+    width: 9
+    frontColor: f5e0cc
+    backColor: d8887e
+    hitColor: d8887e
+    hitEffect: flakExplosion
+    despawnEffect: hitBulletColor
+  }
+  pyratite: {
+    damage: 14
+    splashDamage: 16
+    splashDamageRadius: 15
+    speed: 4
+    lifetime: 40
+    reloadMultiplier: 0.85
+    ammoMultiplier: 7
+    height: 12
+    width: 8
+    frontColor: f8ad42
+    backColor: f68021
+    hitEffect: [
+      hitBulletSmall, 
+      fireHit
+    ]
+    status: burning
+    makeFire: true 
+  }
+  silicon: {
+    damage: 19
+    speed: 4
+    lifetime: 40
+    reloadMultiplier: 1.8
+    ammoMultiplier: 6
+    height: 12
+    width: 8
+    frontColor: 999ba0
+    backColor: 707594
+    hitColor: 707594
+    hitEffect: hitBulletColor
+    despawnEffect: hitBulletColor
+    homingPower: 0.1
+    homingRange: 35
+  }
+  thorium: {
+    damage: 25
+    pierce: true
+    pierceCap: 2
+    speed: 4
+    lifetime: 40
+    ammoMultiplier: 3
+    height: 22
+    width: 13
+    frontColor: ffffff
+    backColor: f595be
+    hitColor: f595be
+    hitEffect: hitBulletColor
+    despawnEffect: hitBulletColor
+    shootSound: shootSpectre
+  }
+}
+requirements: [
+  copper/100
+  graphite/40
+]
+maxAmmo: 20
+category: turret
+research: duo
+coolantMultiplier: 7.5
+consumes: {
+  coolant: {
+    amount: 0.2
+  }
+}

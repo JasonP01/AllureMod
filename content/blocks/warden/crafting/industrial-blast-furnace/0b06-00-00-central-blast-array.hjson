@@ -1,0 +1,210 @@
+type: GenericCrafter
+customShadow: true
+size: 12
+conductivePower: true
+rotate: false
+hasLiquids: true
+liquidCapacity: 600
+liquidOutputDirections: [3, 3]
+consumes: {
+  power: 12
+  liquids: [
+    0b19-01-superheated-slag/2
+    0b19-03-fresh-coolant/0.75
+  ]
+}
+outputLiquids: [
+  0b19-02-gaseous-coolant/1
+  0b19-05-molten-infrastructure/2
+]
+craftTime: 5
+category: crafting
+research: {
+  parent: industrial-blast-furnace
+  requirements: []
+}
+requirements: [
+  metaglass/300
+  dantrales/1200
+  territe-alloy/2400
+  baenite/300
+]
+hideDetails: false
+drawer: {
+  type: DrawMulti
+  iconOverride: [
+    -icon
+  ]
+  drawers: [
+    {
+      type: DrawRegion
+      suffix: -icon
+      layer: 29.4
+    }
+    {
+      type: DrawRegion
+      layer: 29.99
+    }
+    {
+      type: DrawRegion
+      suffix: -fan1
+      rotateSpeed: -4
+      spinSprite: true
+    }
+    {
+      type: DrawRegion
+      suffix: -fan
+      rotateSpeed: -4
+      rotation: 10
+      spinSprite: true
+    }
+    {
+      type: DrawRegion
+      suffix: -fan
+      rotateSpeed: -4
+      rotation: 20
+      spinSprite: true
+    }
+    {
+      type: DrawRegion
+      suffix: -fan
+      rotateSpeed: -4
+      rotation: 30
+      spinSprite: true
+    }
+    {
+      type: DrawRegion
+      suffix: -fan
+      rotateSpeed: -4
+      rotation: 40
+      spinSprite: true
+    }
+    {
+      type: DrawRegion
+      suffix: -fan
+      rotateSpeed: -4
+      rotation: 50
+      spinSprite: true
+    }
+    {
+      type: DrawRegion
+      suffix: -fan
+      rotateSpeed: -4
+      rotation: 60
+      spinSprite: true
+    }
+    {
+      type: DrawRegion
+      suffix: -fan
+      rotateSpeed: -4
+      rotation: 70
+      spinSprite: true
+    }
+    {
+      type: DrawRegion
+      suffix: -fan
+      rotateSpeed: -4
+      rotation: 80
+      spinSprite: true
+    }
+    {
+      type: DrawRegion
+      suffix: -fan0
+      rotateSpeed: -4
+      spinSprite: true
+    }
+    {
+      type: DrawRegion
+      suffix: -top
+    }
+    {
+      type: DrawRegion
+      suffix: -tubing
+      layer: 30.1
+      y: -56.25
+      x: 21.5
+    }
+    {
+      type: DrawRegion
+      suffix: -tubing
+      layer: 30.1
+      y: -56.25
+      x: 10.5
+    }
+    {
+      type: DrawRegion
+      suffix: -tubing
+      layer: 30.1
+      y: -56.25
+      x: -21.5
+    }
+    {
+      type: DrawRegion
+      suffix: -tubing
+      layer: 30.1
+      y: -56.25
+      x: -10.5
+    }
+    {
+      type: DrawRegion
+      suffix: -overlay
+      y: -16
+      layer: 25
+    }
+    {
+      type: DrawGlowRegion
+      color: ffb380
+      alpha: 0.5
+    }
+  ]
+}
+
+craftEffect: [
+  {
+    type: RadialEffect
+    layer: 118
+    rotationSpacing: 45
+    amount: 8
+    lengthOffset: 8
+    effect: {
+      particles: 1
+      length: 130
+      lifetime: 440
+      cone: 20
+      baseRotation: 32
+      useRotation: false 
+      sizeFrom: 0
+      sizeTo: 28
+      colorFrom: 78787866
+      colorTo: 78787800
+      sizeInterp: pow2Out
+      interp: pow2Out
+      layer: 111
+    }
+  }
+  {
+    type: RadialEffect
+    layer: 118
+    rotationSpacing: 11.25
+    amount: 32
+    lengthOffset: 24
+    effect: {
+      particles: 1
+      line: true
+      length: 40
+      lifetime: 35
+      cone: 20
+      useRotation: false
+      baseRotation: 90
+      lenFrom: 0
+      lenTo: 8
+      strokeFrom: 1
+      strokeTo: 0
+      colorFrom: ffffff00
+      colorTo: ffffff88
+      interp: pow2
+      sizeInterp: pow3In
+      layer: 80
+    }
+  }
+]

@@ -1,0 +1,98 @@
+type: AttributeCrafter
+size: 2
+hasLiquids: true 
+squareSprite: false
+customShadow: true
+liquidOutputDirections: [0, 2]
+liquidCapacity: 100
+baseEfficiency: 0
+minEfficiency: 0.25
+maxBoost: 10
+drawer: [
+  {
+  }
+  {
+    type: DrawLiquidTile
+    drawLiquid: water
+    padding: 2
+  }
+  {
+    type: DrawGlowRegion
+    color: feb380
+    layer: 30
+  }
+  {
+    type: DrawBubbles
+    color: "7693e3"
+    timeScl: 30
+    sides: 12
+    recurrence: 6
+    spread: 6
+    radius: 1.5
+    amount: 45
+    strokeMin: 0
+  }
+  {
+    type: DrawLiquidTile 
+    drawLiquid: steam 
+    padding: 2
+  }
+  {
+    type: DrawRegion
+    suffix: -top
+  }
+]
+consumes: {
+  liquids: [
+    water/0.83334
+  ]
+  liquid: {
+    liquid: steam
+    amount: 0
+    optional: true
+  }
+}
+outputLiquids: [
+  water/0
+  water/0
+  steam/0.83334
+]
+ambientSound: loopHum
+ambientSoundVolume: 0.05
+category: power
+research: {
+  parent: 0b04-01-solar-heater
+  objectives: [
+    0b-steam-heating
+  ]
+}
+requirements: [
+  dantrales/120
+  territe-alloy/100
+]
+breakEffect: [
+  {
+    type: WaveEffect
+    rotation: 43
+    lifetime: 20
+    sides: 4
+    sizeFrom: 8
+    sizeTo: 16
+    strokeFrom: 6
+    strokeTo: 0
+    colorFrom: 7382f0
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    length: 0
+    lifetime: 30
+    useRotation: false
+    region: allure-warden-icon
+    sizeFrom: 8
+    sizeTo: 8
+    colorFrom: 7382f0
+    colorTo: 7382f000
+  }
+]

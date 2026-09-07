@@ -1,0 +1,4098 @@
+type: PowerTurret
+size: 16
+reload: 2800
+canOverdrive: false
+rebuildable: false
+rotateSpeed: 0
+shootCone: 360
+range: 1024
+targetGround: false
+targetAir: false
+customShadow: true
+shootY: 0
+outlineIcon: false
+breakable: false
+destructible: false
+drawer: {
+  type: DrawMulti
+  iconOverride: [
+    -icon
+  ]
+  drawers: [
+    {
+      type: DrawRegion
+    }
+    {
+      type: DrawRegion
+      suffix: -piston-rebel
+    }
+    {
+      type: DrawRegion
+      suffix: -piston-specialist
+      rotation: 90
+    }
+    {
+      type: DrawRegion
+      suffix: -piston-warden
+      rotation: 180
+    }
+    {
+      type: DrawRegion
+      suffix: -piston-healer
+      rotation: 270
+    }
+    {
+      type: DrawRegion
+      suffix: -top
+      layer: 36
+    }
+  ]
+}
+shootSound: none
+shootType: {
+  type: BulletType
+  speed: 0
+  lifetime: 2400
+  collides: false
+  hittable: false
+  absorbable: false
+  //I could use these for VFX, but having organization is a necessity in this file - I don't care if it makes it longer to do it this way
+  shootEffect: none
+  smokeEffect: none
+  hitEffect: none
+  despawnEffect: none
+  spawnBullets: [
+    //Charge VFX
+      //Pistons
+    {
+      type: BulletType
+      speed: 0
+      lifetime: 0
+      collides: false
+      hittable: false
+      absorbable: false
+      despawnHit: true
+      hitEffect: [
+        {
+          particles: 1
+          cone: 0
+          randLength: false
+          length: 0
+          lifetime: 690
+          region: allure-infini
+          sizeFrom: 64
+          sizeTo: 64
+          layer: 31
+          baseRotation: -90
+          clip: 8192
+        }
+        //Red
+        {
+          particles: 1
+          cone: 0
+          randLength: false
+          length: 16
+          interp: pow5In
+          lifetime: 150
+          region: allure-infini-piston-rebel
+          sizeFrom: 52.5 
+          sizeTo: 52.5 
+          layer: 34
+          offset: -90
+          clip: 8192
+        }
+        {
+          particles: 1
+          cone: 0
+          randLength: false
+          length: 0
+          baseLength: 16
+          interp: pow5In
+          lifetime: 301
+          startDelay: 149
+          region: allure-infini-piston-rebel
+          sizeFrom: 52.5 
+          sizeTo: 52.5 
+          layer: 34
+          offset: -90
+          clip: 8192
+        }
+        {
+          particles: 1
+          cone: 0
+          randLength: false
+          length: -16
+          baseLength: 16
+          interp: pow10In
+          lifetime: 151
+          startDelay: 450
+          region: allure-infini-piston-rebel
+          sizeFrom: 52.5 
+          sizeTo: 52.5 
+          layer: 34
+          offset: -90
+          clip: 8192
+        }
+        {
+          particles: 1
+          cone: 0
+          randLength: false
+          length: 0
+          lifetime: 90
+          startDelay: 600
+          region: allure-infini-piston-rebel
+          sizeFrom: 52.5 
+          sizeTo: 52.5 
+          layer: 34
+          offset: -90
+          clip: 8192
+        }
+        //(glow)
+        {
+          particles: 1
+          cone: 0
+          randLength: false
+          length: 0
+          baseLength: 56.25
+          interp: pow5In
+          lifetime: 301
+          startDelay: 149
+          region: allure-rebel-icon
+          sizeFrom: 8
+          sizeTo: 8 
+          layer: 105
+          offset: 180
+          clip: 8192
+          colorFrom: e6555500
+          colorTo: e65555
+        }
+        {
+          particles: 1
+          cone: 0
+          randLength: false
+          length: -16
+          baseLength: 56.25
+          interp: pow10In
+          lifetime: 151
+          startDelay: 450
+          region: allure-rebel-icon
+          sizeFrom: 8
+          sizeTo: 8 
+          layer: 105
+          offset: 180
+          clip: 8192
+          colorFrom: e65555
+          colorTo: e65555
+        }
+        {
+          particles: 1
+          cone: 0
+          randLength: false
+          length: 0
+          baseLength: 40.25
+          interp: pow5In
+          lifetime: 1800
+          startDelay: 600
+          region: allure-rebel-icon
+          sizeFrom: 8
+          sizeTo: 8 
+          layer: 105
+          offset: 180
+          clip: 8192
+          colorFrom: e65555
+          colorTo: e65555
+        }
+        //Healer
+        {
+          particles: 1
+          cone: 0
+          randLength: false
+          length: 16
+          interp: pow5In
+          lifetime: 150
+          region: allure-infini-piston-healer
+          sizeFrom: 52.5 
+          sizeTo: 52.5 
+          layer: 34
+          offset: -90
+          baseRotation: 270
+          clip: 8192
+        }
+        {
+          particles: 1
+          cone: 0
+          randLength: false
+          length: 0
+          baseLength: 16
+          interp: pow5In
+          lifetime: 331
+          startDelay: 149
+          region: allure-infini-piston-healer
+          sizeFrom: 52.5 
+          sizeTo: 52.5 
+          layer: 34
+          offset: -90
+          baseRotation: 270
+          clip: 8192
+        }
+        {
+          particles: 1
+          cone: 0
+          randLength: false
+          length: -16
+          baseLength: 16
+          interp: pow10In
+          lifetime: 151
+          startDelay: 480
+          region: allure-infini-piston-healer
+          sizeFrom: 52.5 
+          sizeTo: 52.5 
+          layer: 34
+          offset: -90
+          baseRotation: 270
+          clip: 8192
+        }
+        {
+          particles: 1
+          cone: 0
+          randLength: false
+          length: 0
+          lifetime: 60
+          startDelay: 630
+          region: allure-infini-piston-healer
+          sizeFrom: 52.5 
+          sizeTo: 52.5 
+          layer: 34
+          offset: -90
+          baseRotation: 270
+          clip: 8192
+        }
+        //(glow)
+        {
+          particles: 1
+          cone: 0
+          randLength: false
+          length: 0
+          baseLength: 56.25
+          interp: pow5In
+          lifetime: 331
+          startDelay: 149
+          region: allure-healer-icon
+          sizeFrom: 8
+          sizeTo: 8 
+          layer: 105
+          offset: 90
+          baseRotation: 270
+          clip: 8192
+          colorFrom: 83f79300
+          colorTo: 83f793
+        }
+        {
+          particles: 1
+          cone: 0
+          randLength: false
+          length: -16
+          baseLength: 56.25
+          interp: pow10In
+          lifetime: 151
+          startDelay: 480
+          region: allure-healer-icon
+          sizeFrom: 8
+          sizeTo: 8 
+          layer: 105
+          offset: 90
+          baseRotation: 270
+          clip: 8192
+          colorFrom: 83f793
+          colorTo: 83f793
+        }
+        {
+          particles: 1
+          cone: 0
+          randLength: false
+          length: 0
+          baseLength: 40.25
+          interp: pow5In
+          lifetime: 1770
+          startDelay: 630
+          region: allure-healer-icon
+          sizeFrom: 8
+          sizeTo: 8 
+          layer: 105
+          offset: 90
+          baseRotation: 270
+          clip: 8192
+          colorFrom: 83f793
+          colorTo: 83f793
+        }
+        //Blue
+        {
+          particles: 1
+          cone: 0
+          randLength: false
+          length: 16
+          interp: pow5In
+          lifetime: 150
+          region: allure-infini-piston-warden
+          sizeFrom: 52.5 
+          sizeTo: 52.5 
+          layer: 34
+          offset: -90
+          baseRotation: 180
+          clip: 8192
+        }
+        {
+          particles: 1
+          cone: 0
+          randLength: false
+          length: 0
+          baseLength: 16
+          interp: pow5In
+          lifetime: 361
+          startDelay: 149
+          region: allure-infini-piston-warden
+          sizeFrom: 52.5 
+          sizeTo: 52.5 
+          layer: 34
+          offset: -90
+          baseRotation: 180
+          clip: 8192
+        }
+        {
+          particles: 1
+          cone: 0
+          randLength: false
+          length: -16
+          baseLength: 16
+          interp: pow10In
+          lifetime: 151
+          startDelay: 509
+          region: allure-infini-piston-warden
+          sizeFrom: 52.5 
+          sizeTo: 52.5 
+          layer: 34
+          offset: -90
+          baseRotation: 180
+          clip: 8192
+        }
+        {
+          particles: 1
+          cone: 0
+          randLength: false
+          length: 0
+          lifetime: 30
+          startDelay: 660
+          region: allure-infini-piston-warden
+          sizeFrom: 52.5 
+          sizeTo: 52.5 
+          layer: 34
+          offset: -90
+          baseRotation: 180
+          clip: 8192
+        }
+        //(glow)
+        {
+          particles: 1
+          cone: 0
+          randLength: false
+          length: 0
+          baseLength: 56.25
+          interp: pow5In
+          lifetime: 361
+          startDelay: 149
+          region: allure-warden-icon
+          sizeFrom: 8
+          sizeTo: 8 
+          layer: 105
+          offset: 90
+          baseRotation: 180
+          clip: 8192
+          colorFrom: 7382f000
+          colorTo: 7382f0
+        }
+        {
+          particles: 1
+          cone: 0
+          randLength: false
+          length: -16
+          baseLength: 56.25
+          interp: pow10In
+          lifetime: 151
+          startDelay: 509
+          region: allure-warden-icon
+          sizeFrom: 8
+          sizeTo: 8 
+          layer: 105
+          offset: 90
+          baseRotation: 180
+          clip: 8192
+          colorFrom: 7382f0
+          colorTo: 7382f0
+        }
+        {
+          particles: 1
+          cone: 0
+          randLength: false
+          length: 0
+          baseLength: 40.25
+          interp: pow5In
+          lifetime: 1740
+          startDelay: 660
+          region: allure-warden-icon
+          sizeFrom: 8
+          sizeTo: 8 
+          layer: 105
+          offset: 90
+          baseRotation: 180
+          clip: 8192
+          colorFrom: 7382f0
+          colorTo: 7382f0
+        }
+        //Specialist
+        {
+          particles: 1
+          cone: 0
+          randLength: false
+          length: 16
+          interp: pow5In
+          lifetime: 150
+          region: allure-infini-piston-specialist
+          sizeFrom: 52.5 
+          sizeTo: 52.5 
+          layer: 34
+          offset: -90
+          baseRotation: 90
+          clip: 8192
+        }
+        {
+          particles: 1
+          cone: 0
+          randLength: false
+          length: 0
+          baseLength: 16
+          interp: pow5In
+          lifetime: 391
+          startDelay: 149
+          region: allure-infini-piston-specialist
+          sizeFrom: 52.5 
+          sizeTo: 52.5 
+          layer: 34
+          offset: -90
+          baseRotation: 90
+          clip: 8192
+        }
+        {
+          particles: 1
+          cone: 0
+          randLength: false
+          length: -16
+          baseLength: 16
+          interp: pow10In
+          lifetime: 151
+          startDelay: 539
+          region: allure-infini-piston-specialist
+          sizeFrom: 52.5 
+          sizeTo: 52.5 
+          layer: 34
+          offset: -90
+          baseRotation: 90
+          clip: 8192
+        }
+        //(glow)
+        {
+          particles: 1
+          cone: 0
+          randLength: false
+          length: 0
+          baseLength: 56.25
+          interp: pow5In
+          lifetime: 391
+          startDelay: 149
+          region: allure-specialist-icon
+          sizeFrom: 8
+          sizeTo: 8 
+          layer: 105
+          offset: 90
+          baseRotation: 90
+          clip: 8192
+          colorFrom: be92f700
+          colorTo: be92f7
+        }
+        {
+          particles: 1
+          cone: 0
+          randLength: false
+          length: -16
+          baseLength: 56.25
+          interp: pow10In
+          lifetime: 151
+          startDelay: 539
+          region: allure-specialist-icon
+          sizeFrom: 8
+          sizeTo: 8 
+          layer: 105
+          offset: 90
+          baseRotation: 90
+          clip: 8192
+          colorFrom: be92f7
+          colorTo: be92f7
+        }
+        {
+          particles: 1
+          cone: 0
+          randLength: false
+          length: 0
+          baseLength: 40.25
+          interp: pow5In
+          lifetime: 1710
+          startDelay: 690
+          region: allure-specialist-icon
+          sizeFrom: 8
+          sizeTo: 8 
+          layer: 105
+          offset: 90
+          baseRotation: 90
+          clip: 8192
+          colorFrom: be92f7
+          colorTo: be92f7
+        }
+      ]
+      despawnEffect: [
+        {
+          type: RadialEffect
+          amount: 1
+          lengthOffset: 14
+          rotationOffset: 0
+          effect: {
+            startDelay: 600
+            lifetime: 45
+            length: 135
+            cone: 24
+            particles: 32
+            line: true
+            colorTo: e65555
+            lenFrom: 18
+            lenTo: 0
+            strokeFrom: 5
+            strokeTo: 2
+            interp: pow3Out
+            sizeInterp: pow2In
+            clip: 8192
+          }
+        }
+        {
+          type: RadialEffect
+          amount: 1
+          lengthOffset: 14
+          rotationOffset: 270
+          effect: {
+            startDelay: 630
+            lifetime: 45
+            length: 135
+            cone: 24
+            particles: 32
+            line: true
+            colorTo: 83f793
+            lenFrom: 18
+            lenTo: 0
+            strokeFrom: 5
+            strokeTo: 2
+            interp: pow3Out
+            sizeInterp: pow2In
+            clip: 8192
+          }
+        }
+        {
+          type: RadialEffect
+          amount: 1
+          lengthOffset: 14
+          rotationOffset: 180
+          effect: {
+            startDelay: 660
+            lifetime: 45
+            length: 135
+            cone: 24
+            particles: 32
+            line: true
+            colorTo: 7382f0
+            lenFrom: 18
+            lenTo: 0
+            strokeFrom: 5
+            strokeTo: 2
+            interp: pow3Out
+            sizeInterp: pow2In
+            clip: 8192
+          }
+        }
+        {
+          type: RadialEffect
+          amount: 1
+          lengthOffset: 14
+          rotationOffset: 90
+          effect: {
+            startDelay: 690
+            lifetime: 45
+            length: 135
+            cone: 24
+            particles: 32
+            line: true
+            colorTo: be92f7
+            lenFrom: 18
+            lenTo: 0
+            strokeFrom: 5
+            strokeTo: 2
+            interp: pow3Out
+            sizeInterp: pow2In
+            clip: 8192
+          }
+        }
+      ]
+    }
+    {
+      type: BulletType
+      speed: 0
+      lifetime: 0
+      collides: false
+      hittable: false
+      absorbable: false
+      hitEffect: none
+      despawnEffect: none
+      fragBullets: 160
+      fragLifeMin: 0
+      fragSpread: 90
+      fragRandomSpread: 0
+      fragOffsetMin: 0
+      fragOffsetMax: 0
+      fragBullet: {
+        type: BulletType
+        speed: 0
+        lifetime: 160
+        collides: false
+        hittable: false
+        absorbable: false
+        despawnEffect: {
+          type: RadialEffect
+          lengthOffset: 25
+          effect: [
+            {
+              type: RadialEffect
+              amount: 1
+              lengthOffset: 14
+              rotationOffset: 90
+              effect: {
+                particles: 2
+                length: 45
+                lifetime: 35
+                interp: pow3Out
+                sizeInterp: pow2In
+                cone: 15
+                baseRotation: -75
+                sizeFrom: 2
+                sizeTo: 1
+                colorTo: ffffff00
+              }
+            }
+            {
+              type: RadialEffect
+              amount: 1
+              lengthOffset: -14
+              rotationOffset: 90
+              effect: {
+                particles: 2
+                length: 45
+                lifetime: 35
+                interp: pow3Out
+                sizeInterp: pow2In
+                cone: 15
+                baseRotation: -105
+                sizeFrom: 2
+                sizeTo: 1
+                colorTo: ffffff00
+              }
+            }
+          ]
+        }
+      }
+    }
+    {
+      type: BulletType
+      speed: 0
+      lifetime: 150
+      collides: false
+      hittable: false
+      absorbable: false
+      hitEffect: none
+      despawnEffect: none
+      fragBullets: 36
+      fragSpread: 90
+      fragRandomSpread: 0
+      fragOffsetMin: 0
+      fragOffsetMax: 0
+      fragLifeMin: 0
+      fragBullet: {
+        type: BulletType
+        speed: 0
+        lifetime: 10
+        collides: false
+        hittable: false
+        absorbable: false
+        despawnEffect: {
+          particles: 4
+          length: 11
+          baseLength: 27
+          randLength: false
+          lifetime: 35
+          interp: pow3Out
+          sizeInterp: pow2In
+          cone: 20
+          sizeFrom: 4
+          sizeTo: 0
+          colorFrom: 787878
+          colorTo: 787878
+        }
+      }
+    }
+      //Central sphere
+    {
+      type: BulletType
+      speed: 0
+      lifetime: 0
+      collides: false
+      hittable: false
+      absorbable: false
+      despawnEffect: [
+        {
+          particles: 4
+          length: 0
+          region: circle-shadow
+          lifetime: 120
+          interp: pow3Out
+          sizeFrom: 0
+          sizeTo: 16
+          clip: 8192
+        }
+        {
+          particles: 4
+          length: 0
+          region: circle-shadow
+          lifetime: 2281
+          startDelay: 119
+          sizeFrom: 16
+          sizeTo: 16
+          clip: 8192
+        }
+        {
+          particles: 4
+          length: 0
+          region: allure-diamond-vthin
+          lifetime: 1800
+          startDelay: 600
+          sizeFrom: 0
+          sizeTo: 120
+          interp: pow10Out
+          spin: 0.3
+          clip: 8192
+        }
+        {
+          particles: 4
+          length: 0
+          region: allure-diamond-vthin
+          lifetime: 1800
+          startDelay: 600
+          sizeFrom: 0
+          sizeTo: 120
+          interp: pow10Out
+          offset: 90
+          spin: 0.3
+          clip: 8192
+        }
+        {
+          particles: 1
+          length: 0
+          region: allure-blinding
+          lifetime: 2400
+          interp: pow2Out
+          sizeFrom: 0
+          sizeTo: 300
+          offset: 90
+          layer: 111
+          clip: 8192
+        }
+        {
+          type: WaveEffect
+          startDelay: 600
+          lifetime: 80
+          interp: pow3Out
+          sizeFrom: 20
+          sizeTo: 200
+          strokeFrom: 12
+          clip: 8192
+        }
+        {
+          type: WaveEffect
+          startDelay: 630
+          lifetime: 80
+          interp: pow3Out
+          sizeFrom: 20
+          sizeTo: 240
+          strokeFrom: 12
+          clip: 8192
+        }
+        {
+          type: WaveEffect
+          startDelay: 660
+          lifetime: 80
+          interp: pow3Out
+          sizeFrom: 20
+          sizeTo: 280
+          strokeFrom: 12
+          clip: 8192
+        }
+        {
+          type: WaveEffect
+          startDelay: 690
+          lifetime: 80
+          interp: pow3Out
+          sizeFrom: 20
+          sizeTo: 320
+          strokeFrom: 12
+          clip: 8192
+        }
+      ]
+    }
+    {
+      createChance: 0.5
+      type: BulletType
+      speed: 0
+      lifetime: 600
+      collides: false
+      hittable: false
+      absorbable: false
+      hitEffect: none
+      despawnEffect: none
+      fragBullets: 1
+      fragOffsetMin: 0
+      fragOffsetMax: 0
+      fragBullet: {
+        type: BulletType
+        speed: 0
+        lifetime: 0
+        collides: false
+        hittable: false
+        absorbable: false
+        hitEffect: none
+        despawnEffect: none
+        fragBullets: 600
+        fragRandomSpread: 0
+        fragOffsetMin: 0
+        fragOffsetMax: 0
+        fragLifeMin: 0
+        fragBullet: {
+          type: BulletType
+          speed: 0
+          lifetime: 1800
+          collides: false
+          hittable: false
+          absorbable: false
+          despawnEffect: [
+            {
+              particles: 7
+              length: 115
+              lifetime: 35
+              interp: pow3Out
+              sizeInterp: pow2In
+              cone: 15
+              sizeFrom: 6
+              sizeTo: 0
+            }
+            {
+              particles: 12
+              length: 145
+              lifetime: 30
+              interp: pow3Out
+              sizeInterp: pow2In
+              cone: 12
+              line: true
+              lenFrom: 12
+              lenTo: 6
+              strokeFrom: 3
+              strokeTo: 0
+            }
+          ]
+        }
+      }
+    }
+    {
+      createChance: 0.5
+      type: BulletType
+      speed: 0
+      lifetime: 630
+      collides: false
+      hittable: false
+      absorbable: false
+      hitEffect: none
+      despawnEffect: none
+      fragBullets: 1
+      fragOffsetMin: 0
+      fragOffsetMax: 0
+      fragBullet: {
+        type: BulletType
+        speed: 0
+        lifetime: 0
+        collides: false
+        hittable: false
+        absorbable: false
+        hitEffect: none
+        despawnEffect: none
+        fragBullets: 600
+        fragRandomSpread: 0
+        fragOffsetMin: 0
+        fragOffsetMax: 0
+        fragLifeMin: 0
+        fragBullet: {
+          type: BulletType
+          speed: 0
+          lifetime: 1770
+          collides: false
+          hittable: false
+          absorbable: false
+          despawnEffect: [
+            {
+              particles: 7
+              length: 115
+              lifetime: 35
+              interp: pow3Out
+              sizeInterp: pow2In
+              cone: 15
+              sizeFrom: 6
+              sizeTo: 0
+            }
+            {
+              particles: 12
+              length: 145
+              lifetime: 30
+              interp: pow3Out
+              sizeInterp: pow2In
+              cone: 12
+              line: true
+              lenFrom: 12
+              lenTo: 6
+              strokeFrom: 3
+              strokeTo: 0
+            }
+          ]
+        }
+      }
+    }
+    {
+      createChance: 0.5
+      type: BulletType
+      speed: 0
+      lifetime: 660
+      collides: false
+      hittable: false
+      absorbable: false
+      hitEffect: none
+      despawnEffect: none
+      fragBullets: 1
+      fragOffsetMin: 0
+      fragOffsetMax: 0
+      fragBullet: {
+        type: BulletType
+        speed: 0
+        lifetime: 0
+        collides: false
+        hittable: false
+        absorbable: false
+        hitEffect: none
+        despawnEffect: none
+        fragBullets: 600
+        fragRandomSpread: 0
+        fragOffsetMin: 0
+        fragOffsetMax: 0
+        fragLifeMin: 0
+        fragBullet: {
+          type: BulletType
+          speed: 0
+          lifetime: 1740
+          collides: false
+          hittable: false
+          absorbable: false
+          despawnEffect: [
+            {
+              particles: 7
+              length: 115
+              lifetime: 35
+              interp: pow3Out
+              sizeInterp: pow2In
+              cone: 15
+              sizeFrom: 6
+              sizeTo: 0
+            }
+            {
+              particles: 12
+              length: 145
+              lifetime: 30
+              interp: pow3Out
+              sizeInterp: pow2In
+              cone: 12
+              line: true
+              lenFrom: 12
+              lenTo: 6
+              strokeFrom: 3
+              strokeTo: 0
+            }
+          ]
+        }
+      }
+    }
+    {
+      createChance: 0.5
+      type: BulletType
+      speed: 0
+      lifetime: 690
+      collides: false
+      hittable: false
+      absorbable: false
+      hitEffect: none
+      despawnEffect: none
+      fragBullets: 1
+      fragOffsetMin: 0
+      fragOffsetMax: 0
+      fragBullet: {
+        type: BulletType
+        speed: 0
+        lifetime: 0
+        collides: false
+        hittable: false
+        absorbable: false
+        hitEffect: none
+        despawnEffect: none
+        fragBullets: 600
+        fragRandomSpread: 0
+        fragOffsetMin: 0
+        fragOffsetMax: 0
+        fragLifeMin: 0
+        fragBullet: {
+          type: BulletType
+          speed: 0
+          lifetime: 1710
+          collides: false
+          hittable: false
+          absorbable: false
+          despawnEffect: [
+            {
+              particles: 7
+              length: 115
+              lifetime: 35
+              interp: pow3Out
+              sizeInterp: pow2In
+              cone: 15
+              sizeFrom: 6
+              sizeTo: 0
+            }
+            {
+              particles: 12
+              length: 145
+              lifetime: 30
+              interp: pow3Out
+              sizeInterp: pow2In
+              cone: 12
+              line: true
+              lenFrom: 12
+              lenTo: 6
+              strokeFrom: 3
+              strokeTo: 0
+            }
+          ]
+        }
+      }
+    }
+      //Warning overlays
+    {
+      //Initialized alert
+      type: BulletType
+      speed: 0
+      lifetime: 0
+      collides: false
+      hittable: false
+      absorbable: false
+      despawnEffect: [
+        {
+          lifetime: 31
+          startDelay: 30
+          baseLength: -80
+          offset: -90
+          layer: 130
+          randLength: false
+          cone: 0
+          particles: 1
+          length: 0
+          region: allure-firing
+          sizeFrom: 48
+          sizeTo: 48
+          colorFrom: ffffff00
+          colorTo: 5bcefa
+          clip: 8192
+        }
+        {
+          lifetime: 361
+          startDelay: 60
+          baseLength: -80
+          offset: -90
+          layer: 130
+          randLength: false
+          cone: 0
+          particles: 1
+          length: 0
+          region: allure-firing
+          sizeFrom: 48
+          sizeTo: 48
+          colorFrom: 5bcefa
+          colorTo: 5bcefa
+          clip: 8192
+        }
+        {
+          lifetime: 91
+          startDelay: 420
+          offset: -90
+          baseLength: -80
+          layer: 130
+          randLength: false
+          cone: 0
+          particles: 1
+          length: 0
+          region: allure-firing
+          sizeFrom: 48
+          sizeTo: 48
+          colorFrom: 5bcefa
+          colorTo: ffffff00
+          clip: 8192
+        }
+        {
+          lifetime: 61
+          startDelay: 60
+          baseLength: -80
+          offset: -90
+          layer: 130.01
+          randLength: false
+          cone: 0
+          particles: 1
+          length: 0
+          region: allure-init
+          sizeFrom: 48
+          sizeTo: 48
+          colorFrom: ffffff00
+          colorTo: f5a9b8
+          clip: 8192
+        }
+        {
+          lifetime: 121
+          startDelay: 120
+          baseLength: -80
+          offset: -90
+          layer: 130.01
+          randLength: false
+          cone: 0
+          particles: 1
+          length: 0
+          region: allure-init
+          sizeFrom: 48
+          sizeTo: 48
+          colorTo: ffffff00
+          colorFrom: f5a9b8
+          interp: slope
+          clip: 8192
+        }
+        {
+          lifetime: 121
+          startDelay: 240
+          baseLength: -80
+          offset: -90
+          layer: 130.01
+          randLength: false
+          cone: 0
+          particles: 1
+          length: 0
+          region: allure-init
+          sizeFrom: 48
+          sizeTo: 48
+          colorTo: ffffff00
+          colorFrom: f5a9b8
+          interp: slope
+          clip: 8192
+        }
+        {
+          lifetime: 61
+          startDelay: 360
+          baseLength: -80
+          offset: -90
+          layer: 130.01
+          randLength: false
+          cone: 0
+          particles: 1
+          length: 0
+          region: allure-init
+          sizeFrom: 48
+          sizeTo: 48
+          colorTo: ffffff00
+          colorFrom: f5a9b8
+          clip: 8192
+        }
+      ]
+    }
+    {
+      //Red flash
+      type: BulletType
+      speed: 0
+      lifetime: 0
+      collides: false
+      hittable: false
+      absorbable: false
+      despawnEffect: [
+        {
+          layer: 129
+          startDelay: 700
+          particles: 1
+          length: 0
+          lifetime: 100
+          sizeFrom: 8192
+          sizeTo: 8192
+          colorFrom: 5bcefa00
+          colorTo: f5a9b825
+          clip: 8192
+        }
+        {
+          layer: 129
+          startDelay: 800
+          particles: 1
+          length: 0
+          lifetime: 200
+          sizeFrom: 8192
+          sizeTo: 8192
+          colorTo: 5bcefa25
+          colorFrom: f5a9b825
+          interp: slope
+          clip: 8192
+        }
+        {
+          layer: 129
+          startDelay: 1000
+          particles: 1
+          length: 0
+          lifetime: 200
+          sizeFrom: 8192
+          sizeTo: 8192
+          colorTo: 5bcefa25
+          colorFrom: f5a9b825
+          interp: slope
+          clip: 8192
+        }
+        {
+          layer: 129
+          startDelay: 1200
+          particles: 1
+          length: 0
+          lifetime: 200
+          sizeFrom: 8192
+          sizeTo: 8192
+          colorTo: 5bcefa25
+          colorFrom: f5a9b825
+          interp: slope
+          clip: 8192
+        }
+        {
+          layer: 129
+          startDelay: 1400
+          particles: 1
+          length: 0
+          lifetime: 200
+          sizeFrom: 8192
+          sizeTo: 8192
+          colorTo: 5bcefa25
+          colorFrom: f5a9b825
+          interp: slope
+          clip: 8192
+        }
+        {
+          layer: 129
+          startDelay: 1600
+          particles: 1
+          length: 0
+          lifetime: 200
+          sizeFrom: 8192
+          sizeTo: 8192
+          colorTo: 5bcefa25
+          colorFrom: f5a9b825
+          interp: slope
+          clip: 8192
+        }
+        {
+          layer: 129
+          startDelay: 1800
+          particles: 1
+          length: 0
+          lifetime: 200
+          sizeFrom: 8192
+          sizeTo: 8192
+          colorTo: 5bcefa25
+          colorFrom: f5a9b825
+          interp: slope
+          clip: 8192
+        }
+        {
+          layer: 129
+          startDelay: 2000
+          particles: 1
+          length: 0
+          lifetime: 200
+          sizeFrom: 8192
+          sizeTo: 8192
+          colorTo: 5bcefa25
+          colorFrom: f5a9b825
+          interp: slope
+          clip: 8192
+        }
+        {
+          layer: 129
+          startDelay: 2200
+          particles: 1
+          length: 0
+          lifetime: 100
+          sizeFrom: 8192
+          sizeTo: 8192
+          colorTo: 5bcefa25
+          colorFrom: f5a9b825
+          clip: 8192
+        }
+        {
+          layer: 129
+          startDelay: 2300
+          particles: 1
+          length: 0
+          lifetime: 100
+          sizeFrom: 8192
+          sizeTo: 8192
+          colorFrom: 5bcefa25
+          colorTo: f5a9b888
+          clip: 8192
+        }
+      ]
+    }
+      //Ambient shards
+    {
+      lifetime: 600
+      speed: 0
+      fragBullets: 800
+      fragLifeMin: 0
+      fragVelocityMin: 0.2
+      fragBullet: {
+        type: BulletType
+        speed: 0.8
+        lifetime: 1660
+        collides: false
+        absorbable: false
+        hittable: false
+        despawnEffect: {
+          length: 120
+          cone: 0
+          lifetime: 180
+          region: allure-diamond-thin
+          spin: 1
+          particles: 1
+          sizeInterp: pow2Out
+          sizeFrom: 24
+          sizeTo: 0
+          colorFrom: ffffff00
+        }
+      }
+    }
+    {
+      lifetime: 600
+      speed: 0
+      fragBullets: 800
+      fragLifeMin: 0
+      fragVelocityMin: 0.2
+      fragBullet: {
+        type: BulletType
+        speed: 0.8
+        lifetime: 1660
+        collides: false
+        absorbable: false
+        hittable: false
+        despawnEffect: {
+          length: 120
+          cone: 0
+          lifetime: 180
+          region: allure-diamond-thin
+          spin: 1
+          particles: 1
+          sizeInterp: pow2Out
+          sizeFrom: 24
+          sizeTo: 0
+          colorFrom: f5a9b800
+        }
+      }
+    }
+    {
+      lifetime: 600
+      speed: 0
+      fragBullets: 800
+      fragLifeMin: 0
+      fragVelocityMin: 0.2
+      fragBullet: {
+        type: BulletType
+        speed: 0.8
+        lifetime: 1660
+        collides: false
+        absorbable: false
+        hittable: false
+        despawnEffect: {
+          length: 120
+          cone: 0
+          lifetime: 180
+          region: allure-diamond-thin
+          spin: 1
+          particles: 1
+          sizeInterp: pow2Out
+          sizeFrom: 24
+          sizeTo: 0
+          colorFrom: 5bcefa00
+        }
+      }
+    }
+      //Ground cracks
+    {
+      type: BulletType
+      speed: 0
+      lifetime: 600
+      collides: false
+      hittable: false
+      absorbable: false
+      hitEffect: none
+      despawnEffect: none
+      fragBullets: 5
+      fragLifeMin: 0
+      fragSpread: 72
+      fragRandomSpread: 65
+      fragOffsetMin: 0
+      fragOffsetMax: 0
+      fragBullet: {
+        type: BulletType
+        speed: 0
+        lifetime: 0
+        collides: false
+        hittable: false
+        absorbable: false
+        hitEffect: none
+        despawnEffect: none
+        hitShake: 15
+        fragBullets: 1
+        fragRandomSpread: 0
+        fragOffsetMin: 120
+        fragOffsetMax: 120
+        fragBullet: {
+          type: BulletType
+          speed: 0
+          lifetime: 2
+          collides: false
+          hittable: false
+          absorbable: false
+          pierce: true
+          pierceBuilding: true
+          hitEffect: none
+          despawnEffect: [
+            {
+              line: true
+              particles: 1
+              length: -0.001
+              cone: 0
+              lifetime: 1800
+              interp: pow10Out
+              lenFrom: 120
+              lenTo: 120
+              strokeFrom: 0
+              strokeTo: 12
+              colorFrom: 000000
+              colorTo: 000000
+              layer: 28
+              clip: 8192
+            }
+            {
+              line: true
+              particles: 1
+              length: -0.001
+              cone: 0
+              lifetime: 1800
+              interp: pow10Out
+              lenFrom: 120
+              lenTo: 120
+              strokeFrom: 0
+              strokeTo: 6
+              layer: 28.1
+              clip: 8192
+              colorFrom: 5bcefa
+              colorTo: 5bcefa
+            }
+            {
+              line: true
+              particles: 1
+              length: -0.001
+              cone: 0
+              lifetime: 1800
+              interp: pow10Out
+              lenFrom: 120
+              lenTo: 120
+              strokeFrom: 0
+              strokeTo: 3
+              layer: 28.2
+              clip: 8192
+              colorFrom: f5a9b8
+              colorTo: f5a9b8
+            }
+          ]
+          fragBullets: 2
+          fragRandomSpread: 45
+          fragAngle: 22.5
+          fragOffsetMin: 120
+          fragOffsetMax: 120
+          fragBullet: {
+            type: BulletType
+            createChance: 0.6
+            speed: 0
+            lifetime: 2
+            collides: false
+            hittable: false
+            absorbable: false
+            pierce: true
+            pierceBuilding: true
+            hitShake: 15
+            hitEffect: none
+            despawnEffect: [
+              {
+                line: true
+                particles: 1
+                length: -0.001
+                cone: 0
+                lifetime: 1800
+                interp: pow10Out
+                lenFrom: 120
+                lenTo: 120
+                strokeFrom: 0
+                strokeTo: 11
+                colorFrom: 000000
+                colorTo: 000000
+                layer: 28
+                clip: 8192
+              }
+              {
+                line: true
+                particles: 1
+                length: -0.001
+                cone: 0
+                lifetime: 1800
+                interp: pow10Out
+                lenFrom: 120
+                lenTo: 120
+                strokeFrom: 0
+                strokeTo: 5
+                layer: 28.1
+                clip: 8192
+                colorFrom: 5bcefa
+                colorTo: 5bcefa
+              }
+              {
+                line: true
+                particles: 1
+                length: -0.001
+                cone: 0
+                lifetime: 1800
+                interp: pow10Out
+                lenFrom: 120
+                lenTo: 120
+                strokeFrom: 0
+                strokeTo: 2
+                layer: 28.2
+                clip: 8192
+                colorFrom: f5a9b8
+                colorTo: f5a9b8
+              }
+            ]
+            fragBullets: 2
+            fragRandomSpread: 45
+            fragAngle: -22.5
+            fragOffsetMin: 120
+            fragOffsetMax: 120
+            fragBullet: {
+              type: BulletType
+              createChance: 0.6
+              speed: 0
+              lifetime: 2
+              collides: false
+              hittable: false
+              absorbable: false
+              pierce: true
+              pierceBuilding: true
+              hitShake: 15
+              hitEffect: none
+              despawnEffect: [
+                {
+                  line: true
+                  particles: 1
+                  length: -0.001
+                  cone: 0
+                  lifetime: 1800
+                  interp: pow10Out
+                  lenFrom: 120
+                  lenTo: 120
+                  strokeFrom: 0
+                  strokeTo: 10
+                  colorFrom: 000000
+                  colorTo: 000000
+                  layer: 28
+                  clip: 8192
+                }
+                {
+                  line: true
+                  particles: 1
+                  length: -0.001
+                  cone: 0
+                  lifetime: 1800
+                  interp: pow10Out
+                  lenFrom: 120
+                  lenTo: 120
+                  strokeFrom: 0
+                  strokeTo: 4
+                  layer: 28.1
+                  clip: 8192
+                  colorFrom: 5bcefa
+                  colorTo: 5bcefa
+                }
+                {
+                  line: true
+                  particles: 1
+                  length: -0.001
+                  cone: 0
+                  lifetime: 1800
+                  interp: pow10Out
+                  lenFrom: 120
+                  lenTo: 120
+                  strokeFrom: 0
+                  strokeTo: 1
+                  layer: 28.2
+                  clip: 8192
+                  colorFrom: f5a9b8
+                  colorTo: f5a9b8
+                }
+              ]
+              fragBullets: 2
+              fragRandomSpread: 45
+              fragAngle: 22.5
+              fragOffsetMin: 120
+              fragOffsetMax: 120
+              fragBullet: {
+                type: BulletType
+                createChance: 0.6
+                speed: 0
+                lifetime: 2
+                collides: false
+                hittable: false
+                absorbable: false
+                pierce: true
+                pierceBuilding: true
+                hitShake: 15
+                hitEffect: none
+                despawnEffect: [
+                  {
+                    line: true
+                    particles: 1
+                    length: -0.001
+                    cone: 0
+                    lifetime: 1800
+                    interp: pow10Out
+                    lenFrom: 120
+                    lenTo: 120
+                    strokeFrom: 0
+                    strokeTo: 9
+                    colorFrom: 000000
+                    colorTo: 000000
+                    layer: 28
+                    clip: 8192
+                  }
+                  {
+                    line: true
+                    particles: 1
+                    length: -0.001
+                    cone: 0
+                    lifetime: 1800
+                    interp: pow10Out
+                    lenFrom: 120
+                    lenTo: 120
+                    strokeFrom: 0
+                    strokeTo: 3
+                    layer: 28.1
+                    clip: 8192
+                    colorFrom: 5bcefa
+                    colorTo: 5bcefa
+                  }
+                ]
+                fragBullets: 2
+                fragRandomSpread: 45
+                fragAngle: -22.5
+                fragOffsetMin: 120
+                fragOffsetMax: 120
+                fragBullet: {
+                  type: BulletType
+                  createChance: 0.6
+                  speed: 0
+                  lifetime: 2
+                  collides: false
+                  hittable: false
+                  absorbable: false
+                  pierce: true
+                  pierceBuilding: true
+                  hitShake: 15
+                  hitEffect: none
+                  despawnEffect: [
+                    {
+                      line: true
+                      particles: 1
+                      length: -0.001
+                      cone: 0
+                      lifetime: 1800
+                      interp: pow10Out
+                      lenFrom: 120
+                      lenTo: 120
+                      strokeFrom: 0
+                      strokeTo: 8
+                      colorFrom: 000000
+                      colorTo: 000000
+                      layer: 28
+                      clip: 8192
+                    }
+                    {
+                      line: true
+                      particles: 1
+                      length: -0.001
+                      cone: 0
+                      lifetime: 1800
+                      interp: pow10Out
+                      lenFrom: 120
+                      lenTo: 120
+                      strokeFrom: 0
+                      strokeTo: 2
+                      layer: 28.1
+                      clip: 8192
+                      colorFrom: 5bcefa
+                      colorTo: 5bcefa
+                    }
+                  ]
+                  fragBullets: 2
+                  fragRandomSpread: 45
+                  fragAngle: 22.5
+                  fragOffsetMin: 120
+                  fragOffsetMax: 120
+                  fragBullet: {
+                    type: BulletType
+                    createChance: 0.6
+                    speed: 0
+                    lifetime: 2
+                    collides: false
+                    hittable: false
+                    absorbable: false
+                    pierce: true
+                    pierceBuilding: true
+                    hitShake: 15
+                    hitEffect: none
+                    despawnEffect: [
+                      {
+                        line: true
+                        particles: 1
+                        length: -0.001
+                        cone: 0
+                        lifetime: 1800
+                        interp: pow10Out
+                        lenFrom: 120
+                        lenTo: 120
+                        strokeFrom: 0
+                        strokeTo: 7
+                        colorFrom: 000000
+                        colorTo: 000000
+                        layer: 28
+                        clip: 8192
+                      }
+                      {
+                        line: true
+                        particles: 1
+                        length: -0.001
+                        cone: 0
+                        lifetime: 1800
+                        interp: pow10Out
+                        lenFrom: 120
+                        lenTo: 120
+                        strokeFrom: 0
+                        strokeTo: 1
+                        layer: 28.1
+                        clip: 8192
+                        colorFrom: 5bcefa
+                        colorTo: 5bcefa
+                      }
+                    ]
+                    fragBullets: 2
+                    fragRandomSpread: 45
+                    fragAngle: -22.5
+                    fragOffsetMin: 120
+                    fragOffsetMax: 120
+                    fragBullet: {
+                      type: BulletType
+                      createChance: 0.6
+                      speed: 0
+                      lifetime: 2
+                      collides: false
+                      hittable: false
+                      absorbable: false
+                      pierce: true
+                      pierceBuilding: true
+                      hitShake: 15
+                      hitEffect: none
+                      despawnEffect: {
+                        line: true
+                        particles: 1
+                        length: -0.001
+                        cone: 0
+                        lifetime: 1800
+                        interp: pow10Out
+                        lenFrom: 120
+                        lenTo: 120
+                        strokeFrom: 0
+                        strokeTo: 6
+                        colorFrom: 000000
+                        colorTo: 000000
+                        layer: 28
+                        clip: 8192
+                      }
+                      fragBullets: 2
+                      fragRandomSpread: 45
+                      fragAngle: 22.5
+                      fragOffsetMin: 120
+                      fragOffsetMax: 120
+                      fragBullet: {
+                        type: BulletType
+                        createChance: 0.6
+                        speed: 0
+                        lifetime: 2
+                        collides: false
+                        hittable: false
+                        absorbable: false
+                        pierce: true
+                        pierceBuilding: true
+                        hitShake: 15
+                        hitEffect: none
+                        despawnEffect: {
+                          line: true
+                          particles: 1
+                          length: -0.001
+                          cone: 0
+                          lifetime: 1800
+                          interp: pow10Out
+                          lenFrom: 120
+                          lenTo: 120
+                          strokeFrom: 0
+                          strokeTo: 5
+                          colorFrom: 000000
+                          colorTo: 000000
+                          layer: 28
+                          clip: 8192
+                        }
+                        fragBullets: 2
+                        fragRandomSpread: 45
+                        fragAngle: -22.5
+                        fragOffsetMin: 120
+                        fragOffsetMax: 120
+                        fragBullet: {
+                          type: BulletType
+                          createChance: 0.6
+                          speed: 0
+                          lifetime: 2
+                          collides: false
+                          hittable: false
+                          absorbable: false
+                          pierce: true
+                          pierceBuilding: true
+                          hitShake: 15
+                          hitEffect: none
+                          despawnEffect: {
+                            line: true
+                            particles: 1
+                            length: -0.001
+                            cone: 0
+                            lifetime: 1800
+                            interp: pow10Out
+                            lenFrom: 120
+                            lenTo: 120
+                            strokeFrom: 0
+                            strokeTo: 4
+                            colorFrom: 000000
+                            colorTo: 000000
+                            layer: 28
+                            clip: 8192
+                          }
+                          fragBullets: 2
+                          fragRandomSpread: 45
+                          fragAngle: 22.5
+                          fragOffsetMin: 120
+                          fragOffsetMax: 120
+                          fragBullet: {
+                            type: BulletType
+                            createChance: 0.6
+                            speed: 0
+                            lifetime: 2
+                            collides: false
+                            hittable: false
+                            absorbable: false
+                            pierce: true
+                            pierceBuilding: true
+                            hitShake: 15
+                            hitEffect: none
+                            despawnEffect: {
+                              line: true
+                              particles: 1
+                              length: -0.001
+                              cone: 0
+                              lifetime: 1800
+                              interp: pow10Out
+                              lenFrom: 120
+                              lenTo: 120
+                              strokeFrom: 0
+                              strokeTo: 3
+                              colorFrom: 000000
+                              colorTo: 000000
+                              layer: 28
+                              clip: 8192
+                            }
+                            fragBullets: 2
+                            fragRandomSpread: 45
+                            fragAngle: -22.5
+                            fragOffsetMin: 120
+                            fragOffsetMax: 120
+                            fragBullet: {
+                              type: BulletType
+                              createChance: 0.6
+                              speed: 0
+                              lifetime: 2
+                              collides: false
+                              hittable: false
+                              absorbable: false
+                              pierce: true
+                              pierceBuilding: true
+                              hitShake: 15
+                              hitEffect: none
+                              despawnEffect: {
+                                line: true
+                                particles: 1
+                                length: -0.001
+                                cone: 0
+                                lifetime: 1800
+                                interp: pow10Out
+                                lenFrom: 120
+                                lenTo: 120
+                                strokeFrom: 0
+                                strokeTo: 2
+                                colorFrom: 000000
+                                colorTo: 000000
+                                layer: 28
+                                clip: 8192
+                              }
+                              fragBullets: 2
+                              fragRandomSpread: 45
+                              fragAngle: 22.5
+                              fragOffsetMin: 120
+                              fragOffsetMax: 120
+                              fragBullet: {
+                                type: BulletType
+                                createChance: 0.6
+                                speed: 0
+                                lifetime: 2
+                                collides: false
+                                hittable: false
+                                absorbable: false
+                                pierce: true
+                                pierceBuilding: true
+                                hitShake: 15
+                                hitEffect: none
+                                despawnEffect: {
+                                  line: true
+                                  particles: 1
+                                  length: -0.001
+                                  cone: 0
+                                  lifetime: 1800
+                                  interp: pow10Out
+                                  lenFrom: 120
+                                  lenTo: 120
+                                  strokeFrom: 0
+                                  strokeTo: 1
+                                  colorFrom: 000000
+                                  colorTo: 000000
+                                  layer: 28
+                                  clip: 8192
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+      //Explosion
+    {
+      //Plasma tossed everywhere
+      lifetime: 2400
+      speed: 0
+      collides: false
+      hittable: false
+      absorbable: false
+      fragBullets: 70
+      fragLifeMin: 0
+      fragVelocityMin: 0.2
+      fragBullet: {
+        type: BulletType
+        speed: 0.8
+        lifetime: 240
+        collides: false
+        absorbable: false
+        hittable: false
+        despawnEffect: [
+          {
+            particles: 2
+            length: 2100
+            lifetime: 480
+            region: circle-shadow
+            interp: pow3Out
+            sizeInterp: pow2In
+            sizeFrom: 120
+            sizeTo: 0
+            clip: 8192
+          }
+          {
+            particles: 2
+            length: 2100
+            lifetime: 480
+            region: circle-shadow
+            interp: pow3Out
+            sizeInterp: pow2In
+            sizeFrom: 120
+            sizeTo: 0
+            colorTo: f5a9b8
+            clip: 8192
+          }
+          {
+            particles: 2
+            length: 2100
+            lifetime: 480
+            region: circle-shadow
+            interp: pow3Out
+            sizeInterp: pow2In
+            sizeFrom: 120
+            sizeTo: 0
+            colorTo: 5bcefa
+            clip: 8192
+          }
+        ]
+      }
+    }
+    {
+      //Blast & shockwaves
+      type: BulletType
+      speed: 0
+      lifetime: 2000
+      collides: false
+      hittable: false
+      absorbable: false
+      despawnEffect: [
+        {
+          particles: 1
+          length: 0
+          region: allure-diamond-vthin
+          lifetime: 400
+          sizeFrom: 0
+          sizeTo: 220
+          interp: pow2Out
+          offset: 45
+          clip: 8192
+        }
+        {
+          particles: 1
+          length: 0
+          region: allure-diamond-vthin
+          lifetime: 400
+          sizeFrom: 0
+          sizeTo: 220
+          interp: pow2Out
+          offset: 135
+          clip: 8192
+        }
+        {
+          particles: 1
+          length: 0
+          region: allure-diamond-vthin
+          lifetime: 200
+          startDelay: 200
+          sizeFrom: 0
+          sizeTo: 330
+          interp: pow2Out
+          offset: 45
+          colorFrom: f5a9b866
+          colorTo: f5a9b866
+          clip: 8192
+        }
+        {
+          particles: 1
+          length: 0
+          region: allure-diamond-vthin
+          lifetime: 200
+          startDelay: 200
+          sizeFrom: 0
+          sizeTo: 330
+          interp: pow2Out
+          offset: 135
+          colorFrom: f5a9b866
+          colorTo: f5a9b866
+          clip: 8192
+        }
+        {
+          particles: 1
+          length: 0
+          region: allure-diamond-vthin
+          lifetime: 200
+          startDelay: 200
+          sizeFrom: 0
+          sizeTo: 330
+          interp: pow2Out
+          offset: 45
+          colorFrom: 5bcefa66
+          colorTo: 5bcefa66
+          clip: 8192
+        }
+        {
+          particles: 1
+          length: 0
+          region: allure-diamond-vthin
+          lifetime: 200
+          startDelay: 200
+          sizeFrom: 0
+          sizeTo: 330
+          interp: pow2Out
+          offset: 135
+          colorFrom: 5bcefa66
+          colorTo: 5bcefa66
+          clip: 8192
+        }
+        {
+          particles: 45
+          length: 1600
+          lifetime: 400
+          interp: pow3Out
+          sizeInterp: pow2In
+          sizeFrom: 110
+          sizeTo: 0
+          startDelay: 400
+          clip: 8192
+        }
+        {
+          particles: 40
+          line: true
+          length: 2000
+          lifetime: 400
+          interp: pow3Out
+          sizeInterp: pow2In
+          lenFrom: 150
+          lenTo: 0
+          strokeFrom: 35
+          strokeTo: 20
+          cap: false
+          startDelay: 400
+          clip: 8192
+        }
+        {
+          type: WaveEffect
+          lifetime: 240
+          interp: pow3Out
+          sizeFrom: 0
+          sizeTo: 2400
+          strokeFrom: 36
+          startDelay: 400
+          clip: 8192
+        }
+        {
+          type: WaveEffect
+          lifetime: 240
+          interp: pow3Out
+          sizeFrom: 0
+          sizeTo: 2000
+          strokeFrom: 30
+          startDelay: 520
+          clip: 8192
+        }
+        {
+          type: WaveEffect
+          lifetime: 240
+          interp: pow3Out
+          sizeFrom: 0
+          sizeTo: 1600
+          strokeFrom: 26
+          startDelay: 640
+          colorTo: f5a9b8
+          clip: 8192
+        }
+        {
+          type: WaveEffect
+          lifetime: 240
+          interp: pow3Out
+          sizeFrom: 0
+          sizeTo: 1200
+          strokeFrom: 22
+          startDelay: 760
+          colorTo: 5bcefa
+          clip: 8192
+        }
+        {
+          particles: 1
+          length: 0
+          region: circle-shadow
+          lifetime: 560
+          sizeFrom: 3000
+          sizeTo: 0
+          startDelay: 400
+          layer: 135
+          clip: 8192
+        }
+        {
+          particles: 1
+          length: 0
+          region: circle-shadow
+          lifetime: 140
+          sizeFrom: 8192
+          sizeTo: 8192
+          startDelay: 400
+          layer: 135
+          colorTo: ffffff00
+          clip: 8192
+        }
+      ]
+    }
+    //Sound
+    {
+      type: BulletType
+      speed: 0
+      lifetime: 0
+      collides: false
+      hittable: false
+      absorbable: false
+      despawnEffect: [
+        //Startup
+        {
+          type: SoundEffect
+          effect: none
+          sound: pressure
+          minPitch: 1
+          maxPitch: 1
+          minVolume: 0.25
+          maxVolume: 0.25
+        }
+        {
+          type: SoundEffect
+          startDelay: 150
+          effect: none
+          sound: drillImpact
+          minPitch: 1
+          maxPitch: 1
+          minVolume: 1
+          maxVolume: 1
+        }
+        //Charge
+        {
+          type: SoundEffect
+          startDelay: 600
+          effect: none
+          sound: quake
+          minPitch: 1
+          maxPitch: 1
+          minVolume: 1
+          maxVolume: 1
+        }
+        {
+          type: SoundEffect
+          startDelay: 500
+          effect: none
+          sound: chargeup
+          minPitch: 1
+          maxPitch: 1
+          minVolume: 0.8
+          maxVolume: 0.8
+        }
+        {
+          type: SoundEffect
+          startDelay: 955
+          effect: none
+          sound: chargeup
+          minPitch: 1.2
+          maxPitch: 1.2
+          minVolume: 1
+          maxVolume: 1
+        }
+        {
+          type: SoundEffect
+          startDelay: 2300
+          effect: none
+          sound: whoosh
+          minPitch: 1
+          maxPitch: 1
+          minVolume: 1
+          maxVolume: 1
+        }
+        {
+          type: SoundEffect
+          startDelay: 2325
+          effect: none
+          sound: whoosh
+          minPitch: 1
+          maxPitch: 1
+          minVolume: 1.5
+          maxVolume: 1.5
+        }
+        {
+          type: SoundEffect
+          startDelay: 2350
+          effect: none
+          sound: whoosh
+          minPitch: 1
+          maxPitch: 1
+          minVolume: 2
+          maxVolume: 2
+        }
+        {
+          type: SoundEffect
+          startDelay: 2400
+          effect: none
+          sound: explod
+          minPitch: 1
+          maxPitch: 1
+          minVolume: 1
+          maxVolume: 1
+        }
+        {
+          type: SoundEffect
+          startDelay: 2520
+          effect: none
+          sound: whoosh
+          minPitch: 1
+          maxPitch: 1
+          minVolume: 2
+          maxVolume: 2
+        }
+        {
+          type: SoundEffect
+          startDelay: 2640
+          effect: none
+          sound: whoosh
+          minPitch: 1
+          maxPitch: 1
+          minVolume: 1.5
+          maxVolume: 1.5
+        }
+        {
+          type: SoundEffect
+          startDelay: 2760
+          effect: none
+          sound: whoosh
+          minPitch: 1
+          maxPitch: 1
+          minVolume: 1
+          maxVolume: 1
+        }
+        //Pistons
+        {
+          type: SoundEffect
+          startDelay: 600
+          effect: none
+          sound: drillImpact
+          minPitch: 1
+          maxPitch: 1
+          minVolume: 1
+          maxVolume: 1
+        }
+        {
+          type: SoundEffect
+          startDelay: 630
+          effect: none
+          sound: drillImpact
+          minPitch: 1
+          maxPitch: 1
+          minVolume: 1
+          maxVolume: 1
+        }
+        {
+          type: SoundEffect
+          startDelay: 660
+          effect: none
+          sound: drillImpact
+          minPitch: 1
+          maxPitch: 1
+          minVolume: 1
+          maxVolume: 1
+        }
+        {
+          type: SoundEffect
+          startDelay: 690
+          effect: none
+          sound: drillImpact
+          minPitch: 1
+          maxPitch: 1
+          minVolume: 1
+          maxVolume: 1
+        }
+      ]
+      spawnBullets: [
+        //Warn
+        {
+          type: BulletType
+          speed: 0
+          lifetime: 700
+          collides: false
+          hittable: false
+          absorbable: false
+          despawnEffect: none
+          fragOffsetMin: 0
+          fragOffsetMax: 0
+          fragBullet: {
+            type: BulletType
+            speed: 0
+            lifetime: 1700
+            collides: false
+            hittable: false
+            absorbable: false
+            despawnEffect: none
+            bulletInterval: 100
+            intervalDelay: 101
+            intervalBullets: 1
+            intervalBullet: {
+              type: BulletType
+              speed: 0
+              lifetime: 0
+              collides: false
+              hittable: false
+              absorbable: false
+              despawnEffect: none
+              //Will add a sound when a fitting one is located (tried and failed to find one similar to Halo Reach Covenant AA platform alarm)
+              despawnSound: none
+            }
+          }
+        }
+      ]
+    }
+    //Screenshake
+    {
+      type: BulletType
+      speed: 0
+      lifetime: 150
+      collides: false
+      hittable: false
+      absorbable: false
+      despawnShake: 6
+      despawnEffect: none
+    }
+    {
+      type: BulletType
+      speed: 0
+      lifetime: 2400
+      collides: false
+      hittable: false
+      absorbable: false
+      despawnShake: 350
+      despawnEffect: none
+    }
+    {
+      type: BulletType
+      speed: 0
+      lifetime: 600
+      collides: false
+      hittable: false
+      absorbable: false
+      despawnShake: 6
+      hitEffect: none
+      despawnEffect: none
+      fragBullets: 1
+      fragOffsetMin: 0
+      fragOffsetMax: 0
+      fragBullet: {
+        type: BulletType
+        speed: 0
+        lifetime: 30
+        collides: false
+        hittable: false
+        absorbable: false
+        despawnShake: 6
+        hitEffect: none
+        despawnEffect: none
+        fragBullets: 1
+        fragOffsetMin: 0
+        fragOffsetMax: 0
+        fragBullet: {
+          type: BulletType
+          speed: 0
+          lifetime: 30
+          collides: false
+          hittable: false
+          absorbable: false
+          despawnShake: 6
+          hitEffect: none
+          despawnEffect: none
+          fragBullets: 1
+          fragOffsetMin: 0
+          fragOffsetMax: 0
+          fragBullet: {
+            type: BulletType
+            speed: 0
+            lifetime: 30
+            collides: false
+            hittable: false
+            absorbable: false
+            despawnShake: 6
+            hitEffect: none
+            despawnEffect: none
+            fragBullets: 1
+            fragOffsetMin: 0
+            fragOffsetMax: 0
+          }
+        }
+      }
+    }
+    //functional damage and bullets
+      //Plasma discharges
+    {
+      type: BulletType
+      speed: 0
+      lifetime: 800
+      collides: false
+      hittable: false
+      absorbable: false
+      hitEffect: none
+      despawnEffect: none
+      fragBullets: 50
+      fragOffsetMin: 0
+      fragOffsetMax: 0
+      fragLifeMin: 0
+      fragBullet: {
+        speed: 0
+        lifetime: 1480
+        collides: false
+        hittable: false
+        absorbable: false
+        hitEffect: none
+        despawnEffect: none
+        fragBullets: 1
+        fragOffsetMin: 0
+        fragOffsetMax: 0
+        fragLifeMin: 1
+        fragVelocityMin: 1
+        fragVelocityMax: 1
+        fragBullet: {
+          speed: 6
+          lifetime: 120
+          damage: 1800
+          splashDamage: 120
+          splashDamageRadius: 56
+          knockback: 256
+          impact: true
+          sprite: circle-bullet
+          frontColor: ffffff
+          backColor: f5a9b8
+          trailColor: 5bcefa
+          width: 40
+          height: 40
+          shrinkY: 0
+          trailWidth: 12
+          trailLength: 20
+          homingPower: 0.06
+          homingRange: 600
+          hitShake: 13
+          setDefaults: false
+          despawnHit: false
+          despawnEffect: {
+            type: WaveEffect
+            lifetime: 55
+            interp: pow3Out
+            sizeFrom: 20
+            sizeTo: 100
+            strokeFrom: 6
+          }
+          hitEffect: [
+            {
+              particles: 1
+              length: 0
+              lifetime: 35
+              sizeFrom: 40
+              sizeTo: 0
+              interp: pow3In
+              region: allure-diamond-thin
+            }
+            {
+              lifetime: 65
+              length: 115
+              line: true
+              cone: 35
+              particles: 22
+              lenFrom: 12
+              lenTo: 0
+              strokeFrom: 4
+              strokeTo: 2
+              interp: pow3Out
+              sizeInterp: pow2In
+              colorTo: f5a9b8
+            }
+            {
+              lifetime: 50
+              length: 145
+              line: true
+              cone: 30
+              particles: 16
+              lenFrom: 8
+              lenTo: 0
+              strokeFrom: 3
+              strokeTo: 2
+              interp: pow3Out
+              sizeInterp: pow2In
+              colorTo: 5bcefa
+            }
+          ]
+        }
+      }
+    }
+      //Ambient lightning
+    {
+      lifetime: 760
+      speed: 0
+      fragBullets: 240
+      fragLifeMin: 0
+      fragBullet: {
+        createChance: 0.333
+        type: BulletType
+        speed: 0
+        lifetime: 1640
+        collides: false
+        absorbable: false
+        hittable: false
+        fragOffsetMin: 40
+        fragOffsetMax: 640
+        fragBullets: 1
+        fragBullet: {
+          type: BulletType
+          speed: 0
+          lifetime: 0
+          collides: false
+          hittable: false
+          absorbable: false
+          hitEffect: none
+          despawnEffect: none
+          lightning: 1
+          lightningLength: 14
+          lightningLengthRand: 28
+          lightningDamage: 3500
+          lightningColor: ffffff
+        }
+      }
+    }
+    {
+      lifetime: 760
+      speed: 0
+      fragBullets: 240
+      fragLifeMin: 0
+      fragBullet: {
+        createChance: 0.333
+        type: BulletType
+        speed: 0
+        lifetime: 1640
+        collides: false
+        absorbable: false
+        hittable: false
+        fragOffsetMin: 40
+        fragOffsetMax: 640
+        fragBullets: 1
+        fragBullet: {
+          type: BulletType
+          speed: 0
+          lifetime: 0
+          collides: false
+          hittable: false
+          absorbable: false
+          hitEffect: none
+          despawnEffect: none
+          lightning: 1
+          lightningLength: 14
+          lightningLengthRand: 28
+          lightningDamage: 3500
+          lightningColor: f5a9b8
+        }
+      }
+    }
+    {
+      lifetime: 760
+      speed: 0
+      fragBullets: 240
+      fragLifeMin: 0
+      fragBullet: {
+        createChance: 0.333
+        type: BulletType
+        speed: 0
+        lifetime: 1640
+        collides: false
+        absorbable: false
+        hittable: false
+        fragOffsetMin: 40
+        fragOffsetMax: 640
+        fragBullets: 1
+        fragBullet: {
+          type: BulletType
+          speed: 0
+          lifetime: 0
+          collides: false
+          hittable: false
+          absorbable: false
+          hitEffect: none
+          despawnEffect: none
+          lightning: 1
+          lightningLength: 14
+          lightningLengthRand: 28
+          lightningDamage: 3500
+          lightningColor: 5bcefa
+        }
+      }
+    }
+      //Rifts (long!)
+    {
+      type: BulletType
+      speed: 0
+      lifetime: 800
+      collides: false
+      hittable: false
+      absorbable: false
+      hitEffect: none
+      despawnEffect: none
+      fragBullets: 3
+      fragRandomSpread: 45
+      fragSpread: 120
+      fragOffsetMin: 0
+      fragOffsetMax: 0
+      fragLifeMin: 0
+      fragBullet: {
+        type: BulletType
+        speed: 0
+        lifetime: 300
+        collides: false
+        hittable: false
+        absorbable: false
+        hitEffect: none
+        despawnEffect: none
+        fragBullets: 1
+        fragRandomSpread: 20
+        fragOffsetMin: 0
+        fragOffsetMax: 0
+        fragVelocityMin: 0.75
+        fragLifeMin: 0.75
+        fragBullet: {
+          type: BulletType
+          speed: 2
+          lifetime: 300
+          collides: false
+          hittable: false
+          absorbable: false
+          hitEffect: none
+          despawnEffect: none
+          parts: [
+            {
+              type: RegionPart
+              name: allure-vortex
+              outline: false
+              moveRot: 1800
+              progress: life
+              color: 5bcefa88
+              xScl: 0.14
+              yScl: 0.14
+              moves: [
+                {
+                  gx: 1.6
+                  gy: 1.6
+                  progress: {
+                    type: life
+                    ops: [
+                      {
+                        op: compress
+                        start: 0
+                        end: 0.8
+                      }
+                      {
+                        op: curve
+                        interp: pow10Out
+                      }
+                    ]
+                  }
+                }
+                {
+                  gx: -1.6
+                  gy: -1.6
+                  progress: {
+                    type: life
+                    ops: [
+                      {
+                        op: compress
+                        start: 0.8
+                        end: 1
+                      }
+                      {
+                        op: curve
+                        interp: pow3In
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+            {
+              type: RegionPart
+              name: allure-vortex
+              outline: false
+              moveRot: 600
+              progress: life
+              color: 5bcefa88
+              xScl: 0.14
+              yScl: 0.14
+              moves: [
+                {
+                  gx: 1.6
+                  gy: 1.6
+                  progress: {
+                    type: life
+                    ops: [
+                      {
+                        op: compress
+                        start: 0
+                        end: 0.8
+                      }
+                      {
+                        op: curve
+                        interp: pow10Out
+                      }
+                    ]
+                  }
+                }
+                {
+                  gx: -1.4
+                  gy: -1.4
+                  progress: {
+                    type: life
+                    ops: [
+                      {
+                        op: compress
+                        start: 0.8
+                        end: 1
+                      }
+                      {
+                        op: curve
+                        interp: pow3In
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+            {
+              type: RegionPart
+              name: allure-vortex
+              color: f5a9b8bb
+              outline: false
+              moveRot: 1400
+              progress: life
+              xScl: 0.13
+              yScl: 0.13
+              moves: [
+                {
+                  gx: 1.3
+                  gy: 1.3
+                  progress: {
+                    type: life
+                    ops: [
+                      {
+                        op: compress
+                        start: 0
+                        end: 0.8
+                      }
+                      {
+                        op: curve
+                        interp: pow10Out
+                      }
+                    ]
+                  }
+                }
+                {
+                  gx: -1.3
+                  gy: -1.3
+                  progress: {
+                    type: life
+                    ops: [
+                      {
+                        op: compress
+                        start: 0.8
+                        end: 1
+                      }
+                      {
+                        op: curve
+                        interp: pow3In
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+            {
+              type: RegionPart
+              name: allure-vortex
+              color: f5a9b8bb
+              outline: false
+              moveRot: 450
+              progress: life
+              xScl: 0.13
+              yScl: 0.13
+              moves: [
+                {
+                  gx: 1.3
+                  gy: 1.3
+                  progress: {
+                    type: life
+                    ops: [
+                      {
+                        op: compress
+                        start: 0
+                        end: 0.8
+                      }
+                      {
+                        op: curve
+                        interp: pow10Out
+                      }
+                    ]
+                  }
+                }
+                {
+                  gx: -1.3
+                  gy: -1.3
+                  progress: {
+                    type: life
+                    ops: [
+                      {
+                        op: compress
+                        start: 0.8
+                        end: 1
+                      }
+                      {
+                        op: curve
+                        interp: pow3In
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+            {
+              type: RegionPart
+              name: allure-vortex
+              color: ffffff88
+              outline: false
+              moveRot: 1000
+              progress: life
+              xScl: 0.2
+              yScl: 0.2
+              moves: [
+                {
+                  gx: 1
+                  gy: 1
+                  progress: {
+                    type: life
+                    ops: [
+                      {
+                        op: compress
+                        start: 0
+                        end: 0.8
+                      }
+                      {
+                        op: curve
+                        interp: pow10Out
+                      }
+                    ]
+                  }
+                }
+                {
+                  gx: -1
+                  gy: -1
+                  progress: {
+                    type: life
+                    ops: [
+                      {
+                        op: compress
+                        start: 0.8
+                        end: 1
+                      }
+                      {
+                        op: curve
+                        interp: pow3In
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+            {
+              type: RegionPart
+              name: allure-vortex
+              color: ffffff88
+              outline: false
+              moveRot: 330
+              progress: life
+              xScl: 0.2
+              yScl: 0.2
+              moves: [
+                {
+                  gx: 1
+                  gy: 1
+                  progress: {
+                    type: life
+                    ops: [
+                      {
+                        op: compress
+                        start: 0
+                        end: 0.8
+                      }
+                      {
+                        op: curve
+                        interp: pow10Out
+                      }
+                    ]
+                  }
+                }
+                {
+                  gx: -1
+                  gy: -1
+                  progress: {
+                    type: life
+                    ops: [
+                      {
+                        op: compress
+                        start: 0.8
+                        end: 1
+                      }
+                      {
+                        op: curve
+                        interp: pow3In
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+            {
+              type: RegionPart
+              name: circle
+              layer: 99
+              color: 000000
+              outline: false
+              moveRot: 720
+              progress: life
+              xScl: 0.15
+              yScl: 0.15
+              moves: [
+                {
+                  gx: 1.5
+                  gy: 1.5
+                  progress: {
+                    type: life
+                    ops: [
+                      {
+                        op: compress
+                        start: 0
+                        end: 0.8
+                      }
+                      {
+                        op: curve
+                        interp: pow3Out
+                      }
+                    ]
+                  }
+                }
+                {
+                  gx: -1.5
+                  gy: -1.5
+                  progress: {
+                    type: life
+                    ops: [
+                      {
+                        op: compress
+                        start: 0.8
+                        end: 1
+                      }
+                      {
+                        op: curve
+                        interp: pow3In
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+            {
+              type: RegionPart
+              name: circle-shadow
+              layer: 110
+              color: 000000
+              outline: false
+              moveRot: 720
+              progress: life
+              xScl: 0.15
+              yScl: 0.15
+              moves: [
+                {
+                  gx: 1.5
+                  gy: 1.5
+                  progress: {
+                    type: life
+                    ops: [
+                      {
+                        op: compress
+                        start: 0
+                        end: 0.8
+                      }
+                      {
+                        op: curve
+                        interp: pow3Out
+                      }
+                    ]
+                  }
+                }
+                {
+                  gx: -1.5
+                  gy: -1.5
+                  progress: {
+                    type: life
+                    ops: [
+                      {
+                        op: compress
+                        start: 0.8
+                        end: 1
+                      }
+                      {
+                        op: curve
+                        interp: pow3In
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+          fragBullets: 1
+          fragOffsetMin: 0
+          fragOffsetMax: 0
+          //Main rift
+          fragBullet: {
+            type: BulletType
+            speed: 0
+            lifetime: 700
+            collides: false
+            hittable: false
+            absorbable: false
+            hitEffect: none
+            despawnEffect: none
+            parts: [
+              {
+                type: RegionPart
+                name: allure-vortex
+                outline: false
+                moveRot: 1800
+                progress: life
+                color: 5bcefa88
+                xScl: 0.14
+                yScl: 0.14
+                moves: [
+                  {
+                    gx: 1.6
+                    gy: 1.6
+                    progress: {
+                      type: life
+                      ops: [
+                        {
+                          op: compress
+                          start: 0
+                          end: 0.8
+                        }
+                        {
+                          op: curve
+                          interp: pow10Out
+                        }
+                      ]
+                    }
+                  }
+                  {
+                    gx: -1.6
+                    gy: -1.6
+                    progress: {
+                      type: life
+                      ops: [
+                        {
+                          op: compress
+                          start: 0.8
+                          end: 1
+                        }
+                        {
+                          op: curve
+                          interp: pow3In
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+              {
+                type: RegionPart
+                name: allure-vortex
+                outline: false
+                moveRot: 600
+                progress: life
+                color: 5bcefa88
+                xScl: 0.14
+                yScl: 0.14
+                moves: [
+                  {
+                    gx: 1.6
+                    gy: 1.6
+                    progress: {
+                      type: life
+                      ops: [
+                        {
+                          op: compress
+                          start: 0
+                          end: 0.8
+                        }
+                        {
+                          op: curve
+                          interp: pow10Out
+                        }
+                      ]
+                    }
+                  }
+                  {
+                    gx: -1.4
+                    gy: -1.4
+                    progress: {
+                      type: life
+                      ops: [
+                        {
+                          op: compress
+                          start: 0.8
+                          end: 1
+                        }
+                        {
+                          op: curve
+                          interp: pow3In
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+              {
+                type: RegionPart
+                name: allure-vortex
+                color: f5a9b8bb
+                outline: false
+                moveRot: 1400
+                progress: life
+                xScl: 0.13
+                yScl: 0.13
+                moves: [
+                  {
+                    gx: 1.3
+                    gy: 1.3
+                    progress: {
+                      type: life
+                      ops: [
+                        {
+                          op: compress
+                          start: 0
+                          end: 0.8
+                        }
+                        {
+                          op: curve
+                          interp: pow10Out
+                        }
+                      ]
+                    }
+                  }
+                  {
+                    gx: -1.3
+                    gy: -1.3
+                    progress: {
+                      type: life
+                      ops: [
+                        {
+                          op: compress
+                          start: 0.8
+                          end: 1
+                        }
+                        {
+                          op: curve
+                          interp: pow3In
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+              {
+                type: RegionPart
+                name: allure-vortex
+                color: f5a9b8bb
+                outline: false
+                moveRot: 450
+                progress: life
+                xScl: 0.13
+                yScl: 0.13
+                moves: [
+                  {
+                    gx: 1.3
+                    gy: 1.3
+                    progress: {
+                      type: life
+                      ops: [
+                        {
+                          op: compress
+                          start: 0
+                          end: 0.8
+                        }
+                        {
+                          op: curve
+                          interp: pow10Out
+                        }
+                      ]
+                    }
+                  }
+                  {
+                    gx: -1.3
+                    gy: -1.3
+                    progress: {
+                      type: life
+                      ops: [
+                        {
+                          op: compress
+                          start: 0.8
+                          end: 1
+                        }
+                        {
+                          op: curve
+                          interp: pow3In
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+              {
+                type: RegionPart
+                name: allure-vortex
+                color: ffffff88
+                outline: false
+                moveRot: 1000
+                progress: life
+                xScl: 0.2
+                yScl: 0.2
+                moves: [
+                  {
+                    gx: 1
+                    gy: 1
+                    progress: {
+                      type: life
+                      ops: [
+                        {
+                          op: compress
+                          start: 0
+                          end: 0.8
+                        }
+                        {
+                          op: curve
+                          interp: pow10Out
+                        }
+                      ]
+                    }
+                  }
+                  {
+                    gx: -1
+                    gy: -1
+                    progress: {
+                      type: life
+                      ops: [
+                        {
+                          op: compress
+                          start: 0.8
+                          end: 1
+                        }
+                        {
+                          op: curve
+                          interp: pow3In
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+              {
+                type: RegionPart
+                name: allure-vortex
+                color: ffffff88
+                outline: false
+                moveRot: 330
+                progress: life
+                xScl: 0.2
+                yScl: 0.2
+                moves: [
+                  {
+                    gx: 1
+                    gy: 1
+                    progress: {
+                      type: life
+                      ops: [
+                        {
+                          op: compress
+                          start: 0
+                          end: 0.8
+                        }
+                        {
+                          op: curve
+                          interp: pow10Out
+                        }
+                      ]
+                    }
+                  }
+                  {
+                    gx: -1
+                    gy: -1
+                    progress: {
+                      type: life
+                      ops: [
+                        {
+                          op: compress
+                          start: 0.8
+                          end: 1
+                        }
+                        {
+                          op: curve
+                          interp: pow3In
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+              {
+                type: RegionPart
+                name: allure-diamond-thin
+                layer: 99
+                color: 000000
+                outline: false
+                progress: life
+                xScl: 0.075
+                yScl: 0.25
+                moves: [
+                  {
+                    gx: 0.75
+                    gy: 2.5
+                    progress: {
+                      type: life
+                      ops: [
+                        {
+                          op: compress
+                          start: 0
+                          end: 0.8
+                        }
+                        {
+                          op: curve
+                          interp: pow10Out
+                        }
+                      ]
+                    }
+                  }
+                  {
+                    gx: -0.75
+                    gy: -2.5
+                    progress: {
+                      type: life
+                      ops: [
+                        {
+                          op: compress
+                          start: 0.8
+                          end: 1
+                        }
+                        {
+                          op: curve
+                          interp: pow3In
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+              {
+                type: RegionPart
+                name: allure-blinding
+                layer: 110
+                color: 000000
+                outline: false
+                progress: life
+                xScl: 0.1
+                yScl: 0.1
+                moves: [
+                  {
+                    gx: 2
+                    gy: 2
+                    progress: {
+                      type: life
+                      ops: [
+                        {
+                          op: compress
+                          start: 0
+                          end: 0.8
+                        }
+                        {
+                          op: curve
+                          interp: pow10Out
+                        }
+                      ]
+                    }
+                  }
+                  {
+                    gx: -2
+                    gy: -2
+                    progress: {
+                      type: life
+                      ops: [
+                        {
+                          op: compress
+                          start: 0.8
+                          end: 1
+                        }
+                        {
+                          op: curve
+                          interp: pow3In
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+            intervalBullets: 1
+            bulletInterval: 60
+            intervalBullet: {
+              type: BulletType
+              speed: 0
+              lifetime: 0
+              collides: false
+              hittable: false
+              absorbable: false
+              despawnEffect: {
+                type: WaveEffect
+                lifetime: 240
+                sizeFrom: 0
+                sizeTo: 160
+                strokeFrom: 6
+                layer: 105
+                colorFrom: ffffff60
+                colorTo: ffffff60
+              }
+            }
+            spawnBullets: [
+              //Lightning
+              {
+                type: BulletType
+                speed: 0
+                lifetime: 0
+                collides: false
+                hittable: false
+                absorbable: false
+                hitEffect: none
+                despawnEffect: none
+                fragBullets: 13
+                fragOffsetMin: 0
+                fragOffsetMax: 0
+                fragLifeMin: 0
+                fragBullet: {
+                  type: BulletType
+                  speed: 0
+                  lifetime: 580
+                  collides: false
+                  hittable: false
+                  absorbable: false
+                  hitEffect: none
+                  despawnEffect: none
+                  fragBullets: 1
+                  fragOffsetMin: 0
+                  fragOffsetMax: 0
+                  fragLifeMin: 0
+                  fragBullet: {
+                    type: BulletType
+                    speed: 0
+                    damage: 2400
+                    lifetime: 2
+                    hittable: false
+                    absorbable: false
+                    pierce: true
+                    pierceBuilding: true
+                    hitEffect: none
+                    despawnEffect: none
+                    fragBullets: 2
+                    fragRandomSpread: 45
+                    fragAngle: 22.5
+                    fragOffsetMin: 60
+                    fragOffsetMax: 60
+                    fragBullet: {
+                      type: BulletType
+                      createChance: 0.6
+                      speed: 0
+                      damage: 2400
+                      lifetime: 2
+                      hittable: false
+                      absorbable: false
+                      pierce: true
+                      pierceBuilding: true
+                      hitEffect: none
+                      despawnEffect: {
+                        line: true
+                        particles: 1
+                        length: -0.001
+                        cone: 0
+                        lifetime: 120
+                        lenFrom: 60
+                        lenTo: 60
+                        strokeFrom: 4
+                        strokeTo: 0
+                        colorTo: 5bcefa
+                      }
+                      fragBullets: 2
+                      fragRandomSpread: 45
+                      fragAngle: -22.5
+                      fragOffsetMin: 60
+                      fragOffsetMax: 60
+                      fragBullet: {
+                        type: BulletType
+                        createChance: 0.6
+                        speed: 0
+                        damage: 2400
+                        lifetime: 2
+                        hittable: false
+                        absorbable: false
+                        pierce: true
+                        pierceBuilding: true
+                        hitEffect: none
+                        despawnEffect: {
+                          line: true
+                          particles: 1
+                          length: -0.001
+                          cone: 0
+                          lifetime: 120
+                          lenFrom: 60
+                          lenTo: 60
+                          strokeFrom: 3.5
+                          strokeTo: 0
+                          colorTo: 5bcefa
+                        }
+                        fragBullets: 2
+                        fragRandomSpread: 45
+                        fragAngle: 22.5
+                        fragOffsetMin: 60
+                        fragOffsetMax: 60
+                        fragBullet: {
+                          type: BulletType
+                          createChance: 0.6
+                          speed: 0
+                          damage: 2400
+                          lifetime: 2
+                          hittable: false
+                          absorbable: false
+                          pierce: true
+                          pierceBuilding: true
+                          hitEffect: none
+                          despawnEffect: {
+                            line: true
+                            particles: 1
+                            length: -0.001
+                            cone: 0
+                            lifetime: 120
+                            lenFrom: 60
+                            lenTo: 60
+                            strokeFrom: 3
+                            strokeTo: 0
+                            colorTo: f5a9b8
+                          }
+                          fragBullets: 2
+                          fragRandomSpread: 45
+                          fragAngle: -22.5
+                          fragOffsetMin: 60
+                          fragOffsetMax: 60
+                          fragBullet: {
+                            type: BulletType
+                            createChance: 0.6
+                            speed: 0
+                            damage: 2400
+                            lifetime: 2
+                            hittable: false
+                            absorbable: false
+                            pierce: true
+                            pierceBuilding: true
+                            hitEffect: none
+                            despawnEffect: {
+                              line: true
+                              particles: 1
+                              length: -0.001
+                              cone: 0
+                              lifetime: 120
+                              lenFrom: 60
+                              lenTo: 60
+                              strokeFrom: 2.5
+                              strokeTo: 0
+                            }
+                            fragBullets: 2
+                            fragRandomSpread: 45
+                            fragAngle: 22.5
+                            fragOffsetMin: 60
+                            fragOffsetMax: 60
+                            fragBullet: {
+                              type: BulletType
+                              createChance: 0.6
+                              speed: 0
+                              damage: 2400
+                              lifetime: 2
+                              hittable: false
+                              absorbable: false
+                              pierce: true
+                              pierceBuilding: true
+                              hitEffect: none
+                              despawnEffect: {
+                                line: true
+                                particles: 1
+                                length: -0.001
+                                cone: 0
+                                lifetime: 120
+                                lenFrom: 60
+                                lenTo: 60
+                                strokeFrom: 2
+                                strokeTo: 0
+                              }
+                              fragBullets: 2
+                              fragRandomSpread: 45
+                              fragAngle: -22.5
+                              fragOffsetMin: 60
+                              fragOffsetMax: 60
+                              fragBullet: {
+                                type: BulletType
+                                createChance: 0.6
+                                speed: 0
+                                damage: 2400
+                                lifetime: 2
+                                hittable: false
+                                absorbable: false
+                                pierce: true
+                                pierceBuilding: true
+                                hitEffect: none
+                                despawnEffect: {
+                                  line: true
+                                  particles: 1
+                                  length: -0.001
+                                  cone: 0
+                                  lifetime: 120
+                                  lenFrom: 60
+                                  lenTo: 60
+                                  strokeFrom: 1.5
+                                  strokeTo: 0
+                                  colorTo: f5a9b8
+                                }
+                                fragBullets: 2
+                                fragRandomSpread: 45
+                                fragAngle: 22.5
+                                fragOffsetMin: 60
+                                fragOffsetMax: 60
+                                fragBullet: {
+                                  type: BulletType
+                                  createChance: 0.6
+                                  speed: 0
+                                  damage: 2400
+                                  lifetime: 2
+                                  hittable: false
+                                  absorbable: false
+                                  pierce: true
+                                  pierceBuilding: true
+                                  hitEffect: none
+                                  despawnEffect: {
+                                    line: true
+                                    particles: 1
+                                    length: -0.001
+                                    cone: 0
+                                    lifetime: 120
+                                    lenFrom: 60
+                                    lenTo: 60
+                                    strokeFrom: 1
+                                    strokeTo: 0
+                                    colorTo: 5bcefa
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              //Shrapnel
+              {
+                type: BulletType
+                speed: 0
+                lifetime: 0
+                collides: false
+                hittable: false
+                absorbable: false
+                hitEffect: none
+                despawnEffect: none
+                fragBullets: 50
+                fragOffsetMin: 0
+                fragOffsetMax: 0
+                fragLifeMin: 0
+                fragBullet: {
+                  type: BulletType
+                  createChance: 0.333
+                  speed: 0.001
+                  lifetime: 640
+                  homingPower: 360
+                  homingRange: 360
+                  collides: false
+                  hittable: false
+                  absorbable: false
+                  hitSound: explosion
+                  hitEffect: none
+                  despawnEffect: {
+                    particles: 3
+                    length: -160
+                    baseLength: 160
+                    lifetime: 45
+                    region: circle-shadow
+                    interp: pow3In
+                    sizeInterp: pow2Out
+                    sizeFrom: 0
+                    sizeTo: 12
+                    colorTo: 000000
+                  }
+                  fragBullets: 1
+                  fragRandomSpread: 22.5
+                  fragOffsetMin: 20
+                  fragOffsetMax: 20
+                  fragBullet: {
+                    type: ShrapnelBulletType
+                    lifetime: 120
+                    damage: 5600
+                    serrations: 0
+                    width: 14
+                    length: 240
+                    toColor: ffffff
+                  }
+                }
+              }
+              {
+                type: BulletType
+                speed: 0
+                lifetime: 0
+                collides: false
+                hittable: false
+                absorbable: false
+                hitEffect: none
+                despawnEffect: none
+                fragBullets: 50
+                fragOffsetMin: 0
+                fragOffsetMax: 0
+                fragLifeMin: 0
+                fragBullet: {
+                  type: BulletType
+                  createChance: 0.333
+                  speed: 0.001
+                  lifetime: 640
+                  homingPower: 360
+                  homingRange: 360
+                  collides: false
+                  hittable: false
+                  absorbable: false
+                  hitSound: explosion
+                  hitEffect: none
+                  despawnEffect: {
+                    particles: 3
+                    length: -160
+                    baseLength: 160
+                    lifetime: 45
+                    region: circle-shadow
+                    interp: pow3In
+                    sizeInterp: pow2Out
+                    sizeFrom: 0
+                    sizeTo: 12
+                    colorTo: 000000
+                  }
+                  fragBullets: 1
+                  fragRandomSpread: 22.5
+                  fragOffsetMin: 20
+                  fragOffsetMax: 20
+                  fragBullet: {
+                    type: ShrapnelBulletType
+                    lifetime: 120
+                    damage: 5600
+                    serrations: 0
+                    width: 14
+                    length: 240
+                    toColor: f5a9b8
+                  }
+                }
+              }
+              {
+                type: BulletType
+                speed: 0
+                lifetime: 0
+                collides: false
+                hittable: false
+                absorbable: false
+                hitEffect: none
+                despawnEffect: none
+                fragBullets: 50
+                fragOffsetMin: 0
+                fragOffsetMax: 0
+                fragLifeMin: 0
+                fragBullet: {
+                  type: BulletType
+                  createChance: 0.333
+                  speed: 0.001
+                  lifetime: 640
+                  homingPower: 360
+                  homingRange: 360
+                  collides: false
+                  hittable: false
+                  absorbable: false
+                  hitSound: explosion
+                  hitEffect: none
+                  despawnEffect: {
+                    particles: 3
+                    length: -160
+                    baseLength: 160
+                    lifetime: 45
+                    region: circle-shadow
+                    interp: pow3In
+                    sizeInterp: pow2Out
+                    sizeFrom: 0
+                    sizeTo: 12
+                    colorTo: 000000
+                  }
+                  fragBullets: 1
+                  fragRandomSpread: 22.5
+                  fragOffsetMin: 20
+                  fragOffsetMax: 20
+                  fragBullet: {
+                    type: ShrapnelBulletType
+                    lifetime: 120
+                    damage: 5600
+                    serrations: 0
+                    width: 14
+                    length: 240
+                    toColor: 5bcefa
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+      //Shockwave
+    {
+      type: BulletType
+      speed: 0
+      lifetime: 2400
+      collides: false
+      hittable: false
+      absorbable: false
+      hitEffect: none
+      despawnEffect: none
+      fragBullets: 1440
+      fragOffsetMin: 0
+      fragOffsetMax: 0
+      fragVelocityMin: 1
+      fragVelocityMax: 1
+      fragBullet: {
+        type: BulletType
+        lifetime: 240
+        speed: 30
+        drag: 0.011
+        damage: 90000
+        buildingDamageMultiplier: 0.1
+        splashDamage: 120
+        splashDamageRadius: 67
+        splashDamagePierce: true
+        pierce: true
+        pierceBuilding: true
+        pierceDamageFactor: 0.2
+        absorbable: false
+        hittable: false
+        reflectable: false
+        despawnEffect: none
+      }
+    }
+  ]
+  fragBullets: 1
+  fragBullet: {
+    type: BulletType
+    speed: 0
+    lifetime: 0
+    collides: false
+    hittable: false
+    absorbable: false
+    killShooter: true
+    hitEffect: none
+    despawnEffect: none
+    spawnBullets: [
+      {
+        spawnUnit: allure-infini0
+      }
+    ]
+  }
+}
+category: turret
+requirements: [
+  territe-alloy/24000
+  dantrales/12000
+  anden/12000
+  renfrien/24000
+  crystal/78000
+  amethyst/1200
+  inseltiene/1200
+  draconium/8000
+  shadow/6000
+]
+//It gets worse
+destroyBullet: {
+  spawnUnit: allure-infini0
+}

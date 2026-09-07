@@ -1,0 +1,21 @@
+type: AttributeCrafter
+craftTime: 5
+itemCapacity: 24
+size: 3
+boostScale: 0.111111111
+minEfficiency: 8.99999
+baseEfficiency: 0
+maxBoost: 1
+displayEfficiency: false
+attribute: steam
+customShadow: true
+drawer: [
+  {
+  }
+]
+outputItem: contained-steam/1
+category: production
+requirements: [
+  anden/200
+  renfrien/100
+]

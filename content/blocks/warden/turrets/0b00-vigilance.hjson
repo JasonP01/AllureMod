@@ -1,0 +1,1045 @@
+type: ItemTurret
+customShadow: true
+size: 14
+clipSize: 220
+range: 1440
+health: 55000
+armor: 330
+reload: 240
+recoil: 0
+rotateSpeed: 0.35
+targetGround: false
+cooldownTime: 240
+heatColor: 00000000
+shake: 45
+shoot: {
+  firstShotDelay: 120
+}
+consumes: {
+  power: 444
+}
+shootWarmupSpeed: 0.025
+minWarmup: 0.9
+shootY: 24
+shootSound: considerablyintensepew
+outlineIcon: false
+drawer: [
+  {
+    type: DrawRegion
+    suffix: -base-top
+    layer: 31
+  }
+  {
+    type: DrawGlowRegion
+    suffix: -base-glow
+    layer: 32
+    color: feb380
+  }
+  {
+    type: DrawTurret
+    shadowLayer: 84
+    parts: [
+      {
+        type: RegionPart
+        layer: 30.5
+        suffix: -turntable
+      }
+      {
+        suffix: -main
+        layer: 85
+        outline: false
+        y: 24
+        moveY: -24
+        progress: heat
+        children: [
+          {
+            type: RegionPart
+            outline: false
+            layer: 85.1
+            y: -3.75
+            color: 212229
+            colorTo: 7382f0
+            suffix: -charge0
+            progress: {
+              type: charge
+              op: compress
+              start: 0
+              end: 0.25
+            }
+          }
+          {
+            type: RegionPart
+            outline: false
+            layer: 85.1
+            y: -3.75
+            color: 000000
+            colorTo: 7382f0
+            suffix: -charge1
+            blending: additive
+            progress: {
+              type: charge
+              op: compress
+              start: 0
+              end: 0.25
+            }
+          }
+          {
+            type: RegionPart
+            outline: false
+            layer: 85.1
+            y: 13.5
+            color: 212229
+            colorTo: 7382f0
+            suffix: -charge0
+            progress: {
+              type: charge
+              op: compress
+              start: 0.25
+              end: 0.5
+            }
+          }
+          {
+            type: RegionPart
+            outline: false
+            layer: 85.1
+            y: 13.5
+            color: 000000
+            colorTo: 7382f0
+            suffix: -charge1
+            blending: additive
+            progress: {
+              type: charge
+              op: compress
+              start: 0.25
+              end: 0.5
+            }
+          }
+          {
+            type: RegionPart
+            outline: false
+            layer: 85.1
+            y: 30.75
+            color: 212229
+            colorTo: 7382f0
+            suffix: -charge0
+            progress: {
+              type: charge
+              op: compress
+              start: 0.5
+              end: 0.75
+            }
+          }
+          {
+            type: RegionPart
+            outline: false
+            layer: 85.1
+            y: 30.75
+            color: 000000
+            colorTo: 7382f0
+            suffix: -charge1
+            blending: additive
+            progress: {
+              type: charge
+              op: compress
+              start: 0.5
+              end: 0.75
+            }
+          }
+          {
+            type: RegionPart
+            outline: false
+            layer: 85.1
+            y: 34.75
+            color: 212229
+            colorTo: 7382f0
+            suffix: -charge2
+            progress: {
+              type: charge
+              op: compress
+              start: 0.75
+              end: 0.9
+            }
+          }
+          {
+            type: RegionPart
+            outline: false
+            layer: 85.1
+            y: 34.75
+            color: 000000
+            colorTo: 7382f0
+            suffix: -charge3
+            blending: additive
+            progress: {
+              type: charge
+              op: compress
+              start: 0.75
+              end: 0.9
+            }
+          }
+          {
+            type: RegionPart
+            outline: false
+            layer: 86
+            x: 13
+            y: -2.5
+            moveY: 72
+            suffix: -blade-r
+            progress: {
+              type: charge
+              op: compress
+              start: 0
+              end: 0.9
+            }
+            moves: [
+              {
+                progress: {
+                  type: recoil
+                  op: curve
+                  interp: pow10In
+                }
+                y: 48
+              }
+            ]
+          }
+          {
+            type: RegionPart
+            outline: false
+            layer: 86
+            x: -13
+            y: -2.5
+            moveY: 72
+            suffix: -blade-l
+            progress: {
+              type: charge
+              op: compress
+              start: 0
+              end: 0.9
+            }
+            moves: [
+              {
+                progress: {
+                  type: recoil
+                  op: curve
+                  interp: pow10In
+                }
+                y: 48
+              }
+            ]
+          }
+          {
+            type: RegionPart
+            outline: false
+            layer: 85.1
+            y: 48.5
+            outline: false
+            suffix: -hot
+            blending: additive
+            progress: heat
+            color: 000000
+            colorTo: 7382f0
+          }
+        ]
+      }
+    ]
+  }
+]
+maxAmmo: 256
+ammoPerShot: 256
+ammoTypes: {
+  inseltiene: {
+    type: RailBulletType
+    length: 3600
+    damage: 120000
+    status: allure-0b-energy4
+    statusDuration: 4
+    pierceDamageFactor: 0.85
+    collidesGround: false
+    ammoMultiplier: 8
+    pointEffectSpace: 4
+    pointEffect: [
+      {
+        line: true
+        particles: 1
+        cone: 0
+        length: 0.01
+        baseLength: 0
+        cap: false
+        lifetime: 90
+        strokeFrom: 16
+        strokeTo: 0
+        lenFrom: 6
+        lenTo: 6
+        colorFrom: 7382f0
+        colorTo: 7382f0
+        layer: 105
+      }
+      {
+        line: true
+        particles: 1
+        cone: 0
+        length: 0.01
+        baseLength: 0
+        cap: false
+        lifetime: 90
+        strokeFrom: 12
+        strokeTo: 0
+        lenFrom: 6
+        lenTo: 6
+      }
+    ]
+    shootEffect: [
+      //complicated incoming
+      {
+        type: RadialEffect
+        amount: 1
+        lengthOffset: 320
+        effect: [
+          {
+            particles: 1
+            length: 0
+            lifetime: 90
+            baseRotation: 45
+            region: allure-wide-case-back
+            interp: pow2In
+            sizeFrom: 16
+            sizeTo: 0
+            colorFrom: 7382f0
+            colorTo: 7382f0
+            layer: 105
+          }
+          {
+            particles: 1
+            length: 0
+            lifetime: 90
+            baseRotation: 45
+            region: allure-wide-case-back
+            interp: pow2In
+            sizeFrom: 14
+            sizeTo: 0
+          }
+          {
+            particles: 1
+            length: 0
+            lifetime: 90
+            baseRotation: 90
+            region: allure-diamond-thin
+            interp: pow2In
+            sizeFrom: 96
+            sizeTo: 0
+            colorFrom: 7382f0
+            colorTo: 7382f0
+            layer: 105
+          }
+          {
+            particles: 1
+            length: 0
+            lifetime: 90
+            baseRotation: 90
+            region: allure-diamond-thin
+            interp: pow2In
+            sizeFrom: 90
+            sizeTo: 0
+          }
+        ]
+      }
+      {
+        type: RadialEffect
+        amount: 1
+        lengthOffset: 350
+        effect: [
+          {
+            particles: 1
+            length: 0
+            lifetime: 90
+            baseRotation: 45
+            region: allure-wide-case-back
+            interp: pow2In
+            sizeFrom: 12
+            sizeTo: 0
+            colorFrom: 7382f0
+            colorTo: 7382f0
+            layer: 105
+          }
+          {
+            particles: 1
+            length: 0
+            lifetime: 90
+            baseRotation: 45
+            region: allure-wide-case-back
+            interp: pow2In
+            sizeFrom: 10
+            sizeTo: 0
+          }
+          {
+            particles: 1
+            length: 0
+            lifetime: 90
+            baseRotation: 90
+            region: allure-diamond-thin
+            interp: pow2In
+            sizeFrom: 72
+            sizeTo: 0
+            colorFrom: 7382f0
+            colorTo: 7382f0
+            layer: 105
+          }
+          {
+            particles: 1
+            length: 0
+            lifetime: 90
+            baseRotation: 90
+            region: allure-diamond-thin
+            interp: pow2In
+            sizeFrom: 66
+            sizeTo: 0
+          }
+        ]
+      }
+      {
+        type: RadialEffect
+        amount: 1
+        lengthOffset: 380
+        effect: [
+          {
+            particles: 1
+            length: 0
+            lifetime: 90
+            baseRotation: 45
+            region: allure-wide-case-back
+            interp: pow2In
+            sizeFrom: 8
+            sizeTo: 0
+            colorFrom: 7382f0
+            colorTo: 7382f0
+            layer: 105
+          }
+          {
+            particles: 1
+            length: 0
+            lifetime: 90
+            baseRotation: 45
+            region: allure-wide-case-back
+            interp: pow2In
+            sizeFrom: 6
+            sizeTo: 0
+          }
+          {
+            particles: 1
+            length: 0
+            lifetime: 90
+            baseRotation: 90
+            region: allure-diamond-thin
+            interp: pow2In
+            sizeFrom: 48
+            sizeTo: 0
+            colorFrom: 7382f0
+            colorTo: 7382f0
+            layer: 105
+          }
+          {
+            particles: 1
+            length: 0
+            lifetime: 90
+            baseRotation: 90
+            region: allure-diamond-thin
+            interp: pow2In
+            sizeFrom: 42
+            sizeTo: 0
+          }
+        ]
+      }
+      //actual shoot lmao
+      {
+        type: RadialEffect
+        amount: 1
+        lengthOffset: 120
+        effect: [
+          {
+            particles: 22
+            length: 110
+            lifetime: 80
+            baseLength: 60
+            cone: 30
+            interp: pow3Out
+            sizeInterp: linear
+            sizeFrom: 20
+            sizeTo: 0
+            colorFrom: 7382f0bb
+            colorTo: 7382f0bb
+            layer: 109
+          }
+          {
+            particles: 22
+            length: 110
+            lifetime: 70
+            baseLength: 60
+            cone: 35
+            interp: pow3Out
+            sizeInterp: linear
+            sizeFrom: 10
+            sizeTo: 0
+            colorFrom: 7382f0bb
+            colorTo: 7382f0bb
+            layer: 109
+          }
+          {
+            type: WaveEffect
+            sizeFrom: 18
+            sizeTo: 120
+            colorTo: 90a2fc
+            lifetime: 80
+            strokeFrom: 16
+            strokeTo: 0
+            interp: pow5Out
+          }
+          {
+            particles: 1
+            length: 0
+            lifetime: 90
+            baseRotation: 90
+            region: allure-diamond-thin
+            interp: pow2In
+            sizeFrom: 150
+            sizeTo: 100
+            colorFrom: 7382f0
+            colorTo: 7382f000
+            layer: 105
+          }
+          {
+            particles: 1
+            length: 0
+            lifetime: 90
+            baseRotation: 90
+            region: allure-diamond-thin
+            interp: pow2In
+            sizeFrom: 100
+            sizeTo: 66
+            colorFrom: 000000
+            colorTo: 000000
+            layer: 109
+          }
+          {
+            particles: 1
+            length: 0
+            lifetime: 35
+            baseRotation: 25
+            region: allure-shootspike
+            interp: pow2In
+            sizeFrom: 210
+            sizeTo: 140
+            colorFrom: 7382f0
+            colorTo: 7382f000
+            layer: 105
+          }
+          {
+            particles: 1
+            length: 0
+            lifetime: 35
+            baseRotation: 25
+            region: allure-shootspike
+            interp: pow2In
+            sizeFrom: 140
+            sizeTo: 100
+            colorFrom: 000000
+            colorTo: 000000
+            layer: 109
+          }
+          {
+            particles: 1
+            length: 0
+            lifetime: 35
+            baseRotation: -25
+            region: allure-shootspike
+            interp: pow2In
+            sizeFrom: 210
+            sizeTo: 140
+            colorFrom: 7382f0
+            colorTo: 7382f000
+            layer: 105
+          }
+          {
+            particles: 1
+            length: 0
+            lifetime: 35
+            baseRotation: -25
+            region: allure-shootspike
+            interp: pow2In
+            sizeFrom: 140
+            sizeTo: 100
+            colorFrom: 000000
+            colorTo: 000000
+            layer: 109
+          }
+          {
+            particles: 1
+            length: 0
+            lifetime: 90
+            baseRotation: 45
+            region: allure-wide-case-back
+            interp: pow2In
+            sizeFrom: 25
+            sizeTo: 17
+            colorFrom: 7382f0
+            colorTo: 7382f000
+            layer: 109.5
+          }
+          {
+            particles: 1
+            length: 0
+            lifetime: 90
+            baseRotation: 45
+            region: allure-wide-case-back
+            interp: pow2In
+            sizeFrom: 20
+            sizeTo: 13
+            colorTo: ffffff00
+          }
+        ]
+      }
+    ]
+    pierceEffect: [
+      {
+        particles: 25
+        length: 25
+        lifetime: 80
+        interp: pow3Out
+        sizeInterp: linear
+        sizeFrom: 10
+        sizeTo: 0
+        colorFrom: 7382f0bb
+        colorTo: 7382f0bb
+        layer: 109
+      }
+      {
+        particles: 25
+        length: 30
+        lifetime: 70
+        interp: pow3Out
+        sizeInterp: linear
+        sizeFrom: 5
+        sizeTo: 0
+        colorFrom: 7382f0bb
+        colorTo: 7382f0bb
+        layer: 109
+      }
+      {
+        line: true
+        baseRotation: 180
+        length: 140
+        lifetime: 35
+        particles: 20
+        cone: 30
+        interp: pow3Out
+        sizeInterp: linear
+        cap: false
+        lenFrom: 12
+        lenTo: 5
+        strokeFrom: 3
+        strokeTo: 0
+        colorTo: 7382f0
+      }
+      {
+        particles: 1
+        length: 0
+        lifetime: 35
+        baseRotation: 135
+        region: allure-shootspike
+        interp: pow2In
+        sizeFrom: 80
+        sizeTo: 0
+        colorFrom: 7382f0
+        colorTo: 7382f0
+        layer: 105
+      }
+      {
+        particles: 1
+        length: 0
+        lifetime: 35
+        baseRotation: 135
+        region: allure-shootspike
+        interp: pow2In
+        sizeFrom: 76
+        sizeTo: 0
+      }
+      {
+        particles: 1
+        length: 0
+        lifetime: 35
+        baseRotation: -135
+        region: allure-shootspike
+        interp: pow2In
+        sizeFrom: 80
+        sizeTo: 0
+        colorFrom: 7382f0
+        colorTo: 7382f0
+        layer: 105
+      }
+      {
+        particles: 1
+        length: 0
+        lifetime: 35
+        baseRotation: -135
+        region: allure-shootspike
+        interp: pow2In
+        sizeFrom: 76
+        sizeTo: 0
+      }
+    ]
+  }
+  shadow: {
+    killShooter: true
+    speed: 24
+    lifetime: 100
+    ammoMultiplier: 1
+    reloadMultiplier: 0.333
+    //Average antimatter round
+    damage: 10000000
+    maxDamageFraction: 0.33333
+    collidesGround: false
+    absorbable: false
+    hittable: false
+    sprite: allure-bolt
+    shrinkY: 0
+    width: 48
+    height: 96
+    frontColor: ffffff
+    backColor: d162a4
+    parts: [
+      {
+        type: RegionPart
+        name: allure-railblast
+        outline: false
+        rotation: 90
+        color: ef7627
+        xScl: 1
+        yScl: 1
+      }
+    ]
+    setDefaults: false
+    despawnHit: false
+    hitSound: none
+    fragBullets: 1
+    fragOffsetMin: 0
+    fragOffsetMax: 0
+    fragVelocityMin: 1
+    fragVelocityMax: 1
+    fragRandomSpread: 0
+    fragBullet: {
+      speed: 24
+      pierce: true
+      killShooter: true
+      drag: 0.1
+      lifetime: 35
+      damage: 10000000
+      maxDamageFraction: 0.33333
+      collides: false
+      absorbable: false
+      hittable: false
+      splashDamage: 40000
+      splashDamageRadius: 280
+      sprite: allure-bolt
+      shrinkY: 0
+      width: 48
+      height: 96
+      frontColor: ffffff
+      backColor: d162a4
+      parts: [
+        {
+          type: RegionPart
+          name: allure-railblast
+          outline: false
+          rotation: 90
+          color: ef7627
+          xScl: 1
+          yScl: 1
+        }
+        {
+          type: FlarePart
+          sides: 4
+          rotation: 45
+          color1: ffffff88
+          radius: 0
+          radiusTo: 200
+          stroke: 18
+          innerRadScl: 0.75
+          progress: {
+            type: life
+            op: curve
+            interp: pow2Out
+          }
+          layer: 101
+        }
+        {
+          type: RegionPart
+          name: circle-shadow
+          outline: false
+          rotation: 90
+          color: 00000044
+          xScl: 0
+          yScl: 0
+          layer: 99
+          moves: [
+            {
+              gx: 30
+              gy: 30
+              progress: {
+                type: life
+                op: curve
+                interp: pow2Out
+              }
+            }
+          ]
+        }
+      ]
+      hitSound: explod
+      hitSoundVolume: 4
+      fragBullets: 480
+      fragOffsetMin: 0
+      fragOffsetMax: 0
+      fragBullet: {
+        type: BulletType
+        damage: 55
+        speed: 48
+        lifetime: 120
+        pierce: true
+        pierceBuilding: true
+        absorbable: false
+        hittable: false
+      }
+      despawnEffect: [
+        {
+          type: WaveEffect
+          lifetime: 60
+          sizeFrom: 50
+          sizeTo: 960
+          strokeFrom: 12
+          interp: pow3Out
+          colorTo: d162a4
+        }
+        {
+          type: WaveEffect
+          lifetime: 500
+          sizeFrom: 0
+          sizeTo: 2400
+          strokeFrom: 36
+          layer: 29
+          clip: 4000
+        }
+        {
+          particles: 2
+          length: 0
+          region: circle-shadow
+          lifetime: 45
+          sizeFrom: 0
+          sizeTo: 1200
+          colorTo: ffffff00
+          interp: pow3In
+          sizeInterp: pow2Out
+          layer: 135
+        }
+        {
+          particles: 20
+          length: 600
+          lifetime: 180
+          region: circle-shadow
+          interp: pow3Out
+          sizeInterp: pow3In
+          sizeFrom: 60
+          sizeTo: 0
+        }
+        {
+          particles: 60
+          length: 550
+          lifetime: 210
+          region: circle-shadow
+          interp: pow3Out
+          sizeInterp: pow3In
+          sizeFrom: 90
+          sizeTo: 0
+          colorTo: d162a4
+          layer: 108
+        }
+        {
+          particles: 60
+          length: 500
+          lifetime: 240
+          region: circle-shadow
+          interp: pow3Out
+          sizeInterp: pow3In
+          sizeFrom: 120
+          sizeTo: 0
+          colorTo: ef7627
+          layer: 109
+        }
+        {
+          particles: 1
+          length: 0
+          lifetime: 120
+          region: allure-shield
+          sizeFrom: 0
+          sizeTo: 1440
+          colorTo: ef762700
+          interp: pow3
+          sizeInterp: linear
+        }
+        {
+          particles: 1
+          length: 0
+          lifetime: 120
+          region: circle-shadow
+          sizeFrom: 1200
+          sizeTo: 0
+          colorFrom: 000000
+          colorTo: 00000000
+          layer: 99
+        }
+      ]
+    }
+    trailInterval: 1
+    trailRotation: true
+    trailEffect: {
+      line: true
+      cone: 0
+      cap: false
+      particles: 1
+      lifetime: 25
+      length: 0.0001
+      lenFrom: 12
+      lenTo: 0
+      strokeFrom: 12
+      strokeTo: 6
+      colorTo: ffffff
+    }
+    shootEffect: [
+      {
+        particles: 60
+        cone: 30
+        length: 700
+        lifetime: 90
+        interp: pow3Out
+        sizeInterp: pow2In
+        sizeFrom: 35
+        sizeTo: 0
+      }
+      {
+        particles: 40
+        cone: 30
+        line: true
+        length: 900
+        lifetime: 70
+        interp: pow3Out
+        sizeInterp: pow2In
+        lenFrom: 50
+        lenTo: 0
+        strokeFrom: 15
+        strokeTo: 0
+        cap: false
+      }
+      {
+        type: RadialEffect
+        amount: 1
+        rotationOffset: 180
+        lengthOffset: 24
+        effect: [
+          {
+            type: WaveEffect
+            lifetime: 40
+            sizeFrom: 50
+            sizeTo: 480
+            strokeFrom: 12
+            interp: pow3Out
+          }
+          {
+            particles: 2
+            length: 0
+            region: circle-shadow
+            lifetime: 45
+            sizeFrom: 0
+            sizeTo: 300
+            colorTo: ffffff00
+            interp: pow3In
+            sizeInterp: pow2Out
+            layer: 135
+          }
+          {
+            particles: 60
+            length: 600
+            lifetime: 90
+            region: circle-shadow
+            interp: pow3Out
+            sizeInterp: pow2In
+            sizeFrom: 60
+            sizeTo: 0
+          }
+          {
+            particles: 60
+            length: 500
+            lifetime: 120
+            region: circle-shadow
+            interp: pow3Out
+            sizeInterp: pow2In
+            sizeFrom: 120
+            sizeTo: 0
+          }
+        ]
+      }
+    ]
+    hitEffect: [
+      {
+        followParent: false
+        particles: 1
+        length: 20
+        randLength: false
+        lifetime: 30
+        cone: 0
+        offset: 90
+        region: allure-squishwave
+        sizeFrom: 40
+        sizeTo: 80
+        colorTo: ef762700
+      }
+      {
+        followParent: false
+        particles: 1
+        length: 60
+        randLength: false
+        lifetime: 30
+        cone: 0
+        offset: 90
+        region: allure-squishwave
+        sizeFrom: 30
+        sizeTo: 60
+        colorTo: d162a400
+      }
+      {
+        particles: 1
+        length: 0
+        lifetime: 40
+        cone: 0
+        region: allure-shootspike
+        sizeFrom: 120
+        sizeTo: 0
+        interp: pow2In
+      }
+      {
+        particles: 1
+        length: 0
+        lifetime: 40
+        cone: 0
+        region: allure-shootspike
+        sizeFrom: 120
+        sizeTo: 60
+        interp: pow2In
+        colorTo: d162a400
+      }
+    ]
+  }
+}
+category: turret
+requirements: [
+  dantrales/1200
+  territe-alloy/3600
+  crystal/4800
+  inseltiene/450
+  shadow/1200
+]

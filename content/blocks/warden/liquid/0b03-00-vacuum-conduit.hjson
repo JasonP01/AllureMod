@@ -1,0 +1,12 @@
+type: Conduit
+health: 200, armor: 50
+liquidCapacity: 10, liquidPressure: 1
+requirements: [
+  territe-alloy/1
+]
+leaks: false
+customShadow: true
+botColor: 131316
+category: liquid
+research: 0b02-00-tube
+junctionReplacement: 0b03-01-vacuum-junction

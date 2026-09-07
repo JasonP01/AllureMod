@@ -1,0 +1,12 @@
+temperature: 0.015
+flammability: 0
+viscosity: 0.55
+heatCapacity: 1.6
+explosiveness: 0
+effect: freezing
+color: a36ad5
+research: crystal-plasma
+shownPlanets: [
+  allure-wandura,
+  allure-lus
+]

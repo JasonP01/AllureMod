@@ -1,0 +1,15 @@
+type: ParticleWeather
+color: ffbb44
+noiseColor: ffa33b
+particleRegion: particle
+sizeMax: 25
+sizeMin: 1
+drawParticles: false
+status: melting
+useWindVector: true
+drawNoise: true
+opacityMultiplier: 0.5
+baseSpeed: 0.3
+sound: fire
+soundVol: 0.65
+force: 0

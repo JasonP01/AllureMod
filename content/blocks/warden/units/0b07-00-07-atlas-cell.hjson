@@ -1,0 +1,11 @@
+type: LiquidRouter
+size: 2
+liquidCapacity: 700
+placeablePlayer: false
+liquidPadding: 4
+research: 0b07-00-00-atlas
+requirements: [
+  metaglass/60
+  dantrales/250
+  territe-alloy/120
+]

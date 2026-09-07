@@ -1,0 +1,404 @@
+type: flying
+controller: BuilderAI
+defaultController: BuilderAI
+hitSize: 160
+flying: true
+health: 560000
+armor: 400
+speed: 3.6
+rotateSpeed: 1.7
+accel: 0.025
+drag: 0.025
+strafePenalty: 0.25
+shadowElevationScl: 2.7
+lightRadius: 0
+lowAltitude: true
+engineSize: 0
+outlines: false
+drawCell: false
+drawBody: false
+healColor: 7382f088
+shieldColor: 7382f000
+deathShake: 0
+immunities: [
+  wet,
+  shocked,
+  blasted,
+  tarred,
+  burning,
+  melting,
+  electrified,
+  freezing,
+  unmoving,
+  disarmed,
+  allure-0b-energy0,
+  allure-0b-energy1,
+  allure-0b-energy2,
+  allure-0b-energy3,
+  allure-0b-energy4,
+  allure-emp
+]
+parts: [
+  //like forefront, fearless must use a really custom draw
+  {
+    type: RegionPart
+    layer: 91
+    outline: false
+    weaponIndex: 0
+    growX: -1
+    growProgress: {
+      type: reload
+      ops: [
+        {
+          op: curve
+          interp: pow2
+        }
+        {
+          op: slope
+        }
+      ]
+    }
+    children: [
+      //flares
+      { 
+        type: RegionPart
+        suffix: -flare
+        outline: false
+        blending: additive
+        layer: 92
+        color: 7382f0
+        colorTo: ffffff
+        weaponIndex: 0
+      }
+      { 
+        type: RegionPart
+        suffix: -flare
+        outline: false
+        layer: 141
+        color: 7382f015
+        blending: additive
+      }
+    ]
+  }
+  //baseline (stops me from needing a billion progresses)
+  {
+    type: RegionPart
+    name: clear-effect
+    layer: 91.1
+    outline: false
+    weaponIndex: 0
+    xScl: 0
+    growX: 1
+    growProgress: {
+      type: reload
+      ops: [
+        {
+          op: curve
+          interp: pow2
+        }
+        {
+          op: slope
+        }
+      ]
+    }
+    children: [
+      {
+        suffix: -alt
+        layer: 91.1
+        outline: false
+        weaponIndex: 0
+        x: 40
+        moveX: -80
+        progress: {
+          type: reload
+          ops: [
+            {
+              op: curve
+              interp: pow2
+            }
+          ]
+        }
+      }
+      //simple areas
+      {
+        suffix: -alt0
+        layer: 91.1
+        outline: false
+        weaponIndex: 0
+        x: 104.75
+        y: -52.75
+        moveX: -209.5
+        progress: {
+          type: reload
+          ops: [
+            {
+              op: curve
+              interp: pow2
+            }
+          ]
+        }
+      }
+      {
+        suffix: -alt1
+        layer: 91.1
+        outline: false
+        weaponIndex: 0
+        x: 55.5
+        y: 45.75
+        moveX: -111
+        progress: {
+          type: reload
+          ops: [
+            {
+              op: curve
+              interp: pow2
+            }
+          ]
+        }
+      }
+      {
+        suffix: -alt2
+        layer: 91.1
+        outline: false
+        weaponIndex: 0
+        x: 76.5
+        y: -29
+        moveX: -153
+        progress: {
+          type: reload
+          ops: [
+            {
+              op: curve
+              interp: pow2
+            }
+          ]
+        }
+      }
+      {
+        suffix: -alt3
+        layer: 91.1
+        outline: false
+        weaponIndex: 0
+        x: 48
+        y: 10
+        moveX: -96
+        progress: {
+          type: reload
+          ops: [
+            {
+              op: curve
+              interp: pow2
+            }
+          ]
+        }
+      }
+    ]
+  }
+]
+weapons: [
+  {
+    mirror: false
+    aiControllable: false
+    reload: 60
+    x: 0
+    shootY: 24
+    shootSound: beam
+    shake: 16
+    shootWarmupSpeed: 0.025
+    linearWarmup: true
+    minWarmup: 0.99
+  }
+  //death
+  {
+    shootOnDeath: true
+    controllable: false
+    reload: 15
+    x: 0
+    shootCone: 360
+    shootSound: none
+    bullet: {
+      spawnUnit: allure-0b00-16-fearless-transit
+    }
+  }
+]
+abilities: [
+  //segmented shield layer
+  {
+    type: ShieldArcAbility
+    regen: 20
+    max: 60000
+    angle: 55
+    radius: 95
+    cooldown: 90
+    whenShooting: false
+    angleOffset: 0
+    y: 23
+    width: 3
+  }
+  {
+    type: ShieldArcAbility
+    regen: 20
+    max: 60000
+    angle: 55
+    radius: 95
+    cooldown: 90
+    whenShooting: false
+    angleOffset: 180
+    y: -23
+    width: 3
+    display: false
+  }
+  {
+    type: ShieldArcAbility
+    regen: 20
+    max: 60000
+    angle: 35
+    radius: 151
+    cooldown: 90
+    whenShooting: false
+    angleOffset: 90
+    x: 49
+    width: 3
+    display: false
+  }
+  {
+    type: ShieldArcAbility
+    regen: 20
+    max: 60000
+    angle: 35
+    radius: 151
+    cooldown: 90
+    whenShooting: false
+    angleOffset: -90
+    x: -49
+    width: 3
+    display: false
+  }
+  {
+    type: ShieldArcAbility
+    regen: 20
+    max: 60000
+    angle: 54
+    radius: 89
+    cooldown: 90
+    whenShooting: false
+    angleOffset: 50.5
+    y: 26
+    x: -8
+    width: 3
+    display: false
+  }
+  {
+    type: ShieldArcAbility
+    regen: 20
+    max: 60000
+    angle: 54
+    radius: 89
+    cooldown: 90
+    whenShooting: false
+    angleOffset: 129.5
+    y: -26
+    x: -8
+    width: 3
+    display: false
+  }
+  {
+    type: ShieldArcAbility
+    regen: 20
+    max: 60000
+    angle: 54
+    radius: 89
+    cooldown: 90
+    whenShooting: false
+    angleOffset: -50.5
+    y: 26
+    x: 8
+    width: 3
+    display: false
+  }
+  {
+    type: ShieldArcAbility
+    regen: 20
+    max: 60000
+    angle: 54
+    radius: 89
+    cooldown: 90
+    whenShooting: false
+    angleOffset: -129.5
+    y: -26
+    x: 8
+    width: 3
+    display: false
+  }
+  //all warden ships regenerate slowly
+  {
+    type: RegenAbility
+    percentAmount: 0.01388888888 
+  }
+]
+research: 0b-begin
+fallEngineEffect: none
+fallEffect: {
+  line: true
+  length: 0.001
+  lifetime: 15
+  particles: 2
+  lenFrom: 3
+  lenTo: 3
+  strokeFrom: 1
+  strokeTo: 0
+  colorTo: 7382f0
+}
+deathExplosionEffect: {
+  type: MultiEffect
+  effects: [
+    {
+      length: 18
+      particles: 8
+      lifetime: 40
+      interp: pow2Out
+      sizeInterp: pow5In
+      sizeFrom: 6
+      sizeTo: 0
+      colorFrom: 7382f0bb
+      colorTo: 7382f0bb
+    }
+    {
+      length: 24
+      particles: 6
+      lifetime: 30
+      interp: pow2Out
+      sizeInterp: pow5In
+      sizeFrom: 2
+      sizeTo: 0
+      colorFrom: 7382f0bb
+      colorTo: 7382f0bb
+    }
+    {
+      line: true
+      length: 30
+      lifetime: 25
+      particles: 6
+      lenFrom: 6
+      lenTo: 4
+      strokeFrom: 2
+      strokeTo: 0
+      colorTo: 7382f0
+    }
+    {
+      type: WaveEffect
+      sizeFrom: 0
+      sizeTo: 24
+      colorTo: 90a2fc
+      lifetime: 10
+      strokeFrom: 3
+      strokeTo: 0
+    }
+  ]
+}
+createWreck: false
+createScorch: false
+deathSound: none
+deathExplosionEffect: none
+envEnabled: -1
+envDisabled: 0

@@ -1,0 +1,20 @@
+heatCapacity: 0.25
+//As it turns out, this exploding violently at the slightest inconvenience is a slight issue for all types of base
+//explosiveness: 0.45
+flammability: 0.2
+research: {
+  parent: liquid-baenara
+  objectives: [
+    {
+      type: Produce
+      content: allure-fluid-energy
+    }
+  ]
+}
+color: b3e9ff
+lightColor: b3e9ff44
+shownPlanets: [
+  allure-wandura,
+  allure-genaise,
+  allure-lus
+]

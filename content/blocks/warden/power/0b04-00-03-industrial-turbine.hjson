@@ -1,0 +1,108 @@
+type: ConsumeGenerator
+size: 2
+liquidCapacity: 150
+squareSprite: false 
+customShadow: true
+effectChance: 0.05
+warmupSpeed: 0.01
+generateEffectRange: 8
+generateEffect: {
+  particles: 1
+  length: 100
+  lifetime: 240
+  cone: 12
+  baseRotation: 32
+  sizeFrom: 0
+  sizeTo: 16
+  colorFrom: ffffff88
+  colorTo: ffffff00
+  sizeInterp: pow2Out
+  interp: pow2Out
+}
+drawer: {
+  type: DrawMulti
+  iconOverride: [
+    -icon
+  ]
+  drawers: [
+    {
+      type: DrawRegion
+    }
+    {
+      type: DrawRegion
+      suffix: -fan
+      rotateSpeed: 8, rotation: 0
+      spinSprite: true
+    }
+    {
+      type: DrawRegion
+      suffix: -fan
+      rotateSpeed: 8, rotation: 30
+      spinSprite: true
+    }
+    {
+      type: DrawRegion
+      suffix: -fan
+      rotateSpeed: 8, rotation: 60
+      spinSprite: true
+    }
+    {
+      type: DrawRegion
+      suffix: -top
+    }
+    {
+      type: DrawGlowRegion
+      suffix: -flare1
+      color: 7382f0
+      layer: 46, alpha: 1, glowIntensity: 0.15
+    }
+    {
+      type: DrawGlowRegion
+      suffix: -flare2
+      color: ffffff
+      layer: 46, alpha: 1, glowIntensity: 0.15
+    }
+  ]
+}
+consumes: {
+  liquid: steam/0.83334
+}
+outputLiquid: steam/0
+powerProduction: 2
+category: power
+research: {
+  parent: 0b04-01-solar-heater
+  objectives: [
+    0b-steam-heating
+  ]
+}
+requirements: [
+  dantrales/50
+  territe-alloy/125
+]
+breakEffect: [
+  {
+    type: WaveEffect
+    rotation: 43
+    lifetime: 20
+    sides: 4
+    sizeFrom: 8
+    sizeTo: 16
+    strokeFrom: 6
+    strokeTo: 0
+    colorFrom: 7382f0
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    length: 0
+    lifetime: 30
+    useRotation: false
+    region: allure-warden-icon
+    sizeFrom: 8
+    sizeTo: 8
+    colorFrom: 7382f0
+    colorTo: 7382f000
+  }
+]

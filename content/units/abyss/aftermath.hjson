@@ -1,0 +1,700 @@
+type: naval
+//abyss do not have displayed names
+localizedName: ???
+hitSize: 80
+health: 2200000
+armor: 3200
+speed: 1
+rotateSpeed: 1.1
+drag: 0.15
+accel: 0.3
+shadowElevationScl: 0
+drawBody: false
+drawCell: false
+outlines: false
+immunities: [
+  wet, 
+  shocked,
+  blasted,
+  freezing,
+  tarred,
+  burning,
+  melting,
+  electrified,
+  slow,
+  disarmed,
+  corroded,
+  spore-slowed,
+  allure-0b-energy0,
+  allure-0b-energy1,
+  allure-0b-energy2,
+  allure-0b-energy3,
+  allure-0b-energy4,
+  allure-emp
+]
+//What in the ungodly heck are these old comments
+weapons: [
+  //deployable what the f's
+  {
+    inaccuracy: 0
+    shootCone: 45
+    mirror: false
+    alternate: false
+    rotate: true
+    shootY: 0
+    shoot: {
+      type: ShootBarrel
+      barrels: [
+        0, 0, 11.25,
+        0, 0, -11.25
+      ]
+    }
+    x: 0
+    reload: 10
+    shootSound: none
+    bullet: {
+      type: BulletType
+      layer: 130
+      pierce: true
+      pierceBuilding: true
+      pierceCap: 4
+      absorbable: false
+      hittable: false
+      reflectable: false
+      speed: 6
+      lifetime: 250
+      homingDelay: 5
+      homingPower: 0.05
+      homingRange: 480
+      weaveMag: 3
+      weaveScale: 18
+      trailWidth: 0.1
+      trailLength: 24
+      trailColor: 000000
+      trailSinMag: 120
+      trailSinScl: 2
+      hitEffect: none
+      despawnEffect: none
+      shootEffect: none
+      smokeEffect: none
+      bulletInterval: 1
+      intervalBullet: {
+        type: BulletType
+        lifetime: 2
+        damage: 700
+        pierce: true
+        pierceBuilding: true
+        reflectable: false
+        hittable: false
+        hitEffect: none
+        despawnEffect: none
+      }
+    }
+  }
+  {
+    baseRotation: 14
+    //remove crisscross
+    rotate: true
+    rotateSpeed: 0
+    shootCone: 360
+    x: 70
+    alternate: false
+    reload: 360
+    shoot: {
+      shots: 18
+      shotDelay: 20
+    }
+    shootSound: none
+    bullet: {
+      type: BulletType
+      collides: false
+      absorbable: false
+      hittable: false
+      speed: 8
+      lifetime: 30
+      trailInterval: 1
+      trailEffect: [
+        {
+          length: 0
+          particles: 2
+          region: circle-shadow
+          layer: 60
+          lifetime: 15
+          interp: pow2
+          sizeFrom: 0
+          sizeTo: 12
+          colorFrom: 000000
+          colorTo: 000000
+        }
+        {
+          length: 0
+          particles: 2
+          region: circle-shadow
+          layer: 60
+          lifetime: 15
+          startDelay: 14
+          interp: pow2
+          sizeFrom: 12
+          sizeTo: 0
+          colorFrom: 000000
+          colorTo: 000000
+        }
+      ]
+      hitEffect: none
+      despawnEffect: none
+      shootEffect: none
+      smokeEffect: none
+    }
+  }
+  //slorp
+  {
+    x: 0
+    rotate: true
+    rotateSpeed: 0
+    baseRotation: 180
+    shootY: -240
+    shootCone: 360
+    shoot: {
+      firstShotDelay: 360
+    }
+    reload: 720
+    shootStatus: unmoving
+    shootStatusDuration: 360
+    shootSound: none
+    bullet: {
+      spawnUnit: allure-aftermath-singularity
+      shootEffect: none
+      smokeEffect: none
+      chargeEffect: [
+        {
+          length: 0
+          layer: 60
+          particles: 5
+          region: circle-shadow
+          lifetime: 361
+          interp: pow10Out
+          sizeFrom: 0
+          sizeTo: 55
+          colorFrom: 000000
+          colorTo: 000000
+        }
+        {
+          length: 0
+          layer: 60
+          particles: 1
+          region: circle-shadow
+          lifetime: 361
+          sizeFrom: 0
+          sizeTo: 300
+          colorFrom: 000000
+          colorTo: 000000
+        }
+        {
+          length: 0
+          layer: 60
+          particles: 5
+          lifetime: 361
+          interp: pow10Out
+          sizeFrom: 0
+          sizeTo: 35
+          colorFrom: 000000
+          colorTo: 000000
+        }
+        {
+          type: WaveEffect
+          layer: 60
+          lifetime: 45
+          interp: pow3In
+          sizeFrom: 120
+          sizeTo: 0
+          strokeFrom: 0
+          strokeTo: 16
+          colorFrom: 000000
+          colorTo: 000000
+        }
+        {
+          type: WaveEffect
+          layer: 60
+          lifetime: 45
+          startDelay: 45
+          interp: pow3In
+          sizeFrom: 160
+          sizeTo: 0
+          strokeFrom: 0
+          strokeTo: 16
+          colorFrom: 000000
+          colorTo: 000000
+        }
+        {
+          type: WaveEffect
+          layer: 60
+          lifetime: 45
+          startDelay: 90
+          interp: pow3In
+          sizeFrom: 200
+          sizeTo: 0
+          strokeFrom: 0
+          strokeTo: 16
+          colorFrom: 000000
+          colorTo: 000000
+        }
+        {
+          length: 0
+          layer: 60
+          particles: 1
+          interp: pow3Out
+          spin: 2
+          region: allure-singularity
+          lifetime: 181
+          startDelay: 180
+          sizeFrom: 0
+          sizeTo: 240
+          colorFrom: 000000
+          colorTo: 000000
+          useRotation: false
+        }
+        {
+          length: 0
+          layer: 60
+          particles: 1
+          interp: pow3Out
+          spin: 5
+          region: allure-singularity
+          lifetime: 181
+          startDelay: 180
+          sizeFrom: 0
+          sizeTo: 160
+          colorFrom: 000000
+          colorTo: 000000
+          useRotation: false
+        }
+        {
+          length: 0
+          layer: 60
+          particles: 1
+          interp: pow3Out
+          spin: 5
+          offset: 30
+          region: allure-singularity
+          lifetime: 181
+          startDelay: 180
+          sizeFrom: 0
+          sizeTo: 160
+          colorFrom: 000000
+          colorTo: 000000
+          useRotation: false
+        }
+        {
+          length: 0
+          layer: 60
+          particles: 1
+          interp: pow3Out
+          spin: 5
+          offset: 60
+          region: allure-singularity
+          lifetime: 181
+          startDelay: 180
+          sizeFrom: 0
+          sizeTo: 160
+          colorFrom: 000000
+          colorTo: 000000
+          useRotation: false
+        }
+        {
+          length: 0
+          layer: 60
+          particles: 1
+          interp: pow5Out
+          spin: 8
+          region: allure-singularity-ring
+          lifetime: 361
+          sizeFrom: 0
+          sizeTo: 200
+          colorFrom: 000000bb
+          colorTo: 000000bb
+          useRotation: false
+        }
+        {
+          length: 0
+          layer: 60
+          particles: 1
+          interp: pow5Out
+          spin: -4
+          region: allure-singularity-ring
+          lifetime: 361
+          sizeFrom: 0
+          sizeTo: 200
+          colorFrom: 000000bb
+          colorTo: 000000bb
+          useRotation: false
+        }
+        {
+          length: 0
+          layer: 60
+          particles: 1
+          interp: pow5Out
+          spin: -2
+          region: allure-singularity-ring
+          lifetime: 361
+          sizeFrom: 0
+          sizeTo: 240
+          colorFrom: 00000055
+          colorTo: 00000055
+          useRotation: false
+        }
+        {
+          length: 0
+          layer: 60
+          particles: 1
+          interp: pow5Out
+          spin: 12
+          region: allure-singularity-ring
+          lifetime: 361
+          sizeFrom: 0
+          sizeTo: 240
+          colorFrom: 00000055
+          colorTo: 00000055
+          useRotation: false
+        }
+        {
+          length: 0
+          layer: 60
+          particles: 1
+          interp: pow5Out
+          spin: 12
+          region: allure-singularity-ring
+          lifetime: 361
+          sizeFrom: 0
+          sizeTo: 140
+          colorFrom: 000000
+          colorTo: 000000
+          useRotation: false
+        }
+      ]
+    }
+  }
+  //boiling effect
+  {
+    reload: 25
+    x: 0
+    mirror: false
+    inaccuracy: 360
+    alwaysShooting: true
+    shootCone: 360
+    shootSound: none
+    bullet: {
+      type: BulletType
+      lifetime: 0
+      hitEffect: none
+      despawnEffect: none
+      shootEffect: {
+        type: RadialEffect
+        lengthOffset: 90
+        layer: 60
+        amount: 1
+        effect: {
+          type: SeqEffect
+          layer: 60
+          effects: [
+            {
+              length: 0
+              particles: 1
+              region: circle-shadow
+              layer: 60
+              lifetime: 31
+              sizeFrom: 0
+              sizeTo: 55
+              colorFrom: 000000
+              colorTo: 000000
+              interp: pow3Out
+            }
+            {
+              length: 0
+              particles: 1
+              region: circle-shadow
+              layer: 60
+              lifetime: 91
+              startDelay: 31
+              sizeFrom: 55
+              sizeTo: 0
+              colorFrom: 000000
+              colorTo: 000000
+              interp: pow2In
+            }
+          ]
+        }
+      }
+      smokeEffect: none
+    }
+  }
+  //faint gaseous radiance
+  {
+    reload: 15
+    x: 0
+    mirror: false
+    inaccuracy: 360
+    alwaysShooting: true
+    shootCone: 360
+    shootSound: none
+    bullet: {
+      type: BulletType
+      lifetime: 0
+      hitEffect: none
+      despawnEffect: none
+      smokeEffect: none
+      shootEffect: [
+        {
+          length: 280
+          particles: 1
+          region: circle-shadow
+          layer: 60
+          lifetime: 380
+          interp: pow2In
+          sizeFrom: 80
+          sizeTo: 0
+          colorFrom: 000000bb
+          colorTo: 000000bb
+        }
+      ]
+    }
+  }
+  //p u l s e 
+  {
+    reload: 60
+    x: 0
+    mirror: false
+    inaccuracy: 360
+    alwaysShooting: true
+    shootCone: 360
+    shootSound: none
+    parts: [
+      {
+        type: RegionPart
+        name: circle-shadow
+        outline: false
+        xScl: 7
+        yScl: 7
+        color: 000000
+        layer: 154
+        moves: [
+          {
+            gx: 7
+            gy: 7
+            progress: smoothReload
+          }
+        ]
+      }
+    ]
+    bullet: {
+      type: BulletType
+      instantDisappear: true
+      shootEffect: none
+      smokeEffect: none
+      despawnEffect: none
+    }
+  }
+]
+deathSound: none
+deathExplosionEffect: [
+  {
+    length: 0
+    particles: 4
+    region: circle-shadow
+    layer: 60
+    lifetime: 90
+    interp: pow2
+    sizeFrom: 120
+    sizeTo: 280
+    colorFrom: 000000
+    colorTo: 000000
+  }
+  {
+    length: 0
+    particles: 4
+    region: circle-shadow
+    layer: 60
+    lifetime: 91
+    startDelay: 90
+    interp: pow2In
+    sizeFrom: 280
+    sizeTo: 0
+    colorFrom: 000000
+    colorTo: 000000
+  }
+  {
+    length: 0
+    layer: 60
+    particles: 1
+    interp: pow3Out
+    spin: 2
+    region: allure-singularity
+    lifetime: 181
+    startDelay: 60
+    sizeFrom: 0
+    sizeTo: 240
+    colorFrom: 000000
+    colorTo: 000000
+    useRotation: false
+  }
+  {
+    length: 0
+    layer: 60
+    particles: 1
+    interp: pow3Out
+    spin: 5
+    region: allure-singularity
+    lifetime: 181
+    startDelay: 60
+    sizeFrom: 0
+    sizeTo: 160
+    colorFrom: 000000
+    colorTo: 000000
+    useRotation: false
+  }
+  {
+    length: 0
+    layer: 60
+    particles: 1
+    interp: pow3Out
+    spin: 5
+    offset: 30
+    region: allure-singularity
+    lifetime: 181
+    startDelay: 60
+    sizeFrom: 0
+    sizeTo: 160
+    colorFrom: 000000
+    colorTo: 000000
+    useRotation: false
+  }
+  {
+    length: 0
+    layer: 60
+    particles: 1
+    interp: pow3Out
+    spin: 5
+    offset: 60
+    region: allure-singularity
+    lifetime: 181
+    startDelay: 60
+    sizeFrom: 0
+    sizeTo: 160
+    colorFrom: 000000
+    colorTo: 000000
+    useRotation: false
+  }
+  {
+    length: 0
+    layer: 60
+    particles: 1
+    interp: pow2In
+    spin: 2
+    region: allure-singularity
+    lifetime: 90
+    startDelay: 240
+    sizeFrom: 240
+    sizeTo: 0
+    colorFrom: 000000
+    colorTo: 000000
+    useRotation: false
+  }
+  {
+    length: 0
+    layer: 60
+    particles: 1
+    interp: pow2In
+    spin: 5
+    region: allure-singularity
+    lifetime: 90
+    startDelay: 240
+    sizeFrom: 160
+    sizeTo: 0
+    colorFrom: 000000
+    colorTo: 000000
+    useRotation: false
+  }
+  {
+    length: 0
+    layer: 60
+    particles: 1
+    interp: pow2In
+    spin: 5
+    offset: 30
+    region: allure-singularity
+    lifetime: 90
+    startDelay: 240
+    sizeFrom: 160
+    sizeTo: 0
+    colorFrom: 000000
+    colorTo: 000000
+    useRotation: false
+  }
+  {
+    length: 0
+    layer: 60
+    particles: 1
+    interp: pow2In
+    spin: 5
+    offset: 60
+    region: allure-singularity
+    lifetime: 90
+    startDelay: 240
+    sizeFrom: 160
+    sizeTo: 0
+    colorFrom: 000000
+    colorTo: 000000
+    useRotation: false
+  }
+  {
+    length: 0
+    layer: 60
+    particles: 4
+    region: circle-shadow
+    lifetime: 181
+    startDelay: 60
+    interp: pow3Out
+    sizeFrom: 0
+    sizeTo: 55
+    colorFrom: 000000
+    colorTo: 000000
+  }
+  {
+    length: 0
+    layer: 60
+    particles: 1
+    region: circle-shadow
+    lifetime: 181
+    startDelay: 60
+    interp: pow3Out
+    sizeFrom: 0
+    sizeTo: 300
+    colorFrom: 000000
+    colorTo: 000000
+  }
+  {
+    length: 0
+    layer: 60
+    particles: 5
+    region: circle-shadow
+    lifetime: 90
+    startDelay: 240
+    interp: pow2In
+    sizeFrom: 55
+    sizeTo: 0
+    colorFrom: 000000
+    colorTo: 000000
+  }
+  {
+    length: 0
+    layer: 60
+    particles: 1
+    region: circle-shadow
+    lifetime: 90
+    startDelay: 240
+    interp: pow2In
+    sizeFrom: 300
+    sizeTo: 0
+    colorFrom: 000000
+    colorTo: 000000
+  }
+]

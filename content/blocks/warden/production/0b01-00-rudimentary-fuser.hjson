@@ -1,0 +1,121 @@
+type: AttributeCrafter
+health: 2000
+size: 4, itemCapacity: 50, liquidCapacity: 60
+craftTime: 8
+baseEfficiency: 0, minEfficiency: 0.01, maxBoost: 2, boostScale: 0.0625
+attribute: gravel
+squareSprite: false
+customShadow: true
+drawLiquidLight: false
+dumpExtraLiquid: false
+hasItems: false
+consumes: {
+  liquids: [
+    fluid-energy/0.066666666
+  ]
+  liquid: {
+    liquid: slag
+    amount: 0
+    optional: true
+  }
+}
+outputLiquids: [
+  slag/0.1, fluid-energy/0
+]
+category: production
+research: {
+  parent: 0b-begin
+  objectives: [
+    0b-basic-infrastructure
+  ]
+  requirements: [
+    dantrales/700
+    territe-alloy/2500
+  ]
+}
+requirements: [
+  territe-alloy/18, crystal/126
+]
+ambientSoundVolume: 0.05, ambientSound: loopMineBeam
+craftEffect: [
+  {
+    type: RadialEffect
+    amount: 6, lengthOffset: 0.5, rotationSpacing: 60
+    effect: {
+      line: true
+      particles: 1, lifetime: 20
+      cone: 0, length: 0, baseLength: 1, randLength: false
+      lenFrom: 3.5, lenTo: 3.5
+      strokeFrom: 1, strokeTo: 0
+      colorTo: 7382f0
+    }
+  }
+  {
+    particles: 3, lifetime: 60, layer: 46.5
+    length: 5, baseLength: 3, randLength: false
+    sizeFrom: 0, sizeTo: 3
+    colorFrom: 78787888, colorTo: feb380
+    interp: pow2
+    sizeInterp: slope
+  }
+  {
+    particles: 1, lifetime: 50, layer: 46
+    cone: 0, length: 0, offset: 90
+    sizeFrom: 0, sizeTo: 18
+    colorFrom: 7382f000, colorTo: ffffff66
+    interp: slope
+    region: circle-shadow
+  }
+  {
+    particles: 1, lifetime: 25, layer: 46
+    cone: 0, length: 0, offset: 90
+    sizeFrom: 0, sizeTo: 12
+    colorFrom: 7382f000, colorTo: ffffff66
+    interp: slope
+    region: circle-shadow
+  }
+]
+drawer: {
+  type: DrawMulti
+  iconOverride: [
+    -icon
+  ]
+  drawers: [
+    {
+      type: DrawRegion
+      layer: 45
+    }
+    {
+      type: DrawRegion
+      suffix: -shadow2
+      layer: 46
+    }
+    {
+      type: DrawGlowRegion
+      layer: 46, alpha: 1, glowIntensity: 0.25
+      color: 7382f0
+    }
+    {
+      type: DrawArcSmelt
+      particles: 0
+      flameColor: 7382f0, midColor: ffffff
+    }
+    {
+      type: DrawRegion
+      suffix: -top
+      layer: 47
+    }
+    {
+      type: DrawGlowRegion
+      layer: 48, alpha: 1, glowIntensity: 0.1
+      suffix: -flare1
+      color: 7382f0
+    }
+    {
+      type: DrawGlowRegion
+      layer: 48, alpha: 1, glowIntensity: 0.1
+      suffix: -flare2
+      color: ffffff
+    }
+  ]
+}

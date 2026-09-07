@@ -1,0 +1,34 @@
+type: Constructor
+size: 7
+consumes: {
+  power: 4
+}
+payloadSpeed: 0.75
+buildSpeed: 14
+filter: [
+  allure-1v06-00-00-speed-module,
+  allure-1v06-00-01-productivity-module,
+  allure-1v07-12-00-treads,
+  allure-1v07-12-01-lightweight-cells,
+  allure-1v07-12-02-thin-armor,
+  allure-1v07-12-03-thruster-module,
+  allure-1v07-12-04-shielded-cells,
+  allure-1v07-12-05-plated-armor,
+  lancer,
+  arc,
+  salvo,
+  spectre,
+  swarmer,
+  allure-fallout,
+  hail,
+  ripple,
+  thorium-reactor
+]
+maxBlockSize: 7
+category: units
+requirements: [
+  copper/45
+  lead/150
+  silicon/25
+  thorium/25
+]

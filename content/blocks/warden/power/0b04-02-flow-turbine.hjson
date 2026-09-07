@@ -1,0 +1,128 @@
+type: ThermalGenerator
+size: 4
+attribute: flow
+minEfficiency: 0.499999
+placeableLiquid: true
+customShadow: true 
+powerProduction: 1
+drawer: [
+  {
+    type: DrawRegion
+    suffix: -fan
+    rotateSpeed: 0.5
+    layer: 10
+    color: ffffff88
+  }
+  {
+    type: DrawRegion
+    suffix: -fan
+    rotateSpeed: 0.5
+    rotation: 22.5
+    layer: 10
+    color: ffffff88
+  }
+  {
+    type: DrawRegion
+    suffix: -fan
+    rotateSpeed: 0.5
+    rotation: 45
+    layer: 10
+    color: ffffff88
+  }
+  {
+    type: DrawRegion
+    suffix: -fan
+    rotateSpeed: 0.5
+    rotation: 67.5
+    layer: 10
+    color: ffffff88
+  }
+  {
+  }
+  {
+    type: DrawGlowRegion
+    suffix: -flare2
+    color: ffffff
+    layer: 48, alpha: 1, glowIntensity: 0.15
+  }
+]
+category: power
+research: 0b04-01-solar-heater
+requirements: [
+  dantrales/160
+  territe-alloy/400
+]
+breakEffect: [
+  {
+    type: WaveEffect
+    rotation: 41
+    lifetime: 20
+    sides: 4
+    sizeFrom: 16
+    sizeTo: 32
+    strokeFrom: 12
+    strokeTo: 0
+    colorFrom: 7382f0
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    length: 0
+    lifetime: 11
+    useRotation: false
+    region: allure-warden-icon
+    sizeFrom: 8
+    sizeTo: 8
+    colorFrom: 7382f000
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    length: 0
+    lifetime: 30
+    startDelay: 10
+    useRotation: false
+    region: allure-warden-icon
+    sizeFrom: 8
+    sizeTo: 8
+    colorFrom: 7382f0
+    colorTo: 7382f000
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    cone: 0
+    randLength: false
+    length: 0
+    baseLength: 12
+    lifetime: 35
+    useRotation: false
+    region: allure-energy-arrow
+    interp: pow3Out
+    sizeInterp: pow2In
+    sizeFrom: 4
+    sizeTo: 0
+    colorFrom: 7382f0
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    cone: 0
+    baseRotation: 180
+    randLength: false
+    length: 0
+    baseLength: 12
+    lifetime: 35
+    useRotation: false
+    region: allure-energy-arrow
+    interp: pow3Out
+    sizeInterp: pow2In
+    sizeFrom: 4
+    sizeTo: 0
+    colorFrom: 7382f0
+    colorTo: 7382f0
+  }
+]

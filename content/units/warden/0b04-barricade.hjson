@@ -1,0 +1,296 @@
+type: flying
+flying: true
+wobble: false
+lowAltitude: true
+speed: 3
+rotateSpeed: 4
+accel: 0.04
+drag: 0.04
+strafePenalty: 1
+hitSize: 22
+health: 36000
+armor: 200
+shadowElevationScl: 1.2
+range: 0
+maxRange: 0
+lightRadius: 0
+outlines: false
+drawCell: false
+healColor: 7382f088
+shieldColor: 7382f000
+engineSize: 0
+deathShake: 0
+parts: [
+  {
+    type: RegionPart
+    layer: 91
+    outline: false
+  }
+  { 
+    type: RegionPart
+    suffix: -flare
+    outline: false
+    blending: additive
+    layer: 92
+    color: 7382f0
+    colorTo: ffffff
+    weaponIndex: 0
+  }
+  { 
+    type: RegionPart
+    suffix: -flare
+    outline: false
+    layer: 140
+    color: 7382f025
+    blending: additive
+  }
+  {
+    type: RegionPart
+    name: allure-shield
+    outline: false
+    blending: additive
+    color: 7382f088
+    layer: 88
+    xScl: 0.4
+    yScl: 0.4
+  }
+  {
+    type: RegionPart
+    name: allure-halfshield
+    outline: false
+    blending: additive
+    color: 7382f088
+    layer: 95
+    xScl: 0.25
+    yScl: 0.75
+    x: 18
+    mirror: true
+  }
+  //extra thrusters
+  {
+    name: allure-shootspike
+    x: 0
+    y: -11
+    layer: 90
+    rotation: -90
+    outline: false
+    mirror: false
+    clampProgress: false
+    color: 7382f0
+    blending: additive
+    xScl: 0.1
+    yScl: 0.4
+    growX: 0.05
+    growProgress: {
+      type: time
+      ops: [
+        {
+          op: loop
+          time: 15
+        }
+        {
+          op: slope
+        }
+      ]
+    }
+  }
+  {
+    name: allure-shootspike
+    x: 0
+    y: 11
+    layer: 90
+    rotation: 90
+    outline: false
+    mirror: false
+    clampProgress: false
+    color: 7382f0
+    blending: additive
+    xScl: 0.1
+    yScl: 0.4
+    growX: 0.05
+    growProgress: {
+      type: time
+      ops: [
+        {
+          op: loop
+          time: 15
+        }
+        {
+          op: slope
+        }
+      ]
+    }
+  }
+  {
+    name: allure-shootspike
+    x: 5
+    y: -8.75
+    layer: 90
+    rotation: -45
+    outline: false
+    mirror: true
+    clampProgress: false
+    color: 7382f0
+    blending: additive
+    xScl: 0.025
+    yScl: 0.2
+    growX: 0.025
+    growProgress: {
+      type: time
+      ops: [
+        {
+          op: loop
+          time: 15
+        }
+        {
+          op: slope
+        }
+      ]
+    }
+  }
+  {
+    name: allure-shootspike
+    x: 5
+    y: 8.75
+    layer: 90
+    rotation: 45
+    outline: false
+    mirror: true
+    clampProgress: false
+    color: 7382f0
+    blending: additive
+    xScl: 0.025
+    yScl: 0.2
+    growX: 0.025
+    growProgress: {
+      type: time
+      ops: [
+        {
+          op: loop
+          time: 15
+        }
+        {
+          op: slope
+        }
+      ]
+    }
+  }
+  {
+    name: allure-shootspike
+    x: 4
+    y: 4
+    layer: 91.4
+    rotation: 0
+    outline: false
+    mirror: true
+    clampProgress: false
+    color: 7382f0
+    blending: additive
+    xScl: 0.025
+    yScl: 0.2
+    growX: 0.025
+    growProgress: {
+      type: time
+      ops: [
+        {
+          op: loop
+          time: 15
+        }
+        {
+          op: slope
+        }
+      ]
+    }
+  }
+  {
+    name: allure-shootspike
+    x: 4
+    y: -4
+    layer: 91.4
+    rotation: 0
+    outline: false
+    mirror: true
+    clampProgress: false
+    color: 7382f0
+    blending: additive
+    xScl: 0.025
+    yScl: 0.2
+    growX: 0.025
+    growProgress: {
+      type: time
+      ops: [
+        {
+          op: loop
+          time: 15
+        }
+        {
+          op: slope
+        }
+      ]
+    }
+  }
+]
+weapons: [
+  //death
+  {
+    shootOnDeath: true
+    controllable: false
+    reload: 15
+    x: 0
+    shootCone: 360
+    shootSound: none
+    bullet: {
+      spawnUnit: allure-0b00-04-barricade-transit
+    }
+  }
+]
+abilities: [
+  {
+    type: ShieldArcAbility
+    regen: 12
+    max: 12500
+    angle: 50
+    radius: 90
+    cooldown: 90
+    whenShooting: false
+    angleOffset: 90
+    width: 5
+    x: 68
+  }
+  {
+    type: ShieldArcAbility
+    regen: 12
+    max: 12500
+    angle: 50
+    radius: 90
+    cooldown: 90
+    whenShooting: false
+    angleOffset: -90
+    width: 5
+    display: false
+    x: -68
+  }
+  //segmented shield layer
+  {
+    type: ShieldArcAbility
+    regen: 3
+    max: 4500
+    angle: 360
+    radius: 20
+    cooldown: 90
+    whenShooting: false
+    angleOffset: 0
+    width: 2
+  }
+  //all warden ships regenerate slowly
+  {
+    type: RegenAbility
+    percentAmount: 0.01388888888 
+  }
+]
+createWreck: false
+createScorch: false
+deathSound: none
+deathExplosionEffect: none
+envEnabled: -1
+envDisabled: 0

@@ -1,0 +1,7 @@
+powerProduction: 2.5
+baseExplosiveness: 17
+requirements: [
+  lead/50
+  silicon/50
+  titanium/30
+]

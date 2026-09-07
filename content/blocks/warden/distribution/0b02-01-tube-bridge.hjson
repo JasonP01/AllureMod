@@ -1,0 +1,10 @@
+type: DuctBridge
+health: 250, itemCapacity: 20
+speed: 4.9, range: 3, dumpTime: 4
+squareSprite: false
+customShadow: true
+requirements: [
+  crystal/7
+]
+category: distribution
+research: 0b02-00-tube

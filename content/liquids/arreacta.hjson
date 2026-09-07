@@ -1,0 +1,18 @@
+gas: true
+color: ab68b3
+flammability: 0
+explosiveness: 1.4
+research: {
+  parent: fluid-energy
+  objectives: [
+    {
+      type: Produce
+      content: allure-arreacta
+    }
+  ]
+}
+shownPlanets: [
+  allure-wandura,
+  allure-genaise,
+  allure-lus
+]

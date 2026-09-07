@@ -1,0 +1,12 @@
+hardness: 5
+cost: 0.7
+color: cc7945
+flammability: 0.4
+radioactivity: 0.7
+research: uranium
+healthScaling: 2.2
+shownPlanets: [
+  allure-wandura,
+  allure-genaise,
+  allure-lus
+]

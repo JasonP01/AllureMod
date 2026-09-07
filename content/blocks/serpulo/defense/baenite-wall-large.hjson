@@ -1,0 +1,12 @@
+type: RegenProjector
+size: 2
+health: 2560
+hasPower: false
+range: 2
+optionalMultiplier: 1
+baseColor: abffac
+category: defense
+research: baenite-wall
+requirements: [
+  baenite/24
+]

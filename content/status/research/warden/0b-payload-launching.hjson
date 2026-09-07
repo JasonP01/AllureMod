@@ -1,0 +1,10 @@
+research: {
+  parent: 0b-basic-infrastructure
+  requirements: [
+    forge-plating/50
+    territe-alloy/1500
+    metaglass/2500
+    baenite/1000
+  ]
+}
+show: false

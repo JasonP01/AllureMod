@@ -1,0 +1,13 @@
+type: LiquidJunction
+health: 500, armor: 50
+squareSprite: false
+customShadow: true
+requirements: [
+  territe-alloy/6
+]
+category: liquid
+research: {
+  parent: 0b03-00-vacuum-conduit
+  requirements: [
+  ]
+}

@@ -1,0 +1,15 @@
+research: {
+  parent: 0b-steam-heating
+  objectives: [
+    0b04-00-00-steam-turbine,
+    steam
+  ]
+  requirements: [
+    forge-plating/25
+    territe-alloy/3500
+    silicon/1250
+    scilaxa/1000
+    crystal/2500
+  ]
+}
+show: false

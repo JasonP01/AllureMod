@@ -1,0 +1,45 @@
+type: HeatCrafter
+itemCapacity: 80
+liquidCapacity: 120
+size: 6
+heatRequirement: 6
+overheatScale: 1.33
+maxEfficiency: 6
+craftTime: 120
+rotateDraw: false
+rotate: true
+ignoreLiquidFullness: true
+liquidOutputDirections: [0]
+conductivePower: true
+drawer: [
+  {
+    type: DrawRegion
+    layer: 29.9
+  }
+  {
+    type: DrawLiquidOutputs
+  }
+  {
+    type: DrawFlame
+    flameRadius: 8
+    flameRadiusIn: 6
+    flameRadiusMag: 5
+    flameRadiusInMag: 4
+    flameRadiusScl: 12
+    flameColor: ffffa8
+  }
+]
+updateEffect: fuelburn
+craftEffect: mineHuge
+consumes: {
+  power: 12
+  liquids: [
+    molten-lead/0.1333333333
+    thermal-fluid/0.5
+    molten-silica/0.08333333333333
+  ]
+}
+outputItem: metaglass/24
+outputLiquid: thermal-gas/0.51
+category: crafting
+buildVisibility: sandboxOnly

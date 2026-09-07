@@ -1,0 +1,169 @@
+type: AttributeCrafter
+customShadow: true
+squareSprite: false
+size: 10
+dumpTime: 1
+itemCapacity: 450
+floating: true
+attribute: heat
+boostScale: 0.0118
+minEfficiency: 0
+baseEfficiency: 0
+consumes: {
+  items: [
+    contained-steam/72
+    contained-fluid-energy/36
+  ]
+}
+drawer: [
+  {
+  }
+  //main centrifuge
+  {
+    type: DrawGlowRegion
+    suffix: -heat
+    layer: 30
+  }
+  {
+    type: DrawRegion
+    suffix: -bearing
+    rotateSpeed: -3
+    spinSprite: true
+  }
+  {
+    type: DrawRegion
+    suffix: -centrifuge
+    rotateSpeed: -6
+    spinSprite: true
+  }
+  {
+    type: DrawRegion
+    suffix: -centrifuge
+    rotateSpeed: -6
+    rotation: 45
+    spinSprite: true
+  }
+  {
+    type: DrawRegion
+    suffix: -shade
+  }
+  {
+    type: DrawGlowRegion
+    suffix: -slag
+    alpha: 1
+    glowIntensity: 0
+    blending: normal
+    color: ffffff
+    rotateSpeed: -6
+    layer: 30
+  }
+  {
+    type: DrawRegion
+    suffix: -mid
+  }
+  //slag
+  {
+    type: DrawGlowRegion
+    suffix: -liquid
+    glowIntensity: 0
+    alpha: 1
+    color: e28654
+    blending: normal
+    layer: 30
+  }
+  {
+    type: DrawParticles
+    color: ffcd66
+    particles: 75
+    alpha: 1
+    particleSize: 2
+    particleRad: 3
+    particleInterp: slope
+    particleLife: 80
+    x: 19
+    y: 16
+  }
+  {
+    type: DrawParticles
+    color: ffffa3
+    particles: 75
+    alpha: 1
+    particleSize: 1
+    particleRad: 3
+    particleInterp: slope
+    particleLife: 80
+    x: 19
+    y: 16
+  }
+  {
+    type: DrawParticles
+    color: ffcd66
+    particles: 75
+    alpha: 1
+    particleSize: 2
+    particleRad: 3
+    particleInterp: slope
+    particleLife: 80
+    x: -19
+    y: -16
+  }
+  {
+    type: DrawParticles
+    color: ffffa3
+    particles: 75
+    alpha: 1
+    particleSize: 1
+    particleRad: 3
+    particleInterp: slope
+    particleLife: 80
+    x: -19
+    y: -16
+  }
+  //top turbines
+  {
+    type: DrawRegion
+    suffix: -turbine
+    rotateSpeed: -6
+    spinSprite: true
+    x: 19
+    y: 16
+  }
+  {
+    type: DrawRegion
+    suffix: -turbine
+    rotateSpeed: -6
+    rotation: 45
+    spinSprite: true
+    x: 19
+    y: 16
+  }
+  {
+    type: DrawRegion
+    suffix: -turbine
+    rotateSpeed: -6
+    spinSprite: true
+    x: -19
+    y: -16
+  }
+  {
+    type: DrawRegion
+    suffix: -turbine
+    rotateSpeed: -6
+    rotation: 45
+    spinSprite: true
+    x: -19
+    y: -16
+  }
+  {
+    type: DrawRegion
+    suffix: -top
+  }
+]
+craftTime: 360
+outputItem: baenite/100
+category: crafting
+requirements: [
+  anden/1800
+  graphite/800
+  renfrien/400
+]

@@ -1,0 +1,164 @@
+type: AttributeCrafter
+rotate: true
+baseEfficiency: 0
+minEfficiency: 8.9999
+boostScale: 0.1111111111111
+maxBoost: 4
+dumpTime: 1
+attribute: steam
+squareSprite: false
+size: 8
+warmupSpeed: 0.005
+itemCapacity: 200
+liquidCapacity: 20
+hasLiquids: true
+craftTime: 300
+ignoreLiquidFullness: true
+liquidOutputDirections: [1]
+ambientSound: tankMove
+ambientSoundVolume: 0.5
+rotateDraw: false
+quickRotate: false
+drawer: [
+  {
+  }
+  {
+    type: DrawGlowRegion
+    suffix: -glow1
+    rotateSpeed: 15
+    alpha: 1
+    glowIntensity: 0
+    blending: normal
+    color: ffffff
+    layer: 30
+  }
+  //circle shading
+  {
+    type: DrawRegion
+    suffix: -spinner1
+    rotateSpeed: 15
+    spinSprite: true
+  }
+  {
+    type: DrawRegion
+    suffix: -spinner1
+    rotateSpeed: 15
+    rotation: 15
+    spinSprite: true
+  }
+  {
+    type: DrawRegion
+    suffix: -spinner1
+    rotateSpeed: 15
+    rotation: 30
+    spinSprite: true
+  }
+  {
+    type: DrawRegion
+    suffix: -spinner1
+    rotateSpeed: 15
+    rotation: 45
+    spinSprite: true
+  }
+  {
+    type: DrawRegion
+    suffix: -spinner1
+    rotateSpeed: 15
+    rotation: 60
+    spinSprite: true
+  }
+  {
+    type: DrawRegion
+    suffix: -spinner1
+    rotateSpeed: 15
+    rotation: 75
+    spinSprite: true
+  }
+  //middle
+  {
+    type: DrawBlurSpin
+    suffix: -spinner3
+    rotateSpeed: 15
+  }
+  {
+    type: DrawGlowRegion
+    suffix: -glow2
+    color: e65555
+    layer: 30
+  }
+  {
+    type: DrawRegion
+    suffix: -spinner4
+    rotateSpeed: 15
+  }
+  {
+    type: DrawRegion
+    suffix: -spinner4
+    rotation: -120
+    rotateSpeed: 15
+  }
+  {
+    type: DrawRegion
+    suffix: -spinner4
+    rotation: 120
+    rotateSpeed: 15
+  }
+  //top
+  {
+    type: DrawParticles
+    color: e65555
+    particles: 45
+    alpha: 1
+    particleSize: 2
+    particleRad: 24
+    particleInterp: pow2Out
+    particleSizeInterp: slope
+    particleLife: 40
+    rotateScl: 0.6
+    reverse: true
+    blending: additive
+  }
+  {
+    type: DrawRegion
+    suffix: -spinner5
+    rotateSpeed: 15
+    spinSprite: true
+  }
+  {
+    type: DrawRegion
+    suffix: -top1
+  }
+  {
+    type: DrawRegion
+    suffix: -shade
+  }
+  {
+    type: DrawFlame
+    flameColor: e28654
+    flameRadius: 0
+    flameRadiusIn: 0
+    flameRadiusMag: 0
+    flameRadiusInMag: 0
+    lightRadius: 5
+    lightSinMag: 0
+    lightAlpha: 0.65
+  }
+]
+consumes: {
+  items: [
+    contained-slag/50
+    contained-fluid-energy/10
+  ]
+}
+outputItem: anden/50
+outputLiquids: [
+  chlorine/0.03334
+]
+updateEffect: none
+category: crafting
+research: 0r-begin
+requirements: [
+  anden/400
+]
+envEnabled: -1
+envDisabled: 4

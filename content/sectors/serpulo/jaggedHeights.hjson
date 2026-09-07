@@ -1,0 +1,13 @@
+sector: 218
+difficulty: 6
+research: {
+  parent: crateredBattleground
+  objectives: [
+    {
+      type: SectorComplete
+      preset: crateredBattleground
+    }
+    flare
+    nova
+  ]
+}

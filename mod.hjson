@@ -1,0 +1,22 @@
+name: allure
+displayName: Allure
+author: Elixias Adrys
+description:
+  '''
+Contributors: Sh1penfire (world logic)
+
+⚠ PERFORMANCE WARNING: This mod may crash or misbehave on weaker PCs and phones.
+Best played with a completely fresh campaign save. 
+
+Currently in development. Description will try to increase player engagement later.
+A budding flower of an RTS overhaul mod. Not ready to play yet.
+Enabling this mod will change most Serpulo blocks. Schematics may malfunction, and most blocks are more expensive. Please wait for a proper release.
+  '''
+subtitle: "I smell a snooper!"
+version: 0.8-dev
+minGameVersion: 160
+contentOrder: [
+  air-factory
+  ground-factory
+  naval-factory
+]

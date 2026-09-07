@@ -1,0 +1,358 @@
+type: BurstDrill
+size: 6
+squareSprite: false
+placeableLiquid: true
+drillTime: 240
+liquidCapacity: 3800
+itemCapacity: 100
+tier: 9
+shake: 12
+drillEffect: [
+  {
+    type: WaveEffect
+    lifetime: 60
+    interp: pow3Out
+    sizeFrom: 0
+    sizeTo: 30
+    strokeFrom: 4
+    strokeTo: 0
+    colorFrom: 90a2fc
+    colorTo: 7382f0
+  }
+  {
+    length: 0
+    particles: 1
+    lifetime: 30
+    useRotation: false
+    region: allure-diamond-thin
+    sizeFrom: 60
+    sizeTo: 0
+    colorFrom: 90a2fc
+    colorTo: 7382f0
+  }
+  {
+    length: 0
+    particles: 1
+    lifetime: 30
+    offset: 90
+    useRotation: false
+    region: allure-diamond-thin
+    sizeFrom: 60
+    sizeTo: 0
+    colorFrom: 90a2fc
+    colorTo: 7382f0
+  }
+  {
+    type: RadialEffect
+    startDelay: 5
+    lengthOffset: 8.5
+    rotationOffset: 45
+    effect: [
+      {
+        type: WaveEffect
+        lifetime: 60
+        interp: pow3Out
+        sizeFrom: 0
+        sizeTo: 8
+        strokeFrom: 4
+        strokeTo: 0
+        colorFrom: 90a2fc
+        colorTo: 7382f0
+      }
+      {
+        length: 0
+        particles: 1
+        lifetime: 30
+        useRotation: false
+        region: allure-diamond-thin
+        sizeFrom: 16
+        sizeTo: 0
+        colorFrom: 90a2fc
+        colorTo: 7382f0
+      }
+      {
+        length: 0
+        particles: 1
+        lifetime: 30
+        offset: 90
+        useRotation: false
+        region: allure-diamond-thin
+        sizeFrom: 16
+        sizeTo: 0
+        colorFrom: 90a2fc
+        colorTo: 7382f0
+      }
+    ]
+  }
+  {
+    type: RadialEffect
+    startDelay: 10
+    lengthOffset: 20
+    rotationOffset: 45
+    effect: {
+      type: WaveEffect
+      lifetime: 60
+      interp: pow3Out
+      sizeFrom: 0
+      sizeTo: 6
+      strokeFrom: 3
+      strokeTo: 0
+      colorFrom: 90a2fc
+      colorTo: 7382f0
+    }
+  }
+  {
+    type: RadialEffect
+    startDelay: 10
+    lengthOffset: 20
+    rotationOffset: 45
+    effect: {
+      length: 0
+      particles: 1
+      lifetime: 30
+      useRotation: false
+      region: allure-diamond-thin
+      sizeFrom: 12
+      sizeTo: 0
+      colorFrom: 90a2fc
+      colorTo: 7382f0
+    }
+  }
+  {
+    type: RadialEffect
+    startDelay: 10
+    lengthOffset: 20
+    rotationOffset: 45
+    effect: {
+      length: 0
+      particles: 1
+      lifetime: 30
+      offset: 90
+      useRotation: false
+      region: allure-diamond-thin
+      sizeFrom: 12
+      sizeTo: 0
+      colorFrom: 90a2fc
+      colorTo: 7382f0
+    }
+  }
+  {
+    type: RadialEffect
+    startDelay: 15
+    lengthOffset: 28.25
+    rotationOffset: 45
+    effect: {
+      type: WaveEffect
+      lifetime: 60
+      interp: pow3Out
+      sizeFrom: 0
+      sizeTo: 4
+      strokeFrom: 2
+      strokeTo: 0
+      colorFrom: 90a2fc
+      colorTo: 7382f0
+    }
+  }
+  {
+    type: RadialEffect
+    startDelay: 15
+    lengthOffset: 28.25
+    rotationOffset: 45
+    effect: {
+      length: 0
+      particles: 1
+      lifetime: 30
+      useRotation: false
+      region: allure-diamond-thin
+      sizeFrom: 8
+      sizeTo: 0
+      colorFrom: 90a2fc
+      colorTo: 7382f0
+    }
+  }
+  {
+    type: RadialEffect
+    startDelay: 15
+    lengthOffset: 28.25
+    rotationOffset: 45
+    effect: {
+      length: 0
+      particles: 1
+      lifetime: 30
+      offset: 90
+      useRotation: false
+      region: allure-diamond-thin
+      sizeFrom: 8
+      sizeTo: 0
+      colorFrom: 90a2fc
+      colorTo: 7382f0
+    }
+  }
+]
+blockedItem: sand
+consumes: {
+  power: 6.5
+  liquid: {
+    liquid: liquid-baenara
+    amount: 9.6
+  }
+}
+category: production
+research: {
+  parent: 0b01-00-rudimentary-fuser
+  objectives: [
+    0b-basic-infrastructure
+  ]
+}
+requirements: [
+  silicon/550
+  dantrales/250
+  territe-alloy/2400
+  baenite/600
+]
+breakEffect: [
+  {
+    type: WaveEffect
+    rotation: 39
+    lifetime: 20
+    sides: 4
+    sizeFrom: 24
+    sizeTo: 48
+    strokeFrom: 18
+    strokeTo: 0
+    colorFrom: 7382f0
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    length: 0
+    lifetime: 11
+    useRotation: false
+    region: allure-warden-icon
+    sizeFrom: 8
+    sizeTo: 8
+    colorFrom: 7382f000
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    length: 0
+    lifetime: 30
+    startDelay: 10
+    useRotation: false
+    region: allure-warden-icon
+    sizeFrom: 8
+    sizeTo: 8
+    colorFrom: 7382f0
+    colorTo: 7382f000
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    cone: 0
+    randLength: false
+    baseLength: 6
+    length: 18
+    lifetime: 35
+    useRotation: false
+    region: allure-energy-arrow
+    interp: pow3Out
+    sizeInterp: pow2In
+    sizeFrom: 8
+    sizeTo: 0
+    colorFrom: 7382f0
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    cone: 0
+    baseRotation: 180
+    randLength: false
+    baseLength: 6
+    length: 18
+    lifetime: 35
+    useRotation: false
+    region: allure-energy-arrow
+    interp: pow3Out
+    sizeInterp: pow2In
+    sizeFrom: 8
+    sizeTo: 0
+    colorFrom: 7382f0
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    cone: 0
+    baseRotation: 45
+    randLength: false
+    baseLength: 6
+    length: 9
+    lifetime: 35
+    useRotation: false
+    region: allure-energy-arrow
+    interp: pow3Out
+    sizeInterp: pow2In
+    sizeFrom: 4
+    sizeTo: 0
+    colorFrom: 7382f0
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    cone: 0
+    baseRotation: -45
+    randLength: false
+    baseLength: 6
+    length: 9
+    lifetime: 35
+    useRotation: false
+    region: allure-energy-arrow
+    interp: pow3Out
+    sizeInterp: pow2In
+    sizeFrom: 4
+    sizeTo: 0
+    colorFrom: 7382f0
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    cone: 0
+    baseRotation: 135
+    randLength: false
+    baseLength: 6
+    length: 9
+    lifetime: 35
+    useRotation: false
+    region: allure-energy-arrow
+    interp: pow3Out
+    sizeInterp: pow2In
+    sizeFrom: 4
+    sizeTo: 0
+    colorFrom: 7382f0
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    cone: 0
+    baseRotation: -135
+    randLength: false
+    baseLength: 6
+    length: 9
+    lifetime: 35
+    useRotation: false
+    region: allure-energy-arrow
+    interp: pow3Out
+    sizeInterp: pow2In
+    sizeFrom: 4
+    sizeTo: 0
+    colorFrom: 7382f0
+    colorTo: 7382f0
+  }
+]

@@ -1,0 +1,10 @@
+research: {
+  parent: 0b-energy-defense
+  requirements: [
+    forge-plating/50
+    territe-alloy/1000
+    crystal/3500
+    scilaxa/1500
+  ]
+}
+show: false

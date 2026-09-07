@@ -1,0 +1,63 @@
+type: ConsumeGenerator
+size: 10
+hasLiquids: true
+canOverdrive: false
+liquidCapacity: 400
+itemDuration: 240
+baseExplosiveness: 185
+drawer: {
+  type: DrawMulti
+  drawers: [
+    {
+      type: DrawDefault
+    }
+    {
+      type: DrawLiquidRegion
+      suffix: -liquid
+      drawLiquid: fluid-energy
+    }
+    {
+      type: DrawRegion
+      suffix: -rotator0
+      rotateSpeed: 4.5
+      spinSprite: true
+    }
+    {
+      type: DrawRegion
+      suffix: -rotator1
+      rotateSpeed: -6
+    }
+    {
+      type: DrawRegion
+      suffix: -rotator2
+      rotateSpeed: 9
+      spinSprite: true
+    }
+    {
+      type: DrawRegion
+      suffix: -top
+    }
+  ]
+}
+consumes: {
+  liquid: {
+    liquid: fluid-energy
+    amount: 3
+  }
+  items: {
+    items: [
+      inseltiene/2
+    ]
+  }
+}
+powerProduction: 1800
+category: power
+requirements: [
+  silicon/20000
+  metaglass/15000
+  thorium/17000
+  phase-fabric/9000
+  baenite/5000
+  amethyst/4000
+  draconium/2000
+]

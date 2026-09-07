@@ -1,0 +1,13 @@
+research: {
+  root: true
+  planet: genaise
+  name: Rebel
+  requiresUnlock: true
+  objectives: [
+    {
+      type: SectorComplete
+      preset: origin
+    }
+  ]
+}
+show: false

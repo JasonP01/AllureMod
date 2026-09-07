@@ -1,0 +1,182 @@
+type: naval
+hitSize: 22
+health: 75000
+armor: 14
+speed: 4
+accel: 0.004
+rotateSpeed: 2.4
+drag: 0.08
+parts: [
+  {
+    mirror: true
+    suffix: -fin0
+    layer: 59.9
+    y: -1
+    x: 4
+    moveRot: -45
+    weaponIndex: 0
+    progress: smoothReload
+  }
+  {
+    mirror: true
+    suffix: -fin1
+    layer: 59.9
+    y: -8
+    x: 4.25
+    moveRot: -45
+    weaponIndex: 0
+    progress: smoothReload
+  }
+]
+weapons: [
+  {
+    x: 0
+    mirror: false
+    alwaysShooting: true
+    minShootVelocity: 0.17
+    reload: 30
+    continuous: true
+    shootSound: none
+    bullet: {
+      type: ContinuousFlameBulletType
+      drawFlare: false
+      collides: false
+      width: 0
+      length: 0
+      recoil: -0.15
+      lifetime: 20
+    }
+  }
+  {
+    name: oreodytes-stunner
+    x: 6
+    y: 7.75
+    rotate: true
+    rotateSpeed: 3
+    reload: 25
+    recoil: 2
+    recoilTime: 24
+    inaccuracy: 3
+    shoot: {
+      shots: 3
+      shotDelay: 3
+    }
+    shootSound: sap
+    shootX: -1
+    bullet: {
+      type: LaserBoltBulletType
+      damage: 45
+      speed: 5
+      lifetime: 45
+      width: 3
+      height: 8
+      backColor: cfd446
+      status: {
+        name: oreodytes-stun
+        reloadMultiplier: 0.5
+      }
+      smokeEffect: {
+        type: WaveEffect
+        lifetime: 10
+        sizeFrom: 0
+        sizeTo: 5
+        strokeFrom: 1
+        colorTo: cfd446
+      }
+      hitEffect: {
+        type: WaveEffect
+        lifetime: 10
+        sizeFrom: 0
+        sizeTo: 5
+        strokeFrom: 1
+        colorTo: cfd446
+      }
+      despawnEffect: {
+        type: WaveEffect
+        lifetime: 10
+        sizeFrom: 0
+        sizeTo: 5
+        strokeFrom: 1
+        colorTo: cfd446
+      }
+      setDefaults: false
+      despawnHit: false
+      fragBullets: 1
+      fragRandomSpread: 0
+      fragBullet: {
+        type: LaserBoltBulletType
+        collides: false
+        damage: 0
+        speed: 5
+        lifetime: 10
+        shrinkX: 1
+        width: 3
+        height: 8
+        backColor: cfd446
+        hitEffect: {
+          type: WaveEffect
+          lifetime: 10
+          sizeFrom: 0
+          sizeTo: 5
+          strokeFrom: 1
+          colorTo: cfd446
+        }
+        despawnEffect: none
+        fragBullets: 1
+        fragBullet: {
+          type: EmpBulletType
+          despawnHit: true
+          collides: false
+          lifetime: 1
+          speed: 0
+          damage: 0
+          timeDuration: 60
+          radius: 12
+          hitColor: cfd446
+          healEffect: none
+          hitPowerEffect: {
+            type: WaveEffect
+            lifetime: 10
+            sizeFrom: 0
+            sizeTo: 5
+            strokeFrom: 1
+            colorTo: cfd446
+          }
+        }
+      }
+    }
+  }
+  {
+    name: oreodytes-slower
+    controllable: false
+    autoTarget: true
+    targetInterval: 15
+    targetSwitchInterval: 25
+    x: 0
+    y: -2
+    mirror: false
+    rotate: true
+    rotateSpeed: 2
+    reload: 70
+    recoil: 2
+    recoilTime: 50
+    shootSound: laser
+    shake: 2
+    bullet: {
+      type: LaserBulletType
+      pierceCap: 3
+      length: 180
+      lifetime: 35
+      damage: 70
+      colors: [
+        cfd44666,
+        cfd446,
+        ffffff
+      ]
+      status: {
+        name: oreodytes-slow
+        speedMultiplier: 0.5
+      }
+    }
+  }
+]

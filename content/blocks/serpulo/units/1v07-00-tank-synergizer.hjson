@@ -1,0 +1,39 @@
+type: UnitAssembler
+payloadSpeed: 1.5
+size: 7
+areaSize: 21
+dronesCreated: 4
+hasLiquids: true
+liquidCapacity: 240
+droneType: allure-assault-construction-drone
+consumes: {
+  power: 15
+  liquids: [
+    oil/2
+    cryofluid/0.6
+  ]
+}
+plans: [
+  {
+    type: AssemblerUnitPlan
+    unit: 1v06-conflict
+    time: 3600
+    requirements: [
+      allure-1v07-12-00-treads/4
+      allure-1v07-12-01-lightweight-cells/2
+      allure-1v07-12-02-thin-armor/8
+      salvo/1
+    ]
+  }
+  {
+    type: AssemblerUnitPlan
+    unit: 1v07-strife
+    time: 80
+    requirements: [
+      allure-1v06-conflict/1
+      spectre/1
+    ]
+  }
+]
+category: units
+buildVisibility: sandboxOnly

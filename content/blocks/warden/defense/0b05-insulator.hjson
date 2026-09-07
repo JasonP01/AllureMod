@@ -1,0 +1,7 @@
+type: 'Block'
+health: 200, armor: 10
+solid: true, update: true, insulated: true, customShadow: true
+category: 'defense'
+requirements: [
+  crystal/84
+]

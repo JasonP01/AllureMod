@@ -1,0 +1,10 @@
+research: {
+  parent: 0b-shock-weaponry
+  requirements: [
+    forge-plating/50
+    territe-alloy/2500
+    crystal/12000
+    inseltiene/5000
+  ]
+}
+show: false

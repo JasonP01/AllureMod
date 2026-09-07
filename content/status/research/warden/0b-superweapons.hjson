@@ -1,0 +1,16 @@
+research: {
+  parent: 0b-advanced-production
+  objectives: [
+    0b-fleet-beacons,
+    0b-condenser-turbines,
+    0b-barrier-weaponry
+  ]
+  requirements: [
+    forge-plating/100
+    infrastructure/5000
+    territe-alloy/36000
+    scilaxa/2400
+    inseltiene/8000
+  ]
+}
+show: false

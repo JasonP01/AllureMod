@@ -1,0 +1,170 @@
+type: missile
+template: MissileUnitType
+defaultController: FlyingAI
+physics: false
+hittable: false
+targetable: false
+drawBody: false
+drawCell: false
+rotateSpeed: 0
+//turns out this boi likes running away
+speed: 0
+drag: 0.5
+engineSize: 0
+lifetime: 358
+parts: [
+  {
+    type: RegionPart
+    name: allure-singularity
+    outline: false
+    layer: 150
+    progress: life
+    moveRot: 720
+    xScl: 2.25
+    yScl: 2.25
+    color: ffffff88
+  }
+  {
+    type: RegionPart
+    name: allure-singularity
+    outline: false
+    layer: 150
+    progress: life
+    moveRot: 720
+    rotation: 180
+    xScl: 2.25
+    yScl: 2.25
+    color: ffffff88
+  }
+  {
+    type: RegionPart
+    name: allure-singularity
+    outline: false
+    layer: 150
+    progress: life
+    moveRot: 960
+    xScl: 1.5
+    yScl: 1.5
+    color: ffffffbb
+  }
+  {
+    type: RegionPart
+    name: allure-singularity
+    outline: false
+    layer: 150
+    progress: life
+    moveRot: 1440
+    xScl: 1
+    yScl: 1
+    color: ffffff88
+  }
+  {
+    type: RegionPart
+    name: circle-shadow
+    outline: false
+    layer: 150
+    xScl: 12
+    yScl: 12
+    color: 000000
+  }
+]
+weapons: [
+  {
+    alwaysShooting: true
+    alwaysContinuous: true
+    shootCone: 360
+    x: 0
+    shootSound: none
+    bullet: {
+      type: ContinuousFlameBulletType
+      recoil: 1.7
+      length: 0
+      drawFlare: false
+      smokeEffect: none
+      shootEffect: none
+    }
+  }
+  {
+    alwaysShooting: true
+    shootCone: 360
+    reload: 5
+    inaccuracy: 360
+    shoot: {
+      shots: 120
+    }
+    shootSound: none
+    bullet: {
+      type: RailBulletType
+      length: 300
+      damage: 40
+      knockback: -14
+      shootEffect: none
+      smokeEffect: none
+      hitEffect: {
+        length: -120
+        layer: 150
+        region: particle
+        cone: 0
+        particles: 1
+        lifetime: 15
+        interp: pow2In
+        sizeFrom: 6
+        sizeTo: 0
+        colorFrom: 000000
+        colorTo: 000000
+      }
+      pierceEffect: none
+    }
+  }
+  {
+    alwaysShooting: true
+    shootCone: 360
+    x: 0
+    reload: 1
+    shootSound: none
+    bullet: {
+      lifetime: 0
+      shootEffect: {
+        length: -420
+        baseLength: 420
+        layer: 65
+        region: particle
+        particles: 3
+        lifetime: 45
+        interp: pow2In
+        sizeInterp: pow5Out
+        sizeFrom: 0
+        sizeTo: 12
+        colorFrom: 000000
+        colorTo: 000000
+      }
+      smokeEffect: none
+      hitEffect: none
+      despawnEffect: none
+    }
+  }
+  //no touchy singularity center
+  {
+    alwaysContinuous: true
+    alwaysShooting: true
+    shootCone: 360
+    x: 0 
+    shootY: -2
+    shootSound: none
+    bullet: {
+      type: ContinuousFlameBulletType
+      length: 4
+      width: 0.1
+      damage: 2000000000
+      status: allure-annihilation
+      drawFlare: false
+      shootEffect: none
+      smokeEffect: none
+      hitEffect: none
+      despawnEffect: none
+      colors: [00000000, 00000000, 00000000, 00000000]
+    }
+  }
+]
+deathSound: none
+deathExplosionEffect: none

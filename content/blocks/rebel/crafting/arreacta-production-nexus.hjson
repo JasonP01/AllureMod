@@ -1,0 +1,137 @@
+type: AttributeCrafter
+size: 12
+rotate: true
+quickRotate: true
+liquidOutputDirections: [0]
+craftTime: 120
+floating: true
+itemCapacity: 96
+liquidCapacity: 180
+liquidPressure: 2.1
+maxBoost: 1
+baseEfficiency: 0
+minEfficiency: 1
+boostScale: 0.011458
+drawer: [
+  {
+    type: DrawRegion
+    layer: 29.5
+  }
+  {
+    type: DrawLiquidTile
+    padding: 16
+    drawLiquid: arreacta
+  }
+  {
+    type: DrawRegion
+    suffix: -top1
+  }
+  {
+    type: DrawRegion
+    suffix: -shade
+  }
+  {
+    type: DrawRegion
+    suffix: -spin2-shadow
+    rotateSpeed: -0.6
+    x: -4
+    y: -4
+  }
+  {
+    type: DrawRegion
+    suffix: -spin2-shadow
+    rotateSpeed: -0.6
+    rotation: 30
+    x: -4
+    y: -4
+  }
+  {
+    type: DrawRegion
+    suffix: -spin2-shadow
+    rotateSpeed: -0.6
+    rotation: 60
+    x: -4
+    y: -4
+  }
+  {
+    type: DrawRegion
+    suffix: -spin2
+    rotateSpeed: -0.6
+  }
+  {
+    type: DrawRegion
+    suffix: -spin2
+    rotateSpeed: -0.6
+    rotation: 30
+  }
+  {
+    type: DrawRegion
+    suffix: -spin2
+    rotateSpeed: -0.6
+    rotation: 60
+  }
+  {
+    type: DrawRegion
+    suffix: -spin1
+    rotateSpeed: -1
+  }
+  {
+    type: DrawRegion
+    suffix: -spin1
+    rotateSpeed: -1
+    rotation: 45
+  }
+  {
+    type: DrawRegion
+    suffix: -spin0
+    spinSprite: true
+    rotateSpeed: -1.8
+  }
+  {
+    type: DrawRegion
+    suffix: -spin0
+    spinSprite: true
+    rotateSpeed: -1.8
+    rotation: 30
+  }
+  {
+    type: DrawRegion
+    suffix: -spin0
+    spinSprite: true
+    rotateSpeed: -1.8
+    rotation: 60
+  }
+  {
+    type: DrawRegion
+    suffix: -transfer-shadow
+    layer: 29.7
+    x: -6
+    y: -6
+    buildingRotate: true
+  }
+  {
+    type: DrawRegion
+    suffix: -transfer
+    layer: 50
+    buildingRotate: true
+  }
+  {
+    type: DrawRegion
+    suffix: -top2
+    layer: 50
+  }
+]
+consumes: {
+  items: [
+    uranium/5
+    contained-fluid-energy/48
+  ]
+}
+outputLiquid: arreacta/1.2
+category: crafting
+requirements: [
+  anden/1200
+  ladera/300
+  renfrien/600
+  baenite/300
+]

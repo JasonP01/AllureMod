@@ -1,0 +1,295 @@
+type: PowerTurret
+rotate: false
+squareSprite: false
+size: 2
+reload: 240
+alwaysShooting: true
+shootWarmupSpeed: 0.001
+shootY: 0
+outlineIcon: false
+rotateSpeed: 0
+customShadow: true
+range: 80
+elevation: 4
+recoil: 0
+shoot: {
+  firstShotDelay: 300
+}
+consumes: {
+  liquids: [
+    fluid-energy/0.5
+  ]
+}
+drawer: {
+  type: DrawTurret
+  parts: [
+    {
+      type: RegionPart
+      blending: additive
+      name: allure-0b07-01-victory-beacon-base
+      outline: false
+      color: ffffff00
+      colorTo: ffffff
+      mixColor: feb380
+      progress: warmup
+    }
+  ]
+}
+shootSound: none
+shootType: {
+  type: BulletType
+  lifetime: 0
+  hittable: false
+  absorbable: false
+  collides: false
+  hitEffect: none
+  despawnEffect: none
+  shootEffect: none
+  smokeEffect: none
+  fragBullets: 1
+  fragOffsetMin: 24
+  fragOffsetMax: 120
+  fragBullet: {
+    type: BulletType
+    hittable: false
+    absorbable: false
+    collides: false
+    lifetime: 120
+    speed: 1
+    homingPower: 360
+    homingRange: 1024
+    despawnUnit: allure-0b00-00-victory-spawn
+    fragBullets: 1
+    fragBullet: {
+      type: EmptyBulletType
+      lifetime: 0
+      killShooter: true
+    }
+  }
+  spawnBullets: [
+    {
+      type: EmptyBulletType
+      ignoreSpawnAngle: true
+      lifetime: 0
+      despawnEffect: none
+      hitShake: 4
+      hitEffect: [
+        {
+          type: SoundEffect
+          sound: shootCollaris
+          minPitch: 0.75
+          maxPitch: 0.9
+          minVolume: 0.25
+          maxVolume: 0.25
+          effect: {
+            type: SoundEffect
+            sound: massdriverReceive
+            minPitch: 0.6
+            maxPitch: 0.7
+            minVolume: 0.25
+            maxVolume: 0.25
+            effect: none
+          }
+        }
+        {
+          type: WaveEffect
+          lifetime: 30
+          sizeFrom: 15
+          sizeTo: 20
+          strokeFrom: 6
+          colorFrom: ffffff
+          colorTo: 7382f0
+          interp: pow3Out
+        }
+        {
+          type: WaveEffect
+          lifetime: 30
+          sizeFrom: 18
+          sizeTo: 24
+          strokeFrom: 6
+          colorFrom: ffffff
+          colorTo: 7382f0
+          interp: pow3Out
+        }
+        {
+          line: true
+          particles: 12
+          length: 14
+          lifetime: 35
+          lenFrom: 4
+          lenTo: 0
+          strokeFrom: 1
+          strokeTo: 2
+          colorTo: 7382f0
+          cap: false
+        }
+      ]
+      fragBullets: 1
+      fragRandomSpread: 45
+      fragAngle: 45
+      fragVelocityMin: 0.5
+      fragBullet: {
+        type: BulletType
+        lifetime: 60
+        speed: 4
+        drag: 0.05
+        hittable: false
+        absorbable: false
+        collides: false
+        despawnEffect: none
+        parts: [
+          {
+            type: FlarePart
+            sides: 2
+            color1: 7382f0bb
+            radius: 0
+            radiusTo: 120
+            stroke: 8
+            innerRadScl: 0.75
+            progress: {
+              type: life
+              ops: [
+                {
+                  op: curve
+                  interp: pow4In
+                }
+                {
+                  op: slope
+                }
+              ]
+            }
+            layer: 101
+          }
+          {
+            type: FlarePart
+            sides: 2
+            color1: 00000000
+            radius: 0
+            radiusTo: 24
+            stroke: 24
+            progress: {
+              type: life
+              ops: [
+                {
+                  op: curve
+                  interp: pow4In
+                }
+                {
+                  op: slope
+                }
+              ]
+            }
+            layer: 101
+          }
+        ]
+      }
+    }
+  ]
+}
+category: units
+research: {
+  parent: 0b-begin
+  objectives: [
+    0b-basic-infrastructure, 
+    0b-wormhole-beacons
+  ]
+  requirements: [
+    territe-alloy/1800
+    dantrales/800
+    silicon/300
+  ]
+}
+requirements: [
+  territe-alloy/900
+  dantrales/300
+  silicon/150
+]
+destroySound: explosion
+destroyEffect: none
+destroyBullet: {
+  type: BulletType
+  collides: false
+  absorbable: false
+  hittable: false
+  ignoreSpawnAngle: true
+  speed: 0
+  lifetime: 45
+  trailInterval: 5
+  trailEffect: {
+    particles: 4
+    length: 24
+    lifetime: 40
+    sizeFrom: 4
+    sizeTo: 0
+    colorFrom: ffffa3
+    colorTo: e28654
+    interp: pow2Out
+    sizeInterp: pow2In
+    layer: 35
+  }
+  parts: [
+    {
+      type: RegionPart
+      rotation: 90
+      name: allure-0b07-01-victory-beacon-base
+      outline: false
+      color: ffffff
+      colorTo: ffffff00
+      mixColor: ffffff
+      mixColorTo: feb380
+      progress: {
+        type: life
+        op: curve
+        interp: pow3In
+      }
+    }
+    {
+      type: RegionPart
+      rotation: 90
+      name: allure-0b07-01-victory-beacon-shadow
+      outline: false
+      color: ffffff
+      colorTo: ffffff00
+      progress: life
+    }
+  ]
+}
+breakEffect: [
+  {
+    type: WaveEffect
+    rotation: 41
+    lifetime: 20
+    sides: 4
+    sizeFrom: 12
+    sizeTo: 24
+    strokeFrom: 9
+    strokeTo: 0
+    colorFrom: 7382f0
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    length: 0
+    lifetime: 11
+    useRotation: false
+    region: allure-warden-icon
+    sizeFrom: 8
+    sizeTo: 8
+    colorFrom: 7382f000
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    length: 0
+    lifetime: 30
+    startDelay: 10
+    useRotation: false
+    region: allure-warden-icon
+    sizeFrom: 8
+    sizeTo: 8
+    colorFrom: 7382f0
+    colorTo: 7382f000
+  }
+]

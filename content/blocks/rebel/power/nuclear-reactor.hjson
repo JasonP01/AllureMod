@@ -1,0 +1,187 @@
+type: ConsumeGenerator
+size: 8
+buildTime: 1200
+health: 6000
+armor: 50
+powerProduction: 0.001
+itemCapacity: 40
+liquidCapacity: 320
+consumes: {
+  items: [
+    uranium/4
+    graphite/2
+  ]
+}
+itemDuration: 120
+drawer: [
+  {
+    type: DrawDefault
+  }
+  {
+    type: DrawLiquidTile
+    drawLiquid: fluid-energy
+    padLeft: 27.75
+    padRight: 27.75
+    padTop: 1.25
+    padBottom: 1.25
+  }
+  {
+    type: DrawRegion
+    suffix: -top0
+  }
+  {
+    type: DrawRegion
+    suffix: -top1
+  }
+  {
+    type: DrawRegion
+    suffix: -shade
+  }
+  {
+    type: DrawGlowRegion
+    layer: 30
+  }
+]
+outputLiquid: fluid-energy/1.6
+category: power
+requirements: [
+  anden/2400
+  silicon/1200
+  ladera/1200
+]
+destroySound: explosionbig
+destroyBullet: {
+  type: BulletType
+  damage: 0
+  lifetime: 0
+  speed: 0
+  collides: false
+  hittable: false
+  absorbable: false
+  hitShake: 80
+  hitEffect: none
+  hitSound: generatorBreak
+  hitSoundVolume: 2
+  hitSoundPitch: 1.25
+  despawnEffect: none
+  fragBullets: 240
+  fragLifeMin: 0
+  fragVelocityMin: 1
+  fragVelocityMax: 1
+  fragBullet: {
+    type: BulletType
+    damage: 15
+    pierce: true
+    pierceBuilding: true
+    lifetime: 60
+    speed: 4
+    hitEffect: none
+    despawnEffect: none
+    hittable: false
+    absorbable: false
+    reflectable: false
+    bulletInterval: 5
+    intervalBullets: 1
+    intervalBullet: {
+      type: EmpBulletType
+      width: 0
+      height: 0
+      damage: 20
+      powerDamageScl: 6
+      timeDuration: 0
+      radius: 24
+      lifetime: 2
+      speed: 0
+      despawnHit: true
+      hittable: false
+      absorbable: false
+      hitColor: 3bbeff
+      hitEffect: none
+      hitPowerEffect: none
+      despawnEffect: none
+      applyEffect: none
+    }
+  }
+  lightning: 12
+  lightningLength: 20
+  lightningLengthRand: 14
+  lightningColor: 3bbeff
+  lightningDamage: 120
+}
+destroyEffect: [
+  {
+    type: WaveEffect
+    lifetime: 60
+    sizeFrom: 0
+    sizeTo: 240
+    strokeFrom: 11
+    strokeTo: 0
+    colorFrom: b3e9ff
+    colorTo: 3bbeff
+  }
+  {
+    length: 80
+    lifetime: 220
+    particles: 27
+    colorFrom: 787878
+    colorTo: 787878
+    sizeFrom: 14
+    sizeTo: 0
+    interp: pow5Out
+    sizeInterp: pow3In
+    layer: 105
+  }
+  {
+    length: 120
+    lifetime: 160
+    particles: 17
+    colorFrom: 787878
+    colorTo: 787878
+    sizeFrom: 8
+    sizeTo: 0
+    interp: pow5Out
+    sizeInterp: pow3In
+    layer: 105
+  }
+  {
+    length: 210
+    lifetime: 90
+    particles: 12
+    colorFrom: 787878
+    colorTo: 787878
+    sizeFrom: 3
+    sizeTo: 0
+    interp: pow5Out
+    sizeInterp: pow3In
+    layer: 105
+  }
+  {
+    length: 110
+    lifetime: 140
+    particles: 75
+    colorTo: 3bbeff88
+    sizeFrom: 12
+    sizeTo: 0
+    interp: pow3Out
+    sizeInterp: pow5In
+  }
+  {
+    length: 210
+    lifetime: 80
+    particles: 12
+    colorTo: 3bbeff
+    sizeFrom: 4
+    sizeTo: 0
+    interp: pow3Out
+    sizeInterp: pow5In
+  }
+  {
+    type: WaveEffect
+    lifetime: 40
+    sizeFrom: 0
+    sizeTo: 110
+    strokeFrom: 5
+    strokeTo: 0
+    colorTo: 3bbeff
+  }
+]

@@ -1,0 +1,9 @@
+type: Duct
+health: 100, speed: 4.9
+customShadow: true
+requirements: [
+  crystal/3
+]
+bridgeReplacement: 0b02-01-tube-bridge
+category: distribution
+research: 0b-begin

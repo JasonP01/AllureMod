@@ -1,0 +1,36 @@
+type: HeatCrafter
+liquidCapacity: 70
+heatRequirement: 6
+maxEfficiency: 2
+size: 2
+conductivePower: true
+craftTime: 20
+drawer: [
+  {
+    type: DrawRegion
+    layer: 29.9
+  }
+  {
+    type: DrawLiquidTile
+    drawLiquid: molten-lead
+    padding: 4
+  }
+  {
+    type: DrawRegion
+    suffix: -top
+  }
+]
+consumes: {
+  power: 1
+  liquids: [
+    slag/0.15
+  ]
+  items: [
+    lead/3
+  ]
+}
+outputLiquids: [
+  molten-lead/0.2
+]
+category: crafting
+buildVisibility: sandboxOnly

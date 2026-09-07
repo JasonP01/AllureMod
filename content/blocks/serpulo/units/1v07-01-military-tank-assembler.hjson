@@ -1,0 +1,60 @@
+type: UnitAssembler
+payloadSpeed: 1.5
+size: 14
+areaSize: 28
+dronesCreated: 4
+hasLiquids: true
+liquidCapacity: 240
+droneType: allure-assault-construction-drone
+consumes: {
+  power: 15
+  liquids: [
+    arreacta/5
+    supercoolant/0.6
+  ]
+}
+plans: [
+  {
+    type: AssemblerUnitPlan
+    unit: 1v08-dispute
+    time: 4200
+    requirements: [
+      allure-1v07-12-00-treads/7
+      allure-1v07-12-01-lightweight-cells/6
+      allure-1v07-12-05-plated-armor/3
+      swarmer/1
+    ]
+  }
+  {
+    type: AssemblerUnitPlan
+    unit: 1v09-skirmish
+    time: 80
+    requirements: [
+      allure-1v08-dispute/1
+      allure-fallout/1
+    ]
+  }
+  {
+    type: AssemblerUnitPlan
+    unit: 1v10-hostility
+    time: 6400
+    requirements: [
+      allure-1v07-12-00-treads/16
+      allure-1v07-12-02-thin-armor/5
+      allure-1v07-12-04-shielded-cells/9
+      allure-1v07-12-05-plated-armor/12
+      hail/5
+    ]
+  }
+  {
+    type: AssemblerUnitPlan
+    unit: 1v11-war
+    time: 80
+    requirements: [
+      allure-1v10-hostility/1
+      ripple/1
+    ]
+  }
+]
+category: units
+buildVisibility: sandboxOnly

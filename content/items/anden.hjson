@@ -1,0 +1,11 @@
+color: ad4244
+cost: 0.4
+research: {
+  parent: 0r-begin
+}
+explosiveness: 0.4
+healthScaling: 0.4
+shownPlanets: [
+  allure-genaise,
+  allure-lus
+]

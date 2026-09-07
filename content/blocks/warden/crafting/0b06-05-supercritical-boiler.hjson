@@ -1,0 +1,87 @@
+type: GenericCrafter
+squareSprite: false
+size: 3
+craftTime: 120
+liquidCapacity: 60
+itemCapacity: 24
+drawer: [
+  {
+  }
+  {
+    type: DrawCultivator
+    plantColor: 5594f2
+    plantColorLight: 87b7ff
+    bubbles: 120
+    radius: 1
+    spread: 8
+    timeScl: 25
+  }
+  {
+    type: DrawRegion
+    suffix: -top
+  }
+  {
+    type: DrawGlowRegion
+    color: ffb380
+  }
+]
+consumes: {
+  power: 7
+  items: [
+    wolframite/4
+  ]
+}
+ignoreLiquidFullness: true
+outputItem: altesin/2
+outputLiquid: crystal-plasma/0.5
+category: crafting
+research: {
+  parent: 0b06-04-heat-engine
+  objectives: [
+    0b-advanced-production
+  ]
+}
+requirements: [
+  dantrales/200
+  territe-alloy/500
+  baenite/200
+]
+breakEffect: [
+  {
+    type: WaveEffect
+    rotation: 41
+    lifetime: 20
+    sides: 4
+    sizeFrom: 12
+    sizeTo: 24
+    strokeFrom: 9
+    strokeTo: 0
+    colorFrom: 7382f0
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    length: 0
+    lifetime: 11
+    useRotation: false
+    region: allure-warden-icon
+    sizeFrom: 8
+    sizeTo: 8
+    colorFrom: 7382f000
+    colorTo: 7382f0
+  }
+  {
+    type: ParticleEffect
+    particles: 1
+    length: 0
+    lifetime: 30
+    startDelay: 10
+    useRotation: false
+    region: allure-warden-icon
+    sizeFrom: 8
+    sizeTo: 8
+    colorFrom: 7382f0
+    colorTo: 7382f000
+  }
+]

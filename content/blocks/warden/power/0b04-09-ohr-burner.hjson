@@ -1,0 +1,382 @@
+type: GenericCrafter
+squareSprite: false
+size: 11
+liquidCapacity: 24000
+drawer: [
+  {
+    type: DrawDefault
+  }
+  {
+    type: DrawGlowRegion
+    suffix: -transfer
+    color: feb380
+    layer: 30
+  }
+  {
+    type: DrawLiquidTile
+    drawLiquid: water
+    alpha: 0.4
+  }
+  {
+    type: DrawBubbles
+    color: 7693e3
+    timeScl: 10
+    sides: 12
+    recurrence: 3
+    spread: 20
+    radius: 1
+    amount: 200 
+    strokeMin: 0
+  }
+  {
+    type: DrawBubbles
+    color: 7693e3
+    timeScl: 15
+    sides: 12
+    recurrence: 4
+    spread: 20
+    radius: 2
+    amount: 150 
+    strokeMin: 0
+  }
+  {
+    type: DrawRegion
+    suffix: -top0
+  }
+  //i have my regrets 
+  {
+    type: DrawRegion
+    suffix: -fan
+    rotateSpeed: 7
+    spinSprite: true
+    x: 31.875
+    y: 19.875
+  }
+  {
+    type: DrawRegion
+    suffix: -fan
+    rotateSpeed: 7
+    spinSprite: true
+    rotation: 45
+    x: 31.875
+    y: 19.875
+  }
+  {
+    type: DrawRegion
+    suffix: -fan
+    rotateSpeed: 7
+    spinSprite: true
+    x: -31.875
+    y: 19.875
+  }
+  {
+    type: DrawRegion
+    suffix: -fan
+    rotateSpeed: 7
+    spinSprite: true
+    rotation: 45
+    x: -31.875
+    y: 19.875
+  }
+  {
+    type: DrawRegion
+    suffix: -fan
+    rotateSpeed: 7
+    spinSprite: true
+    x: 31.875
+    y: -19.875
+  }
+  {
+    type: DrawRegion
+    suffix: -fan
+    rotateSpeed: 7
+    spinSprite: true
+    rotation: 45
+    x: 31.875
+    y: -19.875
+  }
+  {
+    type: DrawRegion
+    suffix: -fan
+    rotateSpeed: 7
+    spinSprite: true
+    x: -31.875
+    y: -19.875
+  }
+  {
+    type: DrawRegion
+    suffix: -fan
+    rotateSpeed: 7
+    spinSprite: true
+    rotation: 45
+    x: -31.875
+    y: -19.875
+  }
+  {
+    type: DrawRegion
+    suffix: -fan
+    rotateSpeed: 7
+    spinSprite: true
+    x: 12.625
+    y: 30.375
+  }
+  {
+    type: DrawRegion
+    suffix: -fan
+    rotateSpeed: 7
+    spinSprite: true
+    rotation: 45
+    x: 12.625
+    y: 30.375
+  }
+  {
+    type: DrawRegion
+    suffix: -fan
+    rotateSpeed: 7
+    spinSprite: true
+    x: -12.625
+    y: 30.375
+  }
+  {
+    type: DrawRegion
+    suffix: -fan
+    rotateSpeed: 7
+    spinSprite: true
+    rotation: 45
+    x: -12.625
+    y: 30.375
+  }
+  {
+    type: DrawRegion
+    suffix: -fan
+    rotateSpeed: 7
+    spinSprite: true
+    x: 12.625
+    y: -30.375
+  }
+  {
+    type: DrawRegion
+    suffix: -fan
+    rotateSpeed: 7
+    spinSprite: true
+    rotation: 45
+    x: 12.625
+    y: -30.375
+  }
+  {
+    type: DrawRegion
+    suffix: -fan
+    rotateSpeed: 7
+    spinSprite: true
+    x: -12.625
+    y: -30.375
+  }
+  {
+    type: DrawRegion
+    suffix: -fan
+    rotateSpeed: 7
+    spinSprite: true
+    rotation: 45
+    x: -12.625
+    y: -30.375
+  }
+  //ohio
+  {
+    type: DrawRegion
+    suffix: -top1
+  }
+  {
+    type: DrawGlowRegion
+    color: feb380
+    alpha: 0.5
+  }
+  {
+    type: DrawGlowRegion
+    alpha: 1
+    suffix: -glow2
+  }
+]
+consumes: {
+  power: 68
+  liquids: [
+    neoplasm/53.3333333333
+    water/200
+  ]
+}
+outputLiquid: steam/200
+craftTime: 8
+craftEffect: [
+  {
+    type: RadialEffect
+    lengthOffset: 37.75
+    rotationOffset: 32.1
+    rotationSpacing: 180
+    amount: 2
+    effect: [
+      {
+        particles: 1
+        length: 240
+        lifetime: 650
+        cone: 12
+        baseRotation: 32
+        useRotation: false
+        sizeFrom: 0
+        sizeTo: 16
+        colorFrom: 787878
+        colorTo: 78787800
+        sizeInterp: pow2Out
+        interp: pow2Out
+        layer: 98
+      }
+      {
+        particles: 1
+        length: 50
+        lifetime: 160
+        cone: 12
+        baseRotation: 32
+        useRotation: false
+        sizeFrom: 8
+        sizeTo: 0
+        colorFrom: ffb85500
+        colorTo: db661c
+        sizeInterp: pow2Out
+        interp: pow2Out
+        layer: 110
+      }
+    ]
+  }
+  {
+    type: RadialEffect
+    lengthOffset: 37.75
+    rotationOffset: -32.1
+    rotationSpacing: 180
+    amount: 2
+    effect: [
+      {
+        particles: 1
+        length: 240
+        lifetime: 650
+        cone: 12
+        baseRotation: 32
+        useRotation: false
+        sizeFrom: 0
+        sizeTo: 16
+        colorFrom: 787878
+        colorTo: 78787800
+        sizeInterp: pow2Out
+        interp: pow2Out
+        layer: 98
+      }
+      {
+        particles: 1
+        length: 50
+        lifetime: 160
+        cone: 12
+        baseRotation: 32
+        useRotation: false
+        sizeFrom: 8
+        sizeTo: 0
+        colorFrom: ffb85500
+        colorTo: db661c
+        sizeInterp: pow2Out
+        interp: pow2Out
+        layer: 110
+      }
+    ]
+  }
+  {
+    type: RadialEffect
+    lengthOffset: 34
+    rotationOffset: 67.5
+    rotationSpacing: 180
+    amount: 2
+    effect: [
+      {
+        particles: 1
+        length: 240
+        lifetime: 650
+        cone: 12
+        baseRotation: 32
+        useRotation: false
+        sizeFrom: 0
+        sizeTo: 16
+        colorFrom: 787878
+        colorTo: 78787800
+        sizeInterp: pow2Out
+        interp: pow2Out
+        layer: 98
+      }
+      {
+        particles: 1
+        length: 50
+        lifetime: 160
+        cone: 12
+        baseRotation: 32
+        useRotation: false
+        sizeFrom: 8
+        sizeTo: 0
+        colorFrom: ffb85500
+        colorTo: db661c
+        sizeInterp: pow2Out
+        interp: pow2Out
+        layer: 110
+      }
+    ]
+  }
+  {
+    type: RadialEffect
+    lengthOffset: 34
+    rotationOffset: -67.5
+    rotationSpacing: 180
+    amount: 2
+    effect: [
+      {
+        particles: 1
+        length: 240
+        lifetime: 650
+        cone: 12
+        baseRotation: 32
+        useRotation: false
+        sizeFrom: 0
+        sizeTo: 16
+        colorFrom: 787878
+        colorTo: 78787800
+        sizeInterp: pow2Out
+        interp: pow2Out
+        layer: 98
+      }
+      {
+        particles: 1
+        length: 50
+        lifetime: 160
+        cone: 12
+        baseRotation: 32
+        useRotation: false
+        sizeFrom: 8
+        sizeTo: 0
+        colorFrom: ffb85500
+        colorTo: db661c
+        sizeInterp: pow2Out
+        interp: pow2Out
+        layer: 110
+      }
+    ]
+  }
+]
+category: power
+research: {
+  parent: 0b04-08-arc-reactor
+  objectives: [
+    0b-advanced-production
+  ]
+}
+requirements: [
+  infrastructure/750
+  territe-alloy/2500
+  baenite/300
+  crystal/1200
+  draconium/150
+  shadow/250
+]
+ambientSound: smelter
+ambientSoundVolume: 4

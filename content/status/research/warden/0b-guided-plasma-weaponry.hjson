@@ -1,0 +1,7 @@
+research: {
+  parent: 0b-energy-weaponry
+  requirements: [
+    forge-plating/25
+  ]
+}
+show: false

@@ -1,0 +1,2654 @@
+type: flying
+fogRadius: 150
+lowAltitude: true
+flying: true
+health: 2100000
+armor: 1500
+hitSize: 180
+speed: 3
+rotateSpeed: 0.7
+omniMovement: false
+accel: 0.02
+drag: 0.03
+outlines: false
+shadowElevationScl: 3.5
+lightRadius: 0
+deathShake: 0
+immunities: [
+  burning,
+  melting,
+  freezing, 
+  wet, 
+  tarred,
+  slow,
+  unmoving, 
+  disarmed,
+  spore-slowed,
+  shocked,
+  blasted,
+  electrified,
+  sapped, 
+  overclock,
+  overdrive,
+  allure-emp,
+  allure-0r-kinetic0,
+  allure-0r-kinetic1,
+  allure-0r-kinetic2,
+  allure-0r-kinetic3,
+  allure-0r-kinetic4,
+]
+drawBody: false
+parts: [
+  {
+    type: RegionPart
+    layer: 91.04
+    outline: false
+  }
+  {
+    suffix: -top
+    outline: false
+    y: 75.5
+    layer: 91.05
+  }
+  {
+    type: RegionPart
+    suffix: -jump
+    progress: {
+      type: charge
+      op: compress
+      start: 0
+      end: 0.8
+    }
+    y: -84.5
+    layer: 91.05
+    color: ffffff00
+    colorTo: ffffff
+    mixColor: e65555
+    blending: additive
+    outline: false
+    weaponIndex: 7
+  }
+]
+weapons: [
+  //flak cannons
+  {
+    name: extelsus-flak
+    x: 0
+    y: 74
+    layerOffset: 2
+    controllable: false
+    autoTarget: true
+    targetInterval: 80
+    targetSwitchInterval: 8
+    shadow: 48
+    mirror: false
+    rotate: true
+    rotateSpeed: 3.4
+    reload: 35
+    recoil: 6
+    recoils: 2
+    inaccuracy: 5
+    shootY: 10
+    shoot: {
+      type: ShootAlternate
+      spread: 13
+    }
+    shootSound: shootBig
+    parts: [
+      {
+        type: RegionPart
+        suffix: -line
+        outline: false
+        layer: 91.8
+      }
+      {
+        type: RegionPart
+        x: -6.75
+        y: 6.5
+        suffix: -l
+        outline: false
+        layer: 91.9
+        moveY: -18
+        progress: recoil
+        recoilIndex: 0
+      }
+      {
+        type: RegionPart
+        x: 6.75
+        y: 6.5
+        suffix: -r
+        outline: false
+        layer: 91.9
+        moveY: -18
+        progress: recoil
+        recoilIndex: 1
+      }
+    ]
+    shake: 1
+    bullet: {
+      type: RailBulletType
+      despawnHit: false
+      setDefaults: false
+      pierceDamageFactor: 1
+      pierceCap: 1
+      damage: 480
+      length: 640
+      pierceEffect: none
+      hitEffect: massiveExplosion
+      status: 0r-kinetic2
+      statusDuration: 5
+      pointEffectSpace: 20
+      pointEffect: [
+        {
+          cone: 0
+          lifetime: 45
+          length: 0
+          baseLength: 30
+          particles: 8
+          sizeFrom: 2
+          sizeTo: 0
+          interp: pow2In
+          colorFrom: 787878
+          colorTo: 787878
+        }
+        {
+          cone: 0
+          lifetime: 45
+          length: 0
+          baseLength: 30
+          particles: 2
+          sizeFrom: 4
+          sizeTo: 0
+          interp: pow2In
+          colorFrom: 787878
+          colorTo: 787878
+        }
+      ]
+      status: 0r-kinetic2
+      statusDuration: 1
+      fragBullets: 6
+      fragBullet: {
+        type: RailBulletType
+        length: 45
+        damage: 200
+        status: 0r-kinetic2
+        statusDuration: 2
+        pointEffectSpace: 25
+        pointEffect: [
+          {
+            cone: 0
+            lifetime: 45
+            length: 0
+            baseLength: 30
+            particles: 8
+            sizeFrom: 2
+            sizeTo: 0
+            interp: pow2In
+            colorFrom: 787878
+            colorTo: 787878
+          }
+          {
+            cone: 0
+            lifetime: 45
+            length: 0
+            baseLength: 30
+            particles: 2
+            sizeFrom: 4
+            sizeTo: 0
+            interp: pow2In
+            colorFrom: 787878
+            colorTo: 787878
+          }
+        ]
+      }
+    }
+  }
+  {
+    name: extelsus-flak
+    x: 0
+    y: 24
+    layerOffset: 2
+    controllable: false
+    autoTarget: true
+    targetInterval: 80
+    targetSwitchInterval: 8
+    shadow: 48
+    mirror: false
+    rotate: true
+    rotateSpeed: 3.4
+    reload: 35
+    recoil: 6
+    recoils: 2
+    inaccuracy: 5
+    shootY: 10
+    shoot: {
+      type: ShootAlternate
+      spread: 13
+    }
+    shootSound: shootBig
+    parts: [
+      {
+        type: RegionPart
+        suffix: -line
+        outline: false
+        layer: 91.8
+      }
+      {
+        type: RegionPart
+        x: -6.75
+        y: 6.5
+        suffix: -l
+        outline: false
+        layer: 91.9
+        moveY: -18
+        progress: recoil
+        recoilIndex: 0
+      }
+      {
+        type: RegionPart
+        x: 6.75
+        y: 6.5
+        suffix: -r
+        outline: false
+        layer: 91.9
+        moveY: -18
+        progress: recoil
+        recoilIndex: 1
+      }
+    ]
+    shake: 1
+    bullet: {
+      type: RailBulletType
+      despawnHit: false
+      setDefaults: false
+      pierceDamageFactor: 1
+      pierceCap: 1
+      damage: 480
+      length: 640
+      pierceEffect: none
+      hitEffect: massiveExplosion
+      status: 0r-kinetic2
+      statusDuration: 5
+      pointEffectSpace: 20
+      pointEffect: [
+        {
+          cone: 0
+          lifetime: 45
+          length: 0
+          baseLength: 30
+          particles: 8
+          sizeFrom: 2
+          sizeTo: 0
+          interp: pow2In
+          colorFrom: 787878
+          colorTo: 787878
+        }
+        {
+          cone: 0
+          lifetime: 45
+          length: 0
+          baseLength: 30
+          particles: 2
+          sizeFrom: 4
+          sizeTo: 0
+          interp: pow2In
+          colorFrom: 787878
+          colorTo: 787878
+        }
+      ]
+      status: 0r-kinetic2
+      statusDuration: 1
+      fragBullets: 6
+      fragBullet: {
+        type: RailBulletType
+        length: 45
+        damage: 200
+        status: 0r-kinetic2
+        statusDuration: 2
+        pointEffectSpace: 25
+        pointEffect: [
+          {
+            cone: 0
+            lifetime: 45
+            length: 0
+            baseLength: 30
+            particles: 8
+            sizeFrom: 2
+            sizeTo: 0
+            interp: pow2In
+            colorFrom: 787878
+            colorTo: 787878
+          }
+          {
+            cone: 0
+            lifetime: 45
+            length: 0
+            baseLength: 30
+            particles: 2
+            sizeFrom: 4
+            sizeTo: 0
+            interp: pow2In
+            colorFrom: 787878
+            colorTo: 787878
+          }
+        ]
+      }
+    }
+  }
+  {
+    name: extelsus-flak
+    x: 0
+    y: -85
+    baseRotation: 180
+    layerOffset: 2
+    controllable: false
+    autoTarget: true
+    targetInterval: 80
+    targetSwitchInterval: 8
+    shadow: 48
+    mirror: false
+    rotate: true
+    rotateSpeed: 3.4
+    reload: 35
+    recoil: 6
+    recoils: 2
+    inaccuracy: 5
+    shootY: 10
+    shoot: {
+      type: ShootAlternate
+      spread: 13
+    }
+    shootSound: shootBig
+    parts: [
+      {
+        type: RegionPart
+        suffix: -line
+        outline: false
+        layer: 91.8
+      }
+      {
+        type: RegionPart
+        x: -6.75
+        y: 6.5
+        suffix: -l
+        outline: false
+        layer: 91.9
+        moveY: -18
+        progress: recoil
+        recoilIndex: 0
+      }
+      {
+        type: RegionPart
+        x: 6.75
+        y: 6.5
+        suffix: -r
+        outline: false
+        layer: 91.9
+        moveY: -18
+        progress: recoil
+        recoilIndex: 1
+      }
+    ]
+    shake: 1
+    bullet: {
+      type: RailBulletType
+      despawnHit: false
+      setDefaults: false
+      pierceDamageFactor: 1
+      pierceCap: 1
+      damage: 480
+      length: 640
+      pierceEffect: none
+      hitEffect: massiveExplosion
+      status: 0r-kinetic2
+      statusDuration: 5
+      pointEffectSpace: 20
+      pointEffect: [
+        {
+          cone: 0
+          lifetime: 45
+          length: 0
+          baseLength: 30
+          particles: 8
+          sizeFrom: 2
+          sizeTo: 0
+          interp: pow2In
+          colorFrom: 787878
+          colorTo: 787878
+        }
+        {
+          cone: 0
+          lifetime: 45
+          length: 0
+          baseLength: 30
+          particles: 2
+          sizeFrom: 4
+          sizeTo: 0
+          interp: pow2In
+          colorFrom: 787878
+          colorTo: 787878
+        }
+      ]
+      fragBullets: 6
+      fragBullet: {
+        type: RailBulletType
+        length: 45
+        damage: 200
+        status: 0r-kinetic2
+        statusDuration: 2
+        pointEffectSpace: 25
+        pointEffect: [
+          {
+            cone: 0
+            lifetime: 45
+            length: 0
+            baseLength: 30
+            particles: 8
+            sizeFrom: 2
+            sizeTo: 0
+            interp: pow2In
+            colorFrom: 787878
+            colorTo: 787878
+          }
+          {
+            cone: 0
+            lifetime: 45
+            length: 0
+            baseLength: 30
+            particles: 2
+            sizeFrom: 4
+            sizeTo: 0
+            interp: pow2In
+            colorFrom: 787878
+            colorTo: 787878
+          }
+        ]
+      }
+    }
+  }
+  //payload howitzer weapon
+  {
+    name: extelsus-blaster
+    layerOffset: 5
+    x: 0
+    y: -28
+    shadow: 76
+    shootY: 38
+    mirror: false
+    rotate: true
+    rotateSpeed: 0.8
+    reload: 210
+    recoil: -14
+    recoilTime: 160
+    heatColor: e65555
+    cooldownTime: 150
+    shoot: {
+      firstShotDelay: 30
+    }
+    shake: 20
+    parts: [
+      {
+        type: RegionPart
+        suffix: -ram-line
+        layer: 95
+        y: -27.25
+        moveY: 16
+        outline: false
+        progress: {
+          type: charge
+          op: curve
+          interp: pow5In
+        }
+        moves: [
+          {
+            progress: {
+              type: heat
+              op: curve
+              interp: pow3In
+            }
+            y: 16
+          }
+        ]
+      }
+      {
+        type: RegionPart
+        suffix: -line
+        layer: 95.1
+        outline: false
+      }
+      {
+        type: RegionPart
+        suffix: -ram
+        layer: 95.2
+        y: -27.25
+        moveY: 16
+        outline: false
+        progress: {
+          type: charge
+          op: curve
+          interp: pow5In
+        }
+        moves: [
+          {
+            progress: {
+              type: heat
+              op: curve
+              interp: pow3In
+            }
+            y: 16
+          }
+        ]
+      }
+      {
+        type: RegionPart
+        layer: 95.3
+        outline: false
+      }
+    ]
+    shootSound: explosionbig
+    bullet: {
+      speed: 4
+      lifetime: 220
+      damage: 2400
+      collides: false
+      scaleLife: true
+      shrinkInterp: slope
+      shrinkY: 0.4
+      sprite: allure-shell-large
+      width: 30
+      height: 45
+      frontColor: ffb3b3
+      backColor: e65555
+      trailColor: e65555
+      lightColor: e65555
+      intervalBullets: 1
+      bulletInterval: 10
+      intervalRandomSpread: 45
+      intervalBullet: {
+        collides: false
+        damage: 200
+        speed: 6
+        drag: 0.08
+        lifetime: 30
+        width: 12
+        height: 18
+        frontColor: ffb3b3
+        backColor: e65555
+        trailColor: e65555
+        lightColor: e65555
+        trailLength: 12
+        trailWidth: 3
+        hitEffect: [
+          {
+            lightOpacity: 0
+            length: 60
+            lifetime: 60
+            particles: 20
+            colorFrom: 787878
+            colorTo: 787878
+            sizeFrom: 3
+            sizeTo: 0
+            interp: pow3Out
+            sizeInterp: pow2In
+          }
+          {
+            lightOpacity: 0
+            length: 55
+            lifetime: 70
+            particles: 32
+            colorFrom: 787878
+            colorTo: 787878
+            sizeFrom: 5
+            sizeTo: 0
+            interp: pow2Out
+            sizeInterp: pow2In
+          }
+          {
+            lightOpacity: 0
+            length: 80
+            lifetime: 30
+            particles: 22
+            colorFrom: 9f9f9f
+            colorTo: 787878
+            sizeFrom: 1
+            sizeTo: 0
+            interp: pow5Out
+            sizeInterp: pow3In
+          }
+          {
+            lightOpacity: 0
+            length: 70
+            lifetime: 40
+            particles: 22
+            colorFrom: 9f9f9f
+            colorTo: 787878
+            sizeFrom: 3
+            sizeTo: 0
+            interp: pow5Out
+            sizeInterp: pow3In
+          }
+          {
+            length: 80
+            line: true
+            lifetime: 30
+            particles: 8
+            colorTo: e65555
+            lenFrom: 7
+            lenTo: 0
+            strokeFrom: 3
+            strokeTo: 1
+            interp: pow2Out
+            sizeInterp: pow2In
+          }
+          {
+            type: WaveEffect
+            lifetime: 25
+            sizeFrom: 0
+            sizeTo: 60
+            strokeFrom: 5
+            strokeTo: 0
+            colorTo: e65555
+          }
+        ]
+        hitSound: explosion
+        fragBullets: 40
+        fragBullet: {
+          pierce: true
+          pierceBuilding: true
+          damage: 120
+          speed: 7
+          drag: 0.04
+          lifetime: 20
+          frontColor: ffffff
+          mixColorTo: e65555
+          shrinkX: 1
+          shrinkY: 0
+          sprite: allure-diamond
+          backSprite: clear-effect
+          hitColor: e65555
+          hitEffect: hitBulletColor
+          despawnEffect: none
+        }
+      }
+      fragBullets: 60
+      fragBullet: {
+        pierce: true
+        pierceBuilding: true
+        damage: 250
+        speed: 12
+        drag: 0.04
+        lifetime: 30
+        frontColor: ffffff
+        mixColorTo: e65555
+        shrinkX: 1
+        shrinkY: 0
+        sprite: allure-diamond
+        backSprite: clear-effect
+        hitColor: e65555
+        hitEffect: hitBulletColor
+        despawnEffect: none
+      }
+      trailRotation: true
+      trailLength: 16
+      trailWidth: 7
+      trailInterval: 2
+      trailEffect: {
+        cone: 10
+        particles: 2
+        length: -50
+        sizeFrom: 3
+        sizeTo: 0
+        colorFrom: ffb3b3
+        colorTo: 702b2b
+        interp: pow5Out
+        sizeInterp: pow5In
+      }
+      hitEffect: [
+        {
+          length: 150
+          lifetime: 150
+          particles: 115
+          colorFrom: 787878
+          colorTo: 787878
+          interp: pow5Out
+          sizeInterp: pow10In
+          sizeFrom: 8
+          sizeTo: 0
+        }
+        {
+          length: 190
+          lifetime: 140
+          particles: 45
+          colorFrom: 787878
+          colorTo: 787878
+          interp: pow10Out
+          sizeInterp: pow5In
+          sizeFrom: 3
+          sizeTo: 0
+        }
+        {
+          length: 60
+          lifetime: 240
+          particles: 25
+          colorFrom: 787878
+          colorTo: 787878
+          interp: pow10Out
+          sizeInterp: pow5In
+          sizeFrom: 14
+          sizeTo: 0
+        }
+        {
+          length: 260
+          lifetime: 80
+          particles: 22
+          colorFrom: ffb3b3
+          colorTo: e65555
+          interp: pow3Out
+          sizeInterp: pow10In
+          sizeFrom: 4
+          sizeTo: 0
+        }
+        {
+          length: 160
+          line: true
+          lifetime: 60
+          particles: 28
+          lenFrom: 16
+          lenTo: 0
+          strokeFrom: 6
+          strokeTo: 4
+          colorTo: e65555
+        }
+        {
+          type: WaveEffect
+          lifetime: 25
+          sizeFrom: 0
+          sizeTo: 125
+          colorTo: e65555
+          strokeFrom: 6
+          strokeTo: 0
+        }
+      ]
+      shootEffect: [
+        {
+          length: 0
+          cone: 0
+          lifetime: 35
+          region: allure-shootspike
+          colorTo: e65555
+          sizeFrom: 75
+          sizeTo: 0
+        }
+        {
+          offset: 90
+          length: 0
+          cone: 0
+          lifetime: 45
+          region: allure-diamond-thin
+          colorTo: e65555
+          sizeFrom: 70
+          sizeTo: 0
+        }
+      ]
+      smokeEffect: [
+        {
+          particles: 20
+          length: 125
+          lifetime: 180
+          cone: 20
+          sizeFrom: 7
+          sizeTo: 0
+          colorFrom: e65555
+          colorTo: 656565
+          interp: pow5Out
+          sizeInterp: pow2In
+        }
+        {
+          particles: 20
+          lightOpacity: 0
+          length: 160
+          lifetime: 110
+          cone: 25
+          sizeFrom: 3
+          sizeTo: 0
+          colorFrom: 999999
+          colorTo: 656565
+          interp: pow5Out
+          sizeInterp: pow3In
+        }
+      ]
+      hitSound: largeExplosion
+    }
+  }
+  //nukes
+  {
+    x: 39
+    y: 30
+    rotate: true
+    rotateSpeed: 0
+    baseRotation: -90
+    reload: 240
+    shootCone: 360
+    shoot: {
+      type: ShootBarrel
+      shots: 2
+      shotDelay: 15
+      barrels: [
+        14, 0, 0, 
+        -14, 0, 0
+      ]
+    }
+    shake: 0.5
+    shootSound: missileLarge
+    bullet: {
+      speed: 5
+      lifetime: 50
+      drag: 0.08
+      damage: 1200
+      homingRange: 640
+      homingPower: 0.22
+      homingDelay: 30
+      sprite: missile-large
+      width: 18
+      height: 48
+      shrinkY: 0
+      frontColor: ffb3b3
+      backColor: e65555
+      trailColor: e65555
+      lightColor: e65555
+      trailWidth: 7
+      trailLength: 18
+      smokeEffect: {
+        type: RadialEffect
+        amount: 2
+        lengthOffset: 3
+        rotationOffset: -22.5
+        rotationSpacing: 45
+        effect: {
+          lifetime: 45
+          length: 60
+          cone: 8
+          particles: 15
+          colorFrom: 9f9f9f
+          colorTo: 787878
+          sizeFrom: 4
+          sizeTo: 0
+          interp: pow3Out
+          sizeInterp: pow2In
+        }
+      }
+      despawnEffect: none
+      hitEffect: none
+      fragOnHit: false
+      fragBullets: 1
+      fragRandomSpread: 0
+      fragOffsetMin: 0
+      fragOffsetMax: 0
+      fragVelocityMin: 1
+      fragVelocityMax: 1
+      fragBullet: {
+        speed: 1
+        drag: -0.04
+        lifetime: 90
+        damage: 1200
+        sprite: missile-large
+        hitSound: largeExplosion
+        hitShake: 6
+        width: 18
+        height: 48
+        shrinkY: 0
+        frontColor: ffb3b3
+        backColor: e65555
+        trailColor: e65555
+        lightColor: e65555
+        trailWidth: 7
+        trailLength: 18
+        fragBullets: 480
+        fragOffsetMin: 0
+        fragOffsetMax: 0
+        fragVelocityMin: 1
+        fragVelocityMax: 1
+        fragBullet: {
+          type: BulletType
+          hittable: false
+          damage: 40
+          speed: 2
+          lifetime: 60
+          pierce: true
+          pierceBuilding: true
+          hitEffect: none
+          despawnEffect: none
+        }
+        hitEffect: [
+          {
+            particles: 1
+            length: 0
+            lifetime: 120
+            region: allure-shield
+            sizeFrom: 0
+            sizeTo: 240
+            colorTo: e6555500
+          }
+          {
+            particles: 1
+            length: 0
+            lifetime: 60
+            sizeFrom: 48
+            sizeTo: 0
+            colorFrom: e65555
+            colorTo: e6555588
+          }
+          {
+            particles: 1
+            length: 0
+            lifetime: 60
+            sizeFrom: 40
+            sizeTo: 0
+          }
+          {
+            particles: 1
+            region: allure-diamond-vthin
+            useRotation: false
+            length: 0
+            lifetime: 30
+            sizeFrom: 240
+            sizeTo: 0
+            colorTo: e65555
+          }
+          {
+            particles: 1
+            region: circle-shadow
+            useRotation: false
+            length: 0
+            lifetime: 30
+            sizeFrom: 480
+            sizeTo: 0
+            colorFrom: 00000044
+            colorTo: 00000044
+            layer: 99
+          }
+        ]
+      }
+    }
+  }
+  //front cannon
+  {
+    name: extelsus-spinal
+    x: 0
+    y: 106.5
+    shootY: 0
+    rotate: true
+    rotateSpeed: 0
+    recoil: 12
+    mirror: false
+    reload: 370
+    shake: 36
+    shootSound: explod
+    bullet: {
+      damage: 160000
+      splashDamage: 60
+      splashDamageRadius: 64
+      splashDamagePierce: true
+      status: allure-0r-kinetic4
+      statusDuration: 3
+      speed: 20
+      drag: 0.015
+      lifetime: 120
+      pierce: true
+      pierceBuilding: true
+      pierceDamageFactor: 0.8
+      frontColor: ffb3b3
+      backColor: e65555
+      trailColor: e65555
+      lightColor: e65555
+      lightRadius: 96
+      lightOpacity: 0.5
+      sprite: allure-chonker
+      width: 60
+      height: 98
+      layer: 110
+      shrinkY: 0
+      trailRotation: true
+      hitSound: explosion
+      despawnSound: explosionbig
+      trailInterval: 1
+      fragOnHit: false
+      fragBullets: 480
+      fragOffsetMin: 0
+      fragOffsetMax: 0
+      fragBullet: {
+        type: BulletType
+        speed: 5
+        drag: 0.025
+        lifetime: 50
+        hittable: false
+        reflectable: false
+        status: allure-0r-kinetic3
+        statusDuration: 3
+        pierce: true
+        pierceBuilding: true
+        damage: 40
+        hitEffect: none
+        despawnEffect: none
+        lightRadius: 0
+      }
+      shootEffect: [
+        {
+          length: 0
+          cone: 0
+          lifetime: 45
+          region: allure-shootspike
+          colorTo: e65555
+          sizeFrom: 310
+          sizeTo: 0
+          offset: 20
+        }
+        {
+          length: 0
+          cone: 0
+          lifetime: 45
+          region: allure-shootspike
+          colorTo: e65555
+          sizeFrom: 310
+          sizeTo: 0
+          offset: -20
+        }
+        {
+          length: 0
+          cone: 0
+          lifetime: 45
+          region: allure-diamond-thin
+          colorTo: e65555
+          sizeFrom: 70
+          sizeTo: 0
+        }
+      ]
+      smokeEffect: [
+        {
+          particles: 40
+          length: 240
+          lifetime: 180
+          cone: 20
+          sizeFrom: 7
+          sizeTo: 0
+          colorFrom: e65555
+          colorTo: 787878
+          interp: pow5Out
+          sizeInterp: pow2In
+          followParent: false
+          layer: 105
+          lightOpacity: 0
+        }
+        {
+          particles: 40
+          lightOpacity: 0
+          length: 280
+          lifetime: 110
+          cone: 25
+          sizeFrom: 3
+          sizeTo: 0
+          colorFrom: a0a0a0
+          colorTo: 787878
+          interp: pow5Out
+          sizeInterp: pow3In
+          followParent: false
+          layer: 105
+          lightOpacity: 0
+        }
+      ]
+      despawnEffect: [
+        {
+          length: 190
+          lifetime: 100
+          particles: 65
+          colorFrom: 787878
+          colorTo: 787878
+          interp: pow5Out
+          sizeInterp: pow3In
+          sizeFrom: 3
+          sizeTo: 0
+          layer: 105
+          lightOpacity: 0
+        }
+        {
+          length: 150
+          lifetime: 120
+          particles: 65
+          colorFrom: 787878
+          colorTo: 787878
+          interp: pow5Out
+          sizeInterp: pow3In
+          sizeFrom: 8
+          sizeTo: 0
+          layer: 105
+          lightOpacity: 0
+        }
+        {
+          length: 120
+          lifetime: 150
+          particles: 65
+          colorFrom: 787878
+          colorTo: 787878
+          interp: pow5Out
+          sizeInterp: pow3In
+          sizeFrom: 14
+          sizeTo: 0
+          layer: 105
+          lightOpacity: 0
+        }
+        {
+          length: 260
+          lifetime: 80
+          particles: 22
+          colorFrom: ffb3b3
+          colorTo: e65555
+          interp: pow3Out
+          sizeInterp: pow10In
+          sizeFrom: 4
+          sizeTo: 0
+        }
+        {
+          length: 220
+          line: true
+          lifetime: 60
+          particles: 35
+          lenFrom: 16
+          lenTo: 4
+          strokeFrom: 6
+          strokeTo: 0
+          colorTo: e65555
+          interp: pow2Out
+          sizeInterp: pow3In
+        }
+        {
+          type: WaveEffect
+          lifetime: 50
+          sizeFrom: 0
+          sizeTo: 125
+          colorTo: e65555
+          strokeFrom: 6
+          strokeTo: 0
+          interp: pow3Out
+        }
+      ]
+      trailEffect: [
+        {
+          particles: 4
+          baseLength: -24
+          cone: 0
+          length: 8
+          lifetime: 45
+          sizeFrom: 12
+          sizeTo: 0
+          colorFrom: 787878
+          colorTo: 787878
+          lightOpacity: 0
+          layer: 105
+        }
+        {
+          particles: 2
+          baseLength: -24
+          cone: 0
+          length: 6
+          lifetime: 25
+          sizeFrom: 18
+          sizeTo: 0
+          colorFrom: 787878
+          colorTo: 787878
+          lightOpacity: 0
+          layer: 105
+        }
+        {
+          particles: 2
+          length: 6
+          lifetime: 20
+          sizeFrom: 14
+          sizeTo: 0
+          colorFrom: e65555
+          colorTo: e65555
+          layer: 106
+        }
+      ]
+    }
+  }
+  //jump ability
+  {
+    x: 0
+    reload: 1800
+    rotate: true
+    rotateSpeed: 0
+    baseRotation: 180
+    mirror: false
+    continuous: true
+    shootStatus: allure-0r-dashstopper
+    shootStatusDuration: 100
+    shoot: {
+      firstShotDelay: 90
+    }
+    parts: [
+      {
+        type: ShapePart
+        y: -500
+        radius: 24
+        color: e65555
+        circle: true
+        layer: 109
+      }
+      {
+        type: ShapePart
+        y: -500
+        radius: 15
+        stroke: 6
+        color: 000000
+        hollow: true
+        circle: true
+        layer: 109.5
+      }
+      {
+        type: ShapePart
+        y: 500
+        radius: 24
+        color: e65555
+        sides: 4
+        layer: 109
+      }
+      {
+        type: ShapePart
+        y: 500
+        radius: 15
+        radiusTo: 0
+        stroke: 0
+        strokeTo: 22.5
+        color: 000000
+        hollow: true
+        sides: 4
+        layer: 109.5
+        progress: smoothReload
+      }
+      {
+        type: HaloPart
+        tri: true
+        shapes: 1
+        y: -500
+        haloRotation: 180
+        triLength: 120
+        radius: 18
+        color: e65555
+        layer: 109
+      }
+      {
+        type: HaloPart
+        tri: true
+        shapes: 1
+        y: -500
+        haloRotation: 83
+        triLength: 120
+        radius: 24
+        color: e65555
+        layer: 109
+      }
+      {
+        type: HaloPart
+        tri: true
+        shapes: 1
+        y: -500
+        haloRotation: -83
+        triLength: 120
+        radius: 24
+        color: e65555
+        layer: 109
+      }
+      {
+        type: HaloPart
+        tri: true
+        shapes: 1
+        y: -480
+        haloRotation: 0
+        triLength: 18
+        radius: 18
+        color: e65555
+        layer: 109
+      }
+      {
+        type: HaloPart
+        tri: true
+        shapes: 1
+        y: 500
+        haloRotation: 180
+        triLength: 120
+        radius: 18
+        color: e65555
+        layer: 109
+      }
+    ]
+    shootY: 0
+    shootSound: none
+    bullet: {
+      type: BulletType
+      keepVelocity: false 
+      collides: false 
+      hittable: false
+      absorbable: false
+      lifetime: 5
+      recoil: 100
+      shootEffect: [
+        {
+          type: ParticleEffect
+          followParent: false
+          baseRotation: 180
+          offset: -90
+          cone: 0
+          layer: 91.1
+          particles: 1
+          sizeFrom: 87.5
+          sizeTo: 87.5
+          randLength: false
+          length: 320
+          lifetime: 30
+          region: allure-0r14-extelsus-full
+          colorFrom: fffffff88
+          colorTo: ffffff00
+          interp: pow3Out
+          lightOpacity: 0
+        }
+        {
+          type: ParticleEffect
+          followParent: false
+          baseRotation: 180
+          offset: -90
+          cone: 0
+          layer: 91
+          particles: 1
+          sizeFrom: 87.5
+          sizeTo: 87.5
+          randLength: false
+          length: 160
+          lifetime: 30
+          region: allure-0r14-extelsus-full
+          colorFrom: fffffff88
+          colorTo: ffffff00
+          interp: pow3Out
+          lightOpacity: 0
+        }
+      ]
+      smokeEffect: [
+        {
+          type: ParticleEffect
+          baseRotation: 180
+          offset: -90
+          cone: 0
+          layer: 91.1
+          particles: 1
+          sizeFrom: 87.5
+          sizeTo: 87.5
+          randLength: false
+          length: 320
+          baseLength: -320
+          lifetime: 30
+          region: allure-0r14-extelsus-full
+          colorFrom: ffffff00
+          colorTo: ffffff88
+          interp: pow3Out
+          lightOpacity: 0
+        }
+        {
+          type: ParticleEffect
+          baseRotation: 180
+          offset: -90
+          cone: 0
+          layer: 91
+          particles: 1
+          sizeFrom: 87.5
+          sizeTo: 87.5
+          randLength: false
+          length: 160
+          baseLength: -160
+          lifetime: 30
+          region: allure-0r14-extelsus-full
+          colorFrom: ffffff00
+          colorTo: ffffff88
+          interp: pow3Out
+          lightOpacity: 0
+        }
+      ]
+      despawnEffect: none
+    }
+  }
+  {
+    x: 0
+    shootY: 0
+    alwaysShooting: true
+    minShootVelocity: 25
+    shootCone: 360
+    continuous: true
+    mirror: false
+    shootSound: none
+    recoil: 0
+    display: false
+    bullet: {
+      type: BulletType
+      keepVelocity: false 
+      collides: false 
+      hittable: false
+      absorbable: false
+      speed: 0
+      lifetime: 8
+      shootEffect: none
+      smokeEffect: none
+      despawnEffect: {
+        particles: 1
+        length: 0
+        lifetime: 500
+        region: allure-shield
+        sizeFrom: 0
+        sizeTo: 1000
+        colorTo: e6555500
+        interp: pow3
+        sizeInterp: linear
+      }
+      hitSound: jump
+      hitSoundVolume: 4
+      fragBullets: 720
+      fragOffsetMin: 0
+      fragOffsetMax: 0
+      fragVelocityMin: 1
+      fragVelocityMax: 1
+      fragBullet: {
+        type: BulletType
+        keepVelocity: false 
+        hittable: false
+        absorbable: false
+        reflectable: false
+        pierce: true
+        pierceBuilding: true
+        damage: 55
+        speed: 2
+        lifetime: 250
+        despawnEffect: none
+        status: allure-0r-waveblasted
+      }
+    }
+  }
+  //engines
+  {
+    y: -100
+    x: 0
+    shootY: 0
+    baseRotation: 180
+    alwaysShooting: true
+    shootCone: 360
+    continuous: true
+    mirror: false
+    reload: 1
+    shootSound: none
+    shootWarmupSpeed: 0.03
+    minShootVelocity: 0.9
+    recoil: 0
+    display: false
+    parts: [
+      {
+        name: allure-thruster-flare-2
+        y: 8
+        moveY: 8
+        rotation: 180
+        outline: false
+        blending: additive
+        mixColor: e65555
+        color: ffffff44
+        colorTo: ffffff
+        xScl: 1
+        yScl: 1
+        layer: 90.03
+        progress: warmup
+      }
+    ]
+    bullet: {
+      type: ContinuousFlameBulletType
+      layer: 90.02
+      lifetime: 14
+      collides: false
+      length: 50
+      width: 12
+      colors: [e6555544, ef848488, f7acacbb, fcd6d6, ffffff]
+      drawFlare: false
+      shootEffect: none
+      smokeEffect: none
+      lengthInterp: pow10Out
+      oscScl: 1
+      oscMag: 0.1
+      hitEffect: none
+      lightColor: e65555
+      lightStroke: 40
+      lightOpacity: 0.4
+    }
+  }
+  {
+    y: -100
+    x: 0
+    shootY: 0
+    baseRotation: 180
+    alwaysShooting: true
+    shootCone: 360
+    continuous: true
+    mirror: false
+    reload: 1
+    shootSound: none
+    shootWarmupSpeed: 0.03
+    minShootVelocity: 0.9
+    recoil: 0
+    display: false
+    parts: [
+      {
+        name: allure-thruster-flare-2
+        y: 8
+        moveY: 8
+        rotation: 180
+        outline: false
+        blending: additive
+        mixColor: e65555
+        color: ffffff44
+        colorTo: ffffff
+        xScl: 1
+        yScl: 1
+        layer: 90.03
+        progress: warmup
+      }
+    ]
+    bullet: {
+      type: ContinuousFlameBulletType
+      layer: 90.02
+      lifetime: 10
+      collides: false
+      length: 50
+      width: 12
+      colors: [e6555544, ef848488, f7acacbb, fcd6d6, ffffff]
+      drawFlare: false
+      shootEffect: none
+      smokeEffect: none
+      lengthInterp: pow10Out
+      oscScl: 1
+      oscMag: 0.1
+      hitEffect: none
+      lightColor: e65555
+      lightStroke: 34
+      lightOpacity: 0.4
+    }
+  }
+  {
+    y: -97
+    x: 22
+    shootY: 0
+    baseRotation: 180
+    alwaysShooting: true
+    shootCone: 360
+    continuous: true
+    alternate: false
+    reload: 1
+    shootSound: none
+    shootWarmupSpeed: 0.03
+    minShootVelocity: 0.9
+    recoil: 0
+    display: false
+    parts: [
+      {
+        name: allure-thruster-flare-2
+        y: 4
+        moveY: 4
+        rotation: 180
+        outline: false
+        blending: additive
+        mixColor: e65555
+        color: ffffff44
+        colorTo: ffffff
+        xScl: 0.35
+        yScl: 0.35
+        layer: 90.03
+        progress: warmup
+      }
+    ]
+    bullet: {
+      type: ContinuousFlameBulletType
+      layer: 90.02
+      lifetime: 14
+      collides: false
+      length: 25
+      width: 6
+      colors: [e6555544, ef848488, f7acacbb, fcd6d6, ffffff]
+      drawFlare: false
+      shootEffect: none
+      smokeEffect: none
+      lengthInterp: pow10Out
+      oscScl: 1
+      oscMag: 0.1
+      hitEffect: none
+      lightColor: e65555
+      lightStroke: 18
+      lightOpacity: 0.4
+    }
+  }
+  {
+    y: -97
+    x: 22
+    shootY: 0
+    baseRotation: 180
+    alwaysShooting: true
+    shootCone: 360
+    continuous: true
+    alternate: false
+    reload: 1
+    shootSound: none
+    shootWarmupSpeed: 0.03
+    minShootVelocity: 0.9
+    recoil: 0
+    display: false
+    parts: [
+      {
+        name: allure-thruster-flare-2
+        y: 4
+        moveY: 4
+        rotation: 180
+        outline: false
+        blending: additive
+        mixColor: e65555
+        color: ffffff44
+        colorTo: ffffff
+        xScl: 0.35
+        yScl: 0.35
+        layer: 90.03
+        progress: warmup
+      }
+    ]
+    bullet: {
+      type: ContinuousFlameBulletType
+      layer: 90.02
+      lifetime: 10
+      collides: false
+      length: 25
+      width: 6
+      colors: [e6555544, ef848488, f7acacbb, fcd6d6, ffffff]
+      drawFlare: false
+      shootEffect: none
+      smokeEffect: none
+      lengthInterp: pow10Out
+      oscScl: 1
+      oscMag: 0.1
+      hitEffect: none
+      lightColor: e65555
+      lightStroke: 18
+      lightOpacity: 0.4
+    }
+  }
+  {
+    x: 62
+    y: -95
+    shootY: 0
+    baseRotation: 180
+    alwaysShooting: true
+    shootCone: 360
+    continuous: true
+    alternate: false
+    reload: 1
+    shootSound: none
+    shootWarmupSpeed: 0.03
+    minShootVelocity: 0.9
+    recoil: 0
+    display: false
+    parts: [
+      {
+        name: allure-thruster-flare-2
+        y: 6
+        moveY: 6
+        rotation: 180
+        outline: false
+        blending: additive
+        mixColor: e65555
+        color: ffffff44
+        colorTo: ffffff
+        xScl: 0.75
+        yScl: 0.75
+        layer: 90.03
+        progress: warmup
+      }
+    ]
+    bullet: {
+      type: ContinuousFlameBulletType
+      layer: 90.02
+      lifetime: 14
+      collides: false
+      length: 44
+      width: 10
+      colors: [e6555544, ef848488, f7acacbb, fcd6d6, ffffff]
+      drawFlare: false
+      shootEffect: none
+      smokeEffect: none
+      lengthInterp: pow10Out
+      oscScl: 1
+      oscMag: 0.1
+      hitEffect: none
+      lightColor: e65555
+      lightStroke: 30
+      lightOpacity: 0.4
+    }
+  }
+  {
+    x: 62
+    y: -95
+    shootY: 0
+    baseRotation: 180
+    alwaysShooting: true
+    shootCone: 360
+    continuous: true
+    alternate: false
+    reload: 1
+    shootSound: none
+    shootWarmupSpeed: 0.03
+    minShootVelocity: 0.9
+    recoil: 0
+    display: false
+    parts: [
+      {
+        name: allure-thruster-flare-2
+        y: 6
+        moveY: 6
+        rotation: 180
+        outline: false
+        blending: additive
+        mixColor: e65555
+        color: ffffff44
+        colorTo: ffffff
+        xScl: 0.75
+        yScl: 0.75
+        layer: 90.03
+        progress: warmup
+      }
+    ]
+    bullet: {
+      type: ContinuousFlameBulletType
+      layer: 90.02
+      lifetime: 10
+      collides: false
+      length: 44
+      width: 10
+      colors: [e6555544, ef848488, f7acacbb, fcd6d6, ffffff]
+      drawFlare: false
+      shootEffect: none
+      smokeEffect: none
+      lengthInterp: pow10Out
+      oscScl: 1
+      oscMag: 0.1
+      hitEffect: none
+      lightColor: e65555
+      lightStroke: 30
+      lightOpacity: 0.4
+    }
+  }
+  //damaging flames
+  {
+    y: -100
+    x: 0
+    rotate: true
+    rotateSpeed: 0
+    shootY: 0
+    shoot: {
+      type: ShootSummon
+      radius: 16
+    }
+    inaccuracy: 0
+    baseRotation: 180
+    alwaysShooting: true
+    shootCone: 360
+    mirror: false
+    reload: 2
+    shootSound: none
+    minShootVelocity: 0.9
+    recoil: 0
+    display: false
+    bullet: {
+      type: ContinuousFlameBulletType
+      speed: 3
+      drag: 0.08
+      createChance: 0.5
+      damage: 210
+      layer: 90.01
+      lifetime: 30
+      collides: false
+      length: 24
+      width: 8
+      colors: [e6555544, ef848488, f7acacbb, fcd6d6, ffffff]
+      drawFlare: false
+      shootEffect: none
+      smokeEffect: none
+      lengthInterp: reverse
+      oscScl: 1
+      oscMag: 0.1
+      hitEffect: none
+      lightColor: e65555
+      lightStroke: 16
+      lightOpacity: 0.4
+    }
+  }
+  {
+    y: -97
+    x: 22
+    rotate: true
+    rotateSpeed: 0
+    shootY: 0
+    shoot: {
+      type: ShootSummon
+      radius: 4
+    }
+    inaccuracy: 0
+    baseRotation: 180
+    alwaysShooting: true
+    shootCone: 360
+    alternate: false
+    reload: 2
+    shootSound: none
+    minShootVelocity: 0.9
+    recoil: 0
+    display: false
+    bullet: {
+      type: ContinuousFlameBulletType
+      speed: 0.7
+      drag: 0.08
+      createChance: 0.5
+      damage: 60
+      layer: 90.01
+      lifetime: 30
+      collides: false
+      length: 9
+      width: 3
+      colors: [e6555544, ef848488, f7acacbb, fcd6d6, ffffff]
+      drawFlare: false
+      shootEffect: none
+      smokeEffect: none
+      lengthInterp: reverse
+      oscScl: 1
+      oscMag: 0.1
+      hitEffect: none
+      lightColor: e65555
+      lightStroke: 6
+      lightOpacity: 0.4
+    }
+  }
+  {
+    x: 62
+    y: -95
+    rotate: true
+    rotateSpeed: 0
+    shootY: 0
+    shoot: {
+      type: ShootSummon
+      radius: 7
+    }
+    inaccuracy: 0
+    baseRotation: 180
+    alwaysShooting: true
+    shootCone: 360
+    alternate: false
+    reload: 2
+    shootSound: none
+    minShootVelocity: 0.9
+    recoil: 0
+    display: false
+    bullet: {
+      type: ContinuousFlameBulletType
+      speed: 2.4
+      drag: 0.08
+      createChance: 0.5
+      damage: 140
+      layer: 90.01
+      lifetime: 30
+      collides: false
+      length: 18
+      width: 6
+      colors: [e6555544, ef848488, f7acacbb, fcd6d6, ffffff]
+      drawFlare: false
+      shootEffect: none
+      smokeEffect: none
+      lengthInterp: reverse
+      oscScl: 1
+      oscMag: 0.1
+      hitEffect: none
+      lightColor: e65555
+      lightStroke: 12
+      lightOpacity: 0.4
+    }
+  }
+  //idle flames
+  {
+    y: -100
+    x: 0
+    baseRotation: 180
+    alwaysShooting: true
+    alwaysContinuous: true
+    shootCone: 360
+    continuous: true
+    mirror: false
+    shootSound: none
+    recoil: 0
+    display: false
+    bullet: {
+      type: ContinuousFlameBulletType
+      layer: 91
+      lifetime: 14
+      collides: false
+      length: 24
+      width: 12
+      colors: [e6555544, ef848488, f7acacbb, fcd6d6, ffffff]
+      drawFlare: false
+      shootEffect: none
+      smokeEffect: none
+      lengthInterp: pow10Out
+      oscScl: 2.5
+      oscMag: 0.1
+      hitEffect: none
+      lightColor: e65555
+      lightStroke: 24
+      lightOpacity: 0.25
+    }
+  }
+  {
+    y: -97
+    x: 22
+    baseRotation: 180
+    alwaysShooting: true
+    alwaysContinuous: true
+    shootCone: 360
+    continuous: true
+    alternate: false
+    shootSound: none
+    recoil: 0
+    display: false
+    bullet: {
+      type: ContinuousFlameBulletType
+      layer: 91
+      lifetime: 14
+      collides: false
+      length: 12
+      width: 6
+      colors: [e6555544, ef848488, f7acacbb, fcd6d6, ffffff]
+      drawFlare: false
+      shootEffect: none
+      smokeEffect: none
+      lengthInterp: pow10Out
+      oscScl: 2.5
+      oscMag: 0.1
+      hitEffect: none
+      lightColor: e65555
+      lightStroke: 12
+      lightOpacity: 0.25
+    }
+  }
+  {
+    x: 62
+    y: -95
+    baseRotation: 180
+    alwaysShooting: true
+    alwaysContinuous: true
+    shootCone: 360
+    continuous: true
+    alternate: false
+    shootSound: none
+    recoil: 0
+    display: false
+    bullet: {
+      type: ContinuousFlameBulletType
+      layer: 91
+      lifetime: 14
+      collides: false
+      length: 20
+      width: 10
+      colors: [e6555544, ef848488, f7acacbb, fcd6d6, ffffff]
+      drawFlare: false
+      shootEffect: none
+      smokeEffect: none
+      lengthInterp: pow10Out
+      oscScl: 2.5
+      oscMag: 0.1
+      hitEffect: none
+      lightColor: e65555
+      lightStroke: 20
+      lightOpacity: 0.25
+    }
+  }
+  {
+    x: 61
+    y: -2
+    alwaysShooting: true
+    alwaysContinuous: true
+    shootCone: 360
+    continuous: true
+    alternate: false
+    shootSound: none
+    recoil: 0
+    display: false
+    bullet: {
+      type: ContinuousFlameBulletType
+      layer: 91
+      lifetime: 14
+      collides: false
+      length: 14
+      width: 7
+      colors: [e6555544, ef848488, f7acacbb, fcd6d6, ffffff]
+      drawFlare: false
+      shootEffect: none
+      smokeEffect: none
+      lengthInterp: pow10Out
+      oscScl: 2.5
+      oscMag: 0.1
+      hitEffect: none
+      lightColor: e65555
+      lightStroke: 14
+      lightOpacity: 0.25
+    }
+  }
+  //lights
+  {
+    x: 62
+    y: -80
+    shootY: 0
+    reload: 60
+    alwaysShooting: true
+    shootCone: 360
+    alternate: false
+    shootSound: none
+    recoil: 0
+    display: false
+    bullet: {
+      type: BulletType
+      lifetime: 0
+      speed: 0
+      collides: false
+      hittable: false
+      absorbable: false
+      instantDisappear: true
+      hitEffect: none
+      despawnEffect: none
+      shootEffect: {
+        rotWithParent: true
+        particles: 4
+        region: particle
+        length: 0
+        lifetime: 20
+        sizeFrom: 1
+        sizeTo: 1
+        colorFrom: ffffff
+        colorTo: ffffff
+        lightScl: 2
+        lightOpacity: 1
+        lightColor: e65555
+      }
+      smokeEffect: {
+        rotWithParent: true
+        particles: 1
+        length: 0
+        lifetime: 20
+        sizeFrom: 1
+        sizeTo: 1
+        colorFrom: 000000
+        colorTo: 000000
+        layer: 20
+        lightScl: 15
+        lightOpacity: 0.3
+        lightColor: e65555
+      }
+    }
+  }
+  {
+    x: 62
+    y: -14
+    shootY: 0
+    reload: 60
+    alwaysShooting: true
+    shootCone: 360
+    alternate: false
+    shootSound: none
+    recoil: 0
+    display: false
+    bullet: {
+      type: BulletType
+      lifetime: 0
+      speed: 0
+      collides: false
+      hittable: false
+      absorbable: false
+      instantDisappear: true
+      hitEffect: none
+      despawnEffect: none
+      shootEffect: {
+        rotWithParent: true
+        particles: 4
+        region: particle
+        length: 0
+        lifetime: 20
+        sizeFrom: 1
+        sizeTo: 1
+        colorFrom: ffffff
+        colorTo: ffffff
+        lightScl: 2
+        lightOpacity: 1
+        lightColor: e65555
+      }
+      smokeEffect: {
+        rotWithParent: true
+        particles: 1
+        length: 0
+        lifetime: 20
+        sizeFrom: 1
+        sizeTo: 1
+        colorFrom: 000000
+        colorTo: 000000
+        layer: 20
+        lightScl: 15
+        lightOpacity: 0.3
+        lightColor: e65555
+      }
+    }
+  }
+  //headlights (messy)
+  {
+    x: 0
+    y: 72
+    rotate: true
+    rotateSpeed: 0
+    shootY: 0
+    alwaysShooting: true
+    alwaysContinuous: true
+    shootCone: 360
+    mirror: false
+    shootSound: none
+    recoil: 0
+    display: false
+    bullet: {
+      type: ContinuousFlameBulletType
+      collidesGround: false
+      collidesAir: false
+      length: 1200
+      width: 0
+      lifetime: 7
+      damage: 0.001
+      drawFlare: false
+      shootEffect: none
+      smokeEffect: none
+      hitEffect: none
+      lightStroke: 120
+      lightOpacity: 0.25
+      lightColor: ffffff
+      lengthInterp: pow10Out
+    }
+  }
+  {
+    x: 0
+    y: 72
+    rotate: true
+    baseRotation: 4
+    rotateSpeed: 0
+    shootY: 0
+    alwaysShooting: true
+    alwaysContinuous: true
+    shootCone: 360
+    alternate: false
+    shootSound: none
+    recoil: 0
+    display: false
+    bullet: {
+      type: ContinuousFlameBulletType
+      collidesGround: false
+      collidesAir: false
+      length: 1200
+      width: 0
+      lifetime: 7
+      damage: 0.001
+      drawFlare: false
+      shootEffect: none
+      smokeEffect: none
+      hitEffect: none
+      lightStroke: 120
+      lightOpacity: 0.25
+      lightColor: ffffff
+      lengthInterp: pow10Out
+    }
+  }
+  {
+    x: 0
+    y: 72
+    rotate: true
+    baseRotation: 8
+    rotateSpeed: 0
+    shootY: 0
+    reload: 2
+    alwaysShooting: true
+    alwaysContinuous: true
+    shootCone: 360
+    alternate: false
+    shootSound: none
+    recoil: 0
+    display: false
+    bullet: {
+      type: ContinuousFlameBulletType
+      collidesGround: false
+      collidesAir: false
+      length: 1200
+      width: 0
+      lifetime: 7
+      damage: 0.001
+      drawFlare: false
+      shootEffect: none
+      smokeEffect: none
+      hitEffect: none
+      lightStroke: 120
+      lightOpacity: 0.25
+      lightColor: ffffff
+      lengthInterp: pow10Out
+    }
+  }
+  {
+    x: 72
+    y: -24
+    rotate: true
+    rotateSpeed: 0
+    shootY: 0
+    baseRotation: -90
+    alwaysShooting: true
+    alwaysContinuous: true
+    shootCone: 360
+    alternate: false
+    shootSound: none
+    recoil: 0
+    display: false
+    bullet: {
+      type: ContinuousFlameBulletType
+      collidesGround: false
+      collidesAir: false
+      length: 90
+      width: 0
+      lifetime: 7
+      damage: 0.001
+      drawFlare: false
+      shootEffect: none
+      smokeEffect: none
+      hitEffect: none
+      lightStroke: 120
+      lightOpacity: 0.25
+      lightColor: ffffff
+      lengthInterp: pow10Out
+    }
+  }
+  {
+    x: 72
+    y: -24
+    rotate: true
+    baseRotation: -60
+    rotateSpeed: 0
+    shootY: 0
+    alwaysShooting: true
+    alwaysContinuous: true
+    shootCone: 360
+    alternate: false
+    shootSound: none
+    recoil: 0
+    display: false
+    bullet: {
+      type: ContinuousFlameBulletType
+      collidesGround: false
+      collidesAir: false
+      length: 100
+      width: 0
+      lifetime: 7
+      damage: 0.001
+      drawFlare: false
+      shootEffect: none
+      smokeEffect: none
+      hitEffect: none
+      lightStroke: 120
+      lightOpacity: 0.25
+      lightColor: ffffff
+      lengthInterp: pow10Out
+    }
+  }
+  {
+    x: 72
+    y: -24
+    rotate: true
+    baseRotation: -40
+    rotateSpeed: 0
+    shootY: 0
+    alwaysShooting: true
+    alwaysContinuous: true
+    shootCone: 360
+    alternate: false
+    shootSound: none
+    recoil: 0
+    display: false
+    bullet: {
+      type: ContinuousFlameBulletType
+      collidesGround: false
+      collidesAir: false
+      length: 140
+      width: 0
+      lifetime: 7
+      damage: 0.001
+      drawFlare: false
+      shootEffect: none
+      smokeEffect: none
+      hitEffect: none
+      lightStroke: 120
+      lightOpacity: 0.25
+      lightColor: ffffff
+      lengthInterp: pow10Out
+    }
+  }
+  {
+    x: 72
+    y: -24
+    rotate: true
+    baseRotation: -120
+    rotateSpeed: 0
+    shootY: 0
+    alwaysShooting: true
+    alwaysContinuous: true
+    shootCone: 360
+    alternate: false
+    shootSound: none
+    recoil: 0
+    display: false
+    bullet: {
+      type: ContinuousFlameBulletType
+      collidesGround: false
+      collidesAir: false
+      length: 100
+      width: 0
+      lifetime: 7
+      damage: 0.001
+      drawFlare: false
+      shootEffect: none
+      smokeEffect: none
+      hitEffect: none
+      lightStroke: 120
+      lightOpacity: 0.25
+      lightColor: ffffff
+      lengthInterp: pow10Out
+    }
+  }
+  {
+    x: 72
+    y: -24
+    rotate: true
+    baseRotation: -130
+    rotateSpeed: 0
+    shootY: 0
+    alwaysShooting: true
+    alwaysContinuous: true
+    shootCone: 360
+    alternate: false
+    shootSound: none
+    recoil: 0
+    display: false
+    bullet: {
+      type: ContinuousFlameBulletType
+      collidesGround: false
+      collidesAir: false
+      length: 140
+      width: 0
+      lifetime: 7
+      damage: 0.001
+      drawFlare: false
+      shootEffect: none
+      smokeEffect: none
+      hitEffect: none
+      lightStroke: 120
+      lightOpacity: 0.25
+      lightColor: ffffff
+      lengthInterp: pow10Out
+    }
+  }
+  //death
+  {
+    x: 0
+    rotate: true
+    rotateSpeed: 0
+    controllable: false
+    shootY: 0
+    shootCone: 360
+    shootOnDeath: true
+    shootSound: none
+    bullet: {
+      shootEffect: none
+      smokeEffect: none
+      spawnUnit: allure-0r00-01-14-extelsus-deamth
+    }
+  }
+]
+abilities: [
+  {
+    display: false
+    type: MoveEffectAbility
+    minVelocity: 0.9
+    x: 0
+    y: -160
+    rotateEffect: true
+    effect: {
+      type: SeqEffect
+      layer: 90
+      effects: [
+        {
+          particles: 2
+          lifetime: 10
+          length: 0
+          baseLength: 8
+          interp: pow3In
+          sizeInterp: linear
+          sizeFrom: 0
+          sizeTo: 12
+          colorFrom: 787878
+          colorTo: 787878
+          layer: 90
+          lightOpacity: 0
+        }
+        {
+          particles: 2
+          lifetime: 40
+          length: 0
+          baseLength: 8
+          sizeFrom: 12
+          sizeTo: 0
+          colorFrom: 787878
+          colorTo: 787878
+          layer: 90
+          lightOpacity: 0
+        }
+      ]
+    }
+  }
+  {
+    display: false
+    type: MoveEffectAbility
+    minVelocity: 0.9
+    x: 22
+    y: -122
+    rotateEffect: true
+    effect: {
+      type: SeqEffect
+      layer: 90
+      effects: [
+        {
+          particles: 2
+          lifetime: 10
+          length: 0
+          baseLength: 4
+          interp: pow3In
+          sizeInterp: linear
+          sizeFrom: 0
+          sizeTo: 6
+          colorFrom: 787878
+          colorTo: 787878
+          layer: 90
+          lightOpacity: 0
+        }
+        {
+          particles: 2
+          lifetime: 40
+          length: 0
+          baseLength: 4
+          sizeFrom: 6
+          sizeTo: 0
+          colorFrom: 787878
+          colorTo: 787878
+          layer: 90
+          lightOpacity: 0
+        }
+      ]
+    }
+  }
+  {
+    display: false
+    type: MoveEffectAbility
+    minVelocity: 0.9
+    x: -22
+    y: -122
+    rotateEffect: true
+    effect: {
+      type: SeqEffect
+      layer: 90
+      effects: [
+        {
+          particles: 2
+          lifetime: 10
+          length: 0
+          baseLength: 4
+          interp: pow3In
+          sizeInterp: linear
+          sizeFrom: 0
+          sizeTo: 6
+          colorFrom: 787878
+          colorTo: 787878
+          layer: 90
+          lightOpacity: 0
+        }
+        {
+          particles: 2
+          lifetime: 40
+          length: 0
+          baseLength: 4
+          sizeFrom: 6
+          sizeTo: 0
+          colorFrom: 787878
+          colorTo: 787878
+          layer: 90
+          lightOpacity: 0
+        }
+      ]
+    }
+  }
+  {
+    display: false
+    type: MoveEffectAbility
+    minVelocity: 0.9
+    x: 62
+    y: -140
+    rotateEffect: true
+    effect: {
+      type: SeqEffect
+      layer: 90
+      effects: [
+        {
+          particles: 2
+          lifetime: 10
+          length: 0
+          baseLength: 6
+          interp: pow3In
+          sizeInterp: linear
+          sizeFrom: 0
+          sizeTo: 9
+          colorFrom: 787878
+          colorTo: 787878
+          layer: 90
+          lightOpacity: 0
+        }
+        {
+          particles: 2
+          lifetime: 40
+          length: 0
+          baseLength: 6
+          sizeFrom: 9
+          sizeTo: 0
+          colorFrom: 787878
+          colorTo: 787878
+          layer: 90
+          lightOpacity: 0
+        }
+      ]
+    }
+  }
+  {
+    display: false
+    type: MoveEffectAbility
+    minVelocity: 0.9
+    x: -62
+    y: -140
+    rotateEffect: true
+    effect: {
+      type: SeqEffect
+      layer: 90
+      effects: [
+        {
+          particles: 2
+          lifetime: 10
+          length: 0
+          baseLength: 6
+          interp: pow3In
+          sizeInterp: linear
+          sizeFrom: 0
+          sizeTo: 9
+          colorFrom: 787878
+          colorTo: 787878
+          layer: 90
+          lightOpacity: 0
+        }
+        {
+          particles: 2
+          lifetime: 40
+          length: 0
+          baseLength: 6
+          sizeFrom: 9
+          sizeTo: 0
+          colorFrom: 787878
+          colorTo: 787878
+          layer: 90
+          lightOpacity: 0
+        }
+      ]
+    }
+  }
+  {
+    type: MoveEffectAbility
+    minVelocity: 95
+    interval: 1
+    rotateEffect: true
+    effect: {
+      offset: -90
+      cone: 0
+      layer: 91.2
+      particles: 1
+      sizeFrom: 87.5
+      sizeTo: 87.5
+      randLength: false
+      length: 0
+      lifetime: 60
+      region: allure-0r14-extelsus-full
+      colorFrom: ffffff88
+      colorTo: ffffff00
+      interp: pow3Out
+      lightOpacity: 0
+    }
+  }
+  
+]
+envEnabled: -1
+envDisabled: 4
+deathSound: none
+deathExplosionEffect: none
+createWreck: false
+createScorch: false
+crashDamageMultiplier: 0

@@ -1,0 +1,19 @@
+heatCapacity: 0
+temperature: 2.4
+gas: true
+research: {
+  parent: fluid-energy
+  objectives: [
+    {
+      type: Produce
+      content: allure-plasma
+    }
+  ]
+}
+coolant: false
+color: 90a2fc
+lightColor: 7382f044
+shownPlanets: [
+  allure-wandura,
+  allure-lus
+]

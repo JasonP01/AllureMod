@@ -1,0 +1,14 @@
+type: Floor
+speedMultiplier: 0.3
+drownTime: 180
+variants: 0
+status: allure-healing-flood
+statusDuration: 60
+cacheLayer: water
+isLiquid: true
+liquidDrop: liquid-baenara
+liquidMultiplier: 1.25
+//I DON'T KNOW WHY THIS DOESN'T WORK
+attributes: {
+  flow: 0.125
+}
